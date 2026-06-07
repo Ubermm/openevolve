@@ -56,6 +56,7 @@ def main(argv=None) -> int:
         seeds=args.seeds,
         scripted=False,
         decompose=False,  # ArchXBench tbs are not golden-expr decomposable
+        require_usable=False,  # ArchXBench ships no reference RTL to validate against
     )
 
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)

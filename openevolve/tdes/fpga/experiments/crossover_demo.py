@@ -23,71 +23,12 @@ from __future__ import annotations
 import argparse
 import logging
 
-from typing import Optional
-
 from openevolve.tdes.fpga import ablation
+from openevolve.tdes.fpga.ablation import DiverseScheduleController
 from openevolve.tdes.fpga.config import FPGAConfig
 from openevolve.tdes.fpga.experiments import runner
 from openevolve.tdes.fpga.verilog_suite import VerilogTest, VerilogTestSuite
 from openevolve.tdes.types import Candidate, TestLevel
-
-
-class DiverseScheduleController(ablation.AblationController):
-    """AblationController that randomizes per-candidate module order.
-
-    The base controller fixes failing modules in a fixed (test) order, so from a
-    homogeneous seed every candidate pursues the same module first and the
-    population never develops complementary coverage. Shuffling the order per
-    candidate lets different candidates fix different modules — the diversity
-    that complementary-coverage crossover needs to combine partial solutions.
-    Only the per-candidate scheduling changes; all acceptance/regression rules
-    are inherited unchanged.
-    """
-
-    async def _mutate_candidate(self, parent: Candidate, gen: int) -> Optional[Candidate]:
-        baseline_passes = parent.passes
-        working = parent.clone(generation=gen, parent_id=parent.id, metadata={"origin": "mutation"})
-        working.vector = parent.vector
-        changed = False
-
-        failing_modules = parent.vector.failing_modules()
-        self._rng.shuffle(failing_modules)  # <-- the only change vs. base
-        limit = self.config.mutate_modules_per_candidate
-        if limit is not None:
-            failing_modules = failing_modules[:limit]
-
-        for module in failing_modules:
-            feedback = [
-                r.feedback
-                for r in working.vector.results.values()
-                if not r.passed and r.module == module and r.feedback is not None
-            ]
-            proposal = await self.mutator.propose(
-                candidate=working,
-                module=module,
-                feedback=feedback,
-                memory_text=self.memory.render(module),
-                generation=gen,
-            )
-            if proposal is None:
-                continue
-            trial = working.clone(generation=gen, parent_id=parent.id)
-            trial.modules[module] = proposal.new_source
-            trial.vector = self.suite.run(
-                trial, sandbox=self.config.sandbox, timeout=self.config.suite_timeout
-            )
-            if trial.vector.is_superset_of(working.vector):
-                if trial.vector.passes() != working.vector.passes():
-                    changed = True
-                working = trial
-                working.metadata["origin"] = "mutation"
-            else:
-                self._record_failure(module, gen, proposal.approach, trial.vector, working)
-
-        if changed and working.passes > baseline_passes:
-            return working
-        return working if changed else None
-
 
 # Empty, compilable skeletons with the correct interface (no logic).
 SEED = {

@@ -1,0 +1,25 @@
+# TDES-FPGA config using Anthropic Claude Sonnet 4.6 (OpenAI-compatible endpoint).
+#   export ANTHROPIC_API_KEY=...
+#   python -m openevolve.tdes.fpga.experiments.crossover_ablation \
+#       --config openevolve/tdes/fpga/experiments/configs/anthropic_sonnet.yaml --seeds 0 1 2
+
+tdes:
+  pop_size: 8
+  max_generations: 6
+  window_size: 3
+  diff_based: false
+  suite_timeout: 60
+  synth_target: ice40
+  output_dir: tdes_fpga_results/runs
+  random_seed: 42
+
+llm:
+  api_base: "https://api.anthropic.com/v1/"
+  api_key: "${ANTHROPIC_API_KEY}"
+  temperature: 0.9
+  max_tokens: 8192
+  timeout: 180
+  retries: 3
+  models:
+    - name: "claude-sonnet-4-6"
+      weight: 1.0

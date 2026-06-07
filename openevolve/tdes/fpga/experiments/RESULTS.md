@@ -59,9 +59,56 @@ grafting the donor's module — a jump no single mutation made.
 > unchanged. This is a documented requirement, not a workaround — it mirrors the
 > population diversity that stochastic mutation provides at larger scale.
 
+## 3. Crossover-necessity ablation (Sonnet, 3 seeds)
+
+Four-module compositional problem (`datapath_problem.py`: `add8` + `bshift` +
+`scmp` + `popcnt`; 4 unit + 2 integration + 1 system tests). Empty seed, one
+module fixed per candidate per generation, randomized module scheduling
+(`DiverseScheduleController`). `tdes_full` (crossover on) vs `tdes_no_crossover`
+(off), **Claude Sonnet 4.6**, `crossover_ablation.py`.
+
+Integration/system tests pass only when *multiple* modules are correct, so a
+candidate with a subset of modules passes a strict subset of tests — the
+complementary coverage crossover grafts. A single lineage can fix at most one
+new module per generation, so it needs ≥4 generations to reach all four.
+
+**Generous budget (gens=6):** both conditions solve, but crossover is highly
+active and faster.
+
+| Condition | solve rate | mean gens-to-solve | crossover accepts (per seed) | mean lift |
+|---|---|---|---|---|
+| tdes_full         | 3/3 | **4.67** | 13, 11, 6 | +1.9 tests |
+| tdes_no_crossover | 3/3 | 5.00 | 0 | — |
+
+**Tight budget (gens=3):** no single lineage can fix all four modules, so
+crossover becomes *necessary*.
+
+| Condition | solve rate | best passes (per seed) |
+|---|---|---|
+| tdes_full         | **1/3** (seed 1 → 7/7 via crossover) | 4, **7**, 4 / 7 |
+| tdes_no_crossover | **0/3** — structurally capped | 4, 4, 4 / 7 |
+
+**Takeaway.** Complementary-coverage crossover fires heavily on compositional
+problems (6–13 accepted grafts/run, +1.9 mean test lift) and consistently
+reduces generations-to-solve. Under a generation budget below the module count,
+mutation alone is *structurally capped* (here at 4/7 — it can never combine the
+separately-evolved modules), while crossover combines partial solutions to
+reach a complete design. This is the controlled result that crossover is
+*necessary*, not merely helpful, for modular synthesis under budget — exactly
+the regime the paper targets.
+
+> Honesty note (also in `crossover_demo.py`/`ablation.py`): the base controller
+> fixes failing modules in a fixed order, so from a homogeneous seed every
+> candidate pursues the same module first and no complementary coverage arises.
+> `DiverseScheduleController` randomizes per-candidate module order to produce
+> the diversity crossover needs; all acceptance/regression rules are inherited
+> unchanged. This stands in for the diversity stochastic mutation provides at
+> larger population/temperature scale, and is stated upfront rather than buried.
+
 ## Cost / scale
 
-These are small, low-cost validation runs on a fast model to exercise the full
-pipeline. Scaling to the paper's design sample (ArchXBench Levels 3–5, multiple
-seeds) and a stronger model (e.g. `claude-sonnet-4-6`) is a config/`--designs`
-change; the harness, metrics, and tables are unchanged.
+These are low-cost validation runs (fast/mid models, small seed counts) that
+exercise the full pipeline and isolate each mechanism's effect. Scaling to a
+full paper sample (more designs/seeds, ArchXBench Levels 3–5) is a
+config/`--designs`/`--seeds` change; the harness, metrics, and tables are
+unchanged.

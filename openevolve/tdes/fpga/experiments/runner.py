@@ -117,6 +117,7 @@ def run_matrix(
     seeds: List[int],
     scripted: bool = False,
     decompose: bool = True,
+    require_usable: bool = True,
 ) -> List[metrics.RunMetrics]:
     """Run the full (design x condition x seed) matrix."""
     # In LLM mode every condition needs an ensemble; in scripted mode none do.
@@ -136,6 +137,7 @@ def run_matrix(
                         ensemble=ensemble,
                         scripted=scripted,
                         decompose=decompose,
+                        require_usable=require_usable,
                     )
                 except Exception as e:  # keep the sweep alive
                     logger.warning(

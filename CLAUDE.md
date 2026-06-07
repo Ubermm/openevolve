@@ -152,6 +152,30 @@ tests live in `fpga/tests/` (skipped when tools absent). Entry point
 `tdes-fpga-run.py`. **Do not modify base `tdes/*` files** — extend via subclass/
 composition as this layer does.
 
+#### TDES-CombOpt (`openevolve/tdes/combopt/`)
+
+Additive layer that evolves *heuristics* for NP-hard problems (Maximum
+Independent Set, Max-Cut) and composes them with a downstream **exact solver**
+(OR-Tools CP-SAT) — the FunSearch/AlphaEvolve pattern (evolve the priority
+function, never the solution; a deterministic harness owns correctness). Reuses
+the base controller/selection/crossover/memory unchanged (duck-typed suite) and
+the FPGA layer's suite-agnostic `AblationController` family.
+
+- A candidate is a **portfolio** `{instance_class: priority_source}` (classes:
+  sparse/dense/clustered). `combopt/problems.py` holds the fixed greedy/local-
+  search harnesses (feasibility guaranteed, objective recomputed exactly);
+  `combopt/exact.py` is the CP-SAT warm-start solver (deterministic budget for
+  reproducible warm-vs-cold). `combopt/heuristic_runner.py` sandboxes candidate
+  code in a subprocess; `combopt/combopt_suite.py` is the drop-in suite.
+- Hierarchy: UNIT (per class-instance vs classical baseline) → INTEGRATION (per-
+  class held-out batch) → SYSTEM (the headline: the portfolio warm-starts CP-SAT
+  and the hybrid beats the **cold** solver under the same budget).
+- `combopt/benchmark_loader.py::load_problem` builds `(seed, suite, reference-
+  mutator)`; `combopt/experiments/` has the method comparison, crossover ablation,
+  configs, and `RESULTS.md`. Needs `pip install ortools`. Entry point
+  `tdes-combopt-run.py`; tests in `combopt/tests/` (gated on ortools, no API key).
+  **Do not modify base `tdes/*` files.**
+
 ### Development Notes
 
 - Python >=3.10 required

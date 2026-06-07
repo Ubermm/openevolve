@@ -238,10 +238,31 @@ _ARCHX_FAILLINE_RE = re.compile(
     r"\[FAIL\][^\n]*?Input:\s*(.*?)(?:,|\s)\s*Expected:\s*(.*?)(?:,|\s)\s*Got:\s*([^\n]+)",
     re.IGNORECASE,
 )
-_ARCHX_SUMMARY_RE = re.compile(
-    r"TEST SUMMARY:\s*([0-9]+)\s*PASS\w*,\s*([0-9]+)\s*FAIL", re.IGNORECASE
-)
+# Benchmark testbenches report a final pass/fail tally in several formats; each
+# pattern captures the *failure count* (group 1). Order: most specific first.
+_SUMMARY_FAIL_PATTERNS = [
+    re.compile(
+        r"PASS\w*\s*[:=]\s*\d+[\s,]+FAIL\w*\s*[:=]\s*(\d+)", re.IGNORECASE
+    ),  # PASS = 617, FAIL = 0
+    re.compile(
+        r"TEST SUMMARY:\s*\d+\s*PASS\w*,\s*(\d+)\s*FAIL", re.IGNORECASE
+    ),  # TEST SUMMARY: N PASS, M FAILED
+    re.compile(r"\d+\s*PASS\w*[\s,]+(\d+)\s*FAIL", re.IGNORECASE),  # 617 PASS, 0 FAIL
+    re.compile(r"Test completed with\s*(\d+)\s*/\s*\d+\s*failures", re.IGNORECASE),  # RTLLM
+    re.compile(r"\bFAIL(?:URES|ED)?\s*[:=]\s*(\d+)\b", re.IGNORECASE),  # FAIL = 0 / FAILURES: 0
+]
+_PASS_LINE_RE = re.compile(r"\[PASS\]", re.IGNORECASE)
+_FAIL_LINE_RE = re.compile(r"\[FAIL\]", re.IGNORECASE)
 _GENERIC_PASS_RE = re.compile(r"\ball tests passed\b", re.IGNORECASE)
+
+
+def _summary_fail_count(out: str) -> Optional[int]:
+    """Failure count from a benchmark testbench's pass/fail tally, or None."""
+    for pat in _SUMMARY_FAIL_PATTERNS:
+        m = pat.search(out)
+        if m:
+            return int(m.group(1))
+    return None
 
 
 def interpret(test_id: str, sim: SimResult, *, timeout: int) -> TestOutcome:
@@ -275,12 +296,31 @@ def interpret(test_id: str, sim: SimResult, *, timeout: int) -> TestOutcome:
     if "TDES_PASS:" in out:
         return TestOutcome(True, "n/a", "")
 
-    # 2) ArchXBench native --------------------------------------------------
-    summ = _ARCHX_SUMMARY_RE.search(out)
-    if summ:
-        failed = int(summ.group(2))
-        if failed == 0:
+    # 2) Pass/fail tally summary (ArchXBench "PASS = N, FAIL = M",
+    #    "TEST SUMMARY: ...", RTLLM "Test completed with N/M failures", etc.) --
+    fail_count = _summary_fail_count(out)
+    if fail_count is not None:
+        if fail_count == 0:
             return TestOutcome(True, "n/a", "")
+        fail = _ARCHX_FAILLINE_RE.search(out)  # concrete counterexample if available
+        if fail:
+            return TestOutcome(
+                False,
+                _trunc(fail.group(1)),
+                f"expected {_trunc(fail.group(2), 200)}, got {_trunc(fail.group(3), 200)}",
+            )
+        return TestOutcome(False, "n/a", f"{fail_count} case(s) failed")
+
+    # 3) RTLLM / generic explicit verdicts ----------------------------------
+    if _RTLLM_ERROR_RE.search(out):
+        return TestOutcome(False, "n/a", _trunc(out[-300:]) or "design reported Error")
+    if _RTLLM_PASS_RE.search(out) or _GENERIC_PASS_RE.search(out):
+        return TestOutcome(True, "n/a", "")
+
+    # 4) Per-case [PASS] markers with no [FAIL] -> pass ---------------------
+    if _PASS_LINE_RE.search(out) and not _FAIL_LINE_RE.search(out):
+        return TestOutcome(True, "n/a", "")
+    if _FAIL_LINE_RE.search(out):
         fail = _ARCHX_FAILLINE_RE.search(out)
         if fail:
             return TestOutcome(
@@ -288,20 +328,9 @@ def interpret(test_id: str, sim: SimResult, *, timeout: int) -> TestOutcome:
                 _trunc(fail.group(1)),
                 f"expected {_trunc(fail.group(2), 200)}, got {_trunc(fail.group(3), 200)}",
             )
-        return TestOutcome(False, "n/a", f"{failed} case(s) failed")
+        return TestOutcome(False, "n/a", "one or more cases failed")
 
-    # 3) RTLLM native -------------------------------------------------------
-    fail = _RTLLM_FAIL_RE.search(out)
-    if fail:
-        return TestOutcome(
-            False, "random stimulus", f"{fail.group(1)}/{fail.group(2)} cases failed"
-        )
-    if _RTLLM_ERROR_RE.search(out):
-        return TestOutcome(False, "n/a", _trunc(out[-300:]) or "design reported Error")
-    if _RTLLM_PASS_RE.search(out) or _GENERIC_PASS_RE.search(out):
-        return TestOutcome(True, "n/a", "")
-
-    # 4) Ambiguous: simulation ran but emitted no recognizable verdict ------
+    # 5) Ambiguous: simulation ran but emitted no recognizable verdict ------
     tail = _trunc((out or sim.stderr or "")[-300:])
     return TestOutcome(False, "n/a", f"no pass marker found; output tail: {tail}")
 

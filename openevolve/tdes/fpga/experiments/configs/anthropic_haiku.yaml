@@ -1,0 +1,26 @@
+# TDES-FPGA config using Anthropic Claude via the OpenAI-compatible endpoint.
+#   export ANTHROPIC_API_KEY=...
+#   python -m openevolve.tdes.fpga.experiments.run_rtllm \
+#       --config openevolve/tdes/fpga/experiments/configs/anthropic_haiku.yaml \
+#       --designs adder_8bit --conditions tdes_full single_agent pass5
+
+tdes:
+  pop_size: 4
+  max_generations: 4
+  window_size: 3
+  diff_based: false        # full Verilog module rewrites are more reliable
+  suite_timeout: 60
+  synth_target: ice40
+  output_dir: tdes_fpga_results/runs
+  random_seed: 42
+
+llm:
+  api_base: "https://api.anthropic.com/v1/"
+  api_key: "${ANTHROPIC_API_KEY}"
+  temperature: 0.8
+  max_tokens: 4096
+  timeout: 120
+  retries: 3
+  models:
+    - name: "claude-haiku-4-5-20251001"
+      weight: 1.0

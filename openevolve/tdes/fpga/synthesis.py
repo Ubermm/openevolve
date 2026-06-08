@@ -147,6 +147,74 @@ def _extract_json(text: str) -> Optional[dict]:
     return None
 
 
+def rtl_cell_counts(
+    modules: Dict[str, str],
+    *,
+    top_module: Optional[str] = None,
+    timeout: int = 120,
+    yosys_path: Optional[str] = None,
+) -> SynthesisResult:
+    """Count RTL operator cells (``$mul``, ``$add``, …) *before* technology
+    mapping, after coarse optimization.
+
+    This is the metric for "removed unnecessary arithmetic": a 3-multiplier
+    complex multiply has three ``$mul`` cells where the 4-multiplier form has
+    four — a difference that full ``synth`` can hide behind LUT mapping.  The
+    counts land in :attr:`SynthesisResult.raw` under ``num_cells_by_type`` and
+    the multiplier total in :attr:`SynthesisResult.cells`-adjacent fields; we
+    surface ``$mul`` as ``luts`` is not meaningful here, so callers read
+    ``raw['num_cells_by_type']``.
+    """
+    yosys = yosys_path or find_tool(["yosys"])
+    if not yosys:
+        return SynthesisResult(False, error="yosys not found on PATH")
+    top_arg = f" -top {top_module}" if top_module else ""
+    with tempfile.TemporaryDirectory(prefix="tdes_rtlstat_") as tmp:
+        read_lines = []
+        for name, source in modules.items():
+            path = os.path.join(tmp, f"{name}.v")
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(source)
+            read_lines.append(f"read_verilog {name}.v")
+        script = "\n".join(
+            read_lines
+            + [
+                f"hierarchy{top_arg}",
+                "proc",
+                "opt -purge",
+                "tee -o stats.txt stat -json",
+            ]
+        )
+        with open(os.path.join(tmp, "stat.ys"), "w", encoding="utf-8") as f:
+            f.write(script)
+        try:
+            proc = subprocess.run(
+                [yosys, "-q", "-s", "stat.ys"],
+                capture_output=True,
+                text=True,
+                timeout=timeout,
+                cwd=tmp,
+            )
+        except subprocess.TimeoutExpired:
+            return SynthesisResult(False, error=f"rtl stat exceeded {timeout}s")
+        if proc.returncode != 0:
+            return SynthesisResult(False, error=_first_error(proc.stderr or proc.stdout))
+        res = _parse_stats(proc.stdout, os.path.join(tmp, "stats.txt"))
+        if res.ok:
+            # Aggregate operator counts across modules into raw for the caller.
+            by_type: Dict[str, int] = {}
+            for _n, mod in res.raw.get("modules", {}).items():
+                for ct, cnt in (mod.get("num_cells_by_type", {}) or {}).items():
+                    by_type[ct] = by_type.get(ct, 0) + int(cnt)
+            res.raw["num_cells_by_type"] = by_type
+        return res
+
+
+def multiplier_count(result: SynthesisResult) -> int:
+    """Number of ``$mul`` operator cells in an :func:`rtl_cell_counts` result."""
+    return int(result.raw.get("num_cells_by_type", {}).get("$mul", 0))
+
+
 def evaluate_synthesis_test(
     modules: Dict[str, str],
     *,

@@ -152,6 +152,18 @@ tests live in `fpga/tests/` (skipped when tools absent). Entry point
 `tdes-fpga-run.py`. **Do not modify base `tdes/*` files** — extend via subclass/
 composition as this layer does.
 
+*Efficiency demo* (`fpga/efficiency_demo/`) — the AlphaEvolve-TPU analog: evolve
+an *already-correct* arithmetic circuit into a **provably-equivalent, smaller**
+one (complex multiplier, 4→3 multipliers / Gauss-Karatsuba). Unlike the rest of
+the layer it verifies by **formal equivalence** (`fpga/equivalence.py`, Yosys
+miter+SAT) not simulation, and optimizes **area** (`synthesis.py::rtl_cell_counts`
+→ `$mul` count). `efficiency_demo/efficiency_suite.py::EfficiencySuite` is a
+drop-in suite whose hierarchy makes equivalence the UNIT invariant and
+area-under-budget the SYSTEM goal, with **area gated on equivalence** (a
+smaller-but-wrong design must never outrank a correct one). `_validate.py` proves
+the mechanism offline; `run_demo.py` is the LLM run (Sonnet found the Gauss
+algorithm in 2 gens, SAT-verified — see `efficiency_demo/RESULTS.md`).
+
 #### TDES-CombOpt (`openevolve/tdes/combopt/`)
 
 Additive layer that evolves *heuristics* for NP-hard problems (Maximum

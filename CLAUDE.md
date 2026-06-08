@@ -147,6 +147,20 @@ runner for an EDA pipeline:
 - `fpga/ablation.py::AblationController` (subclass) toggles crossover/memory and
   instruments crossover; `fpga/experiments/` runs the matrix + Table 1/2.
 
+*Paper experiments* (`fpga/experiments/`) — the 5-experiment campaign
+(`run_exp1_baseline.py` RTLLM baseline / `run_exp2_crossover.py` crossover
+showcase / `run_exp3_scaling.py` ArchXBench L2–3 / `run_exp4_ablation.py`
+mechanism ablation / `convergence.py` efficiency analysis; `run_all.py`
+orchestrates). The headline **Exp 2** turns *published* hierarchical ArchXBench
+designs into genuine multi-module `{TOP, SUB}` problems via
+`hierarchical_archx.py` — a 3-tier suite (SUB unit, TOP wiring vs an inline golden
+SUB, native testbench as SYSTEM) over `VerilogTestSuite(isolate_modules=True)`, so
+complementary-coverage crossover fires on real benchmarks (the authored
+sub/top-wiring tiers are reference-gated). `runner.py` adds a counting ensemble
+(LLM-call metrics), instrumented controllers (per-module solve timeline +
+calls-to-solve), a `"diverse"` controller choice, and the `tdes_no_cegis` ablation.
+`metrics_exp*.json` are written incrementally (resumable sweeps).
+
 Toolchain: set `OSS_CAD_SUITE_ROOT` (auto-activates bin+lib on import). EDA-gated
 tests live in `fpga/tests/` (skipped when tools absent). Entry point
 `tdes-fpga-run.py`. **Do not modify base `tdes/*` files** — extend via subclass/

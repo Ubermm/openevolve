@@ -1,0 +1,28 @@
+# TDES-FPGA config using Anthropic Claude Opus (OpenAI-compatible endpoint).
+# Small budget intended for the ArchXBench frontier (solve / no-solve), where a
+# few deep candidates matter more than a large shallow population.
+#   export ANTHROPIC_API_KEY=...
+#   python -m openevolve.tdes.fpga.experiments.run_archxbench \
+#       --config openevolve/tdes/fpga/experiments/configs/anthropic_opus.yaml \
+#       --designs booth_multiplier --conditions tdes_full single_agent pass5
+
+tdes:
+  pop_size: 3
+  max_generations: 3
+  window_size: 3
+  diff_based: false
+  suite_timeout: 90
+  synth_target: ice40
+  output_dir: tdes_fpga_results/runs
+  random_seed: 42
+
+llm:
+  api_base: "https://api.anthropic.com/v1/"
+  api_key: "${ANTHROPIC_API_KEY}"
+  temperature: 0.7
+  max_tokens: 8192
+  timeout: 240
+  retries: 2
+  models:
+    - name: "claude-opus-4-6"
+      weight: 1.0

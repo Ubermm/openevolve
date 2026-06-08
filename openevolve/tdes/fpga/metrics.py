@@ -25,6 +25,12 @@ class RunMetrics:
     escalated: bool
     trajectory: List[int] = field(default_factory=list)  # best total passes per generation
     crossover: Optional[dict] = None  # CrossoverStats.as_dict()
+    llm_calls: int = 0  # total LLM generate calls this run (Exp 5 efficiency metric)
+    calls_to_solve: Optional[int] = (
+        None  # LLM calls consumed up to first all-pass (None if unsolved)
+    )
+    # generation each module's primary test first passed (per-module solve timeline)
+    module_first_solved: Dict[str, int] = field(default_factory=dict)
 
     @property
     def pass_at_final(self) -> bool:
@@ -34,17 +40,39 @@ class RunMetrics:
         return asdict(self)
 
 
-def from_result(design, condition, seed, result, total_tests, crossover=None) -> RunMetrics:
-    """Build RunMetrics from a TDESResult."""
+def from_result(
+    design,
+    condition,
+    seed,
+    result,
+    total_tests,
+    crossover=None,
+    *,
+    llm_calls=0,
+    calls_trajectory=None,
+    module_first_solved=None,
+) -> RunMetrics:
+    """Build RunMetrics from a TDESResult.
+
+    ``calls_trajectory`` is a list of ``(generation, cumulative_llm_calls,
+    best_total_passes)`` recorded once per generation by the instrumented
+    controller; it yields ``calls_to_solve`` (the call budget spent up to the
+    first all-pass generation).
+    """
     best = result.best
     passes = best.vector.total_passes if best.vector else 0
-    trajectory = [h.get("best_summary_passes", 0) for h in result.history] if result.history else []
-    # history stores summaries; recompute trajectory from score where available
     traj = []
     for h in result.history:
         # "best_summary" like "system X, integration Y, unit Z (P/T total)"
         summary = h.get("best_summary", "")
         traj.append(_passes_from_summary(summary))
+
+    calls_to_solve = None
+    for gen, calls, bp in calls_trajectory or []:
+        if bp == total_tests and total_tests > 0:
+            calls_to_solve = calls
+            break
+
     return RunMetrics(
         design=design,
         condition=condition,
@@ -56,6 +84,9 @@ def from_result(design, condition, seed, result, total_tests, crossover=None) ->
         escalated=result.escalated,
         trajectory=traj,
         crossover=crossover,
+        llm_calls=llm_calls,
+        calls_to_solve=calls_to_solve,
+        module_first_solved=dict(module_first_solved or {}),
     )
 
 

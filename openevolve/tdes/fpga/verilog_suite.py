@@ -72,6 +72,7 @@ class VerilogTestSuite:
         top_module: Optional[str] = None,
         synth_config: Optional[dict] = None,
         verilog_std: str = "2012",
+        isolate_modules: bool = False,
     ):
         self.module_names: List[str] = list(module_names)
         self.tests: List[VerilogTest] = list(tests)
@@ -79,6 +80,14 @@ class VerilogTestSuite:
         # synth_config: {"target": "ice40", "lut_budget": 500, ...}
         self.synth_config = synth_config or {}
         self.verilog_std = verilog_std
+        # When True, each test compiles ONLY its ``touched_modules()`` from the
+        # candidate (instead of every module). This lets a test substitute a
+        # *golden* submodule inline in its testbench without colliding with the
+        # candidate's own version of that module — the mechanism the hierarchical
+        # crossover harness uses to test a top module's wiring independently of
+        # the candidate's (possibly broken) submodule. Off by default so existing
+        # suites are byte-identical.
+        self.isolate_modules = isolate_modules
         self.source_path: Optional[str] = None  # parity with TDESTestSuite (unused here)
 
     # -- introspection (parity with TDESTestSuite) -----------------------
@@ -108,9 +117,17 @@ class VerilogTestSuite:
             if test.is_synthesis:
                 outcome = self._run_synthesis_test(candidate, test)
             else:
+                if self.isolate_modules:
+                    mods = {
+                        m: candidate.modules[m]
+                        for m in test.touched_modules()
+                        if m in candidate.modules
+                    }
+                else:
+                    mods = candidate.modules
                 outcome = verilog_runner.run_single_test(
                     test.id,
-                    candidate.modules,
+                    mods,
                     test.testbench_source,
                     timeout=timeout,
                     verilog_std=self.verilog_std,

@@ -1,0 +1,53 @@
+{
+  "reason": "stagnation",
+  "generation": 3,
+  "best_candidate": {
+    "id": "f9fe417e2bcc",
+    "score_key": [
+      1,
+      1,
+      7
+    ],
+    "summary": "system 1, integration 1, unit 7 (9/13 total)",
+    "modules": {
+      "sparse": "def priority(v, graph):\n    gain = graph.state['gain'][v]\n    side_v = graph.state['side'][v]\n    \n    # Secondary: sum of weights to neighbors on the opposite side\n    # (flipping v makes these edges go from cut to non-cut, benefiting those neighbors)\n    # We prefer vertices where flipping helps future moves\n    # Actually prefer vertices where neighbors on same side have high weight\n    # (they will gain cut edges after v flips)\n    \n    same_side_weight = 0.0\n    opp_side_weight = 0.0\n    for u in graph.neighbors(v):\n        w = graph.weight(u, v)\n        if graph.state['side'][u] == side_v:\n            same_side_weight += w\n        else:\n            opp_side_weight += w\n    \n    # gain = opp_side_weight - same_side_weight (approximately)\n    # For tie-breaking: prefer higher degree (more influence) or \n    # prefer vertices that free up more future improvements\n    # Neighbors on same side will become cut after flip -> they benefit\n    \n    degree = graph.degree(v)\n    \n    # Use gain as primary, same_side_weight as secondary (higher = more neighbors benefit)\n    return gain * 1000 + same_side_weight",
+      "dense": "def priority(v, graph):\n    gain_v = graph.state['gain'][v]\n    side_v = graph.state['side'][v]\n    \n    # Secondary: estimate future gain impact\n    # Flipping v helps same-side neighbors and hurts other-side neighbors\n    future_benefit = 0.0\n    for u in graph.neighbors(v):\n        w = graph.weight(u, v)\n        if graph.state['side'][u] == side_v:\n            # u's gain increases by 2*w\n            future_benefit += w\n        else:\n            # u's gain decreases by 2*w\n            future_benefit -= w\n    \n    # Normalize secondary signal relative to gain magnitude\n    # Use gain as primary, future_benefit as tie-breaker\n    return gain_v + 0.001 * future_benefit",
+      "clustered": "def priority(v, graph):\n    gain_v = graph.state['gain'][v]\n    side_v = graph.state['side'][v]\n    \n    # Secondary: sum of gains of same-side neighbors\n    # When we flip v, neighbors on same side gain more incentive to flip too\n    neighbor_gain_sum = 0.0\n    same_side_weight = 0.0\n    \n    for u in graph.neighbors(v):\n        w = graph.weight(v, u)\n        if graph.state['side'][u] == side_v:\n            same_side_weight += w\n            # This neighbor might benefit from v flipping\n            neighbor_gain_sum += graph.state['gain'][u]\n    \n    # Primary: gain (steepest ascent)\n    # Secondary: encourage flipping vertices in tight clusters (many same-side neighbors)\n    # Tertiary: sum of neighbor gains (lookahead)\n    \n    return gain_v + 0.001 * same_side_weight + 0.0001 * neighbor_gain_sum"
+    }
+  },
+  "failing_tests": [
+    {
+      "test_id": "unit:maxcut-clustered-n60-s1201",
+      "level": "UNIT",
+      "module": "clustered",
+      "description": "The 'clustered' heuristic must match or beat the classical baseline (maxcut) on a clustered graph of 60 nodes.",
+      "failing_input": "maxcut-clustered-n60-s1201 (n=60, 205 edges)",
+      "error": "quality 865 < baseline 886 on clustered instance"
+    },
+    {
+      "test_id": "unit:maxcut-clustered-n60-s1202",
+      "level": "UNIT",
+      "module": "clustered",
+      "description": "The 'clustered' heuristic must match or beat the classical baseline (maxcut) on a clustered graph of 60 nodes.",
+      "failing_input": "maxcut-clustered-n60-s1202 (n=60, 192 edges)",
+      "error": "quality 782 < baseline 816 on clustered instance"
+    },
+    {
+      "test_id": "integration:sparse",
+      "level": "INTEGRATION",
+      "module": "sparse",
+      "description": "The 'sparse' heuristic must match or beat the classical baseline in aggregate over a held-out batch of sparse instances (generalization).",
+      "failing_input": "validation batch of 2 instances",
+      "error": "portfolio total 868 < baseline total 870 (weakest class so far: sparse)"
+    },
+    {
+      "test_id": "integration:clustered",
+      "level": "INTEGRATION",
+      "module": "clustered",
+      "description": "The 'clustered' heuristic must match or beat the classical baseline in aggregate over a held-out batch of clustered instances (generalization).",
+      "failing_input": "validation batch of 2 instances",
+      "error": "portfolio total 1789 < baseline total 1791 (weakest class so far: clustered)"
+    }
+  ],
+  "negative_memory": {}
+}

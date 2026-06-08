@@ -101,13 +101,16 @@ fires and combines partial solutions on published RTL benchmarks.
 
 L2-L3 designs (single-round AES-128, pipelined CLA/Wallace, FP adder/multiplier)
 run natively (no reference RTL ships, so `require_usable=False`; the native
-testbench is the system test). **Preliminary:** `aes128_single_round` reads
-**0/1 for every method** (tdes_full, tdes_no_crossover, single_agent across
-seeds). These designs sit at/beyond the current budget+capability frontier — a
-single-round AES or an IEEE-754 datapath is not synthesized correctly in ≤6
-generations by any condition. This bounds where the approach works and is
-reported as-is (the run is slow — large/clocked testbenches — and continues in
-the background; `metrics_exp3.json` holds whatever has completed). No design is
+testbench is the system test). **Preliminary / frontier-bounding:**
+`aes128_single_round` reads **0/1 for every method** (tdes_full,
+tdes_no_crossover, single_agent across all seeds — 9 cells). A single-round AES is
+not synthesized correctly in ≤6 generations by any condition: this design sits
+beyond the current budget+capability frontier. The full L2-L3 sweep was **halted
+after the AES block** — each cell is ~10+ minutes (the native testbenches are
+large/clocked, so every candidate's simulation runs near the timeout), making the
+remaining ~36 equally-hard cells a ~9-hour run with no expected new signal.
+Completing the sweep at lower cost (tighter sim timeout, 1 seed/condition per
+design) is a config change, left as runtime-bound future work. No design is
 scored as passing that did not; the verdict parser is failure-evidence-first.
 
 ## Experiment 4 — Full mechanism ablation (Sonnet)

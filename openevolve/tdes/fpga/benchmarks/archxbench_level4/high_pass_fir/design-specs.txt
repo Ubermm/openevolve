@@ -1,0 +1,65 @@
+Design Name: highpass_fir_streaming
+Module Name: highpass_fir
+
+Inputs:
+- clk                         // Clock signal
+- rst                         // Synchronous reset (active-high)
+- valid_in                    // Input-sample valid
+- data_in[DATA_W-1:0]         // Serial input sample stream
+
+Outputs:
+- valid_out                   // Output-sample valid
+- data_out[DATA_W+GAIN_W-1:0] // Filtered sample (extended width)
+
+Parameters:
+- DATA_W   = 20                       // Bit width of input sample (input signal uses IN_SCALE=32768, exceeds 16-bit range)
+- TAP_CNT  = 31                       // Odd number of FIR taps (15–127); golden generated with ~101 taps
+- GAIN_W   = 4                        // Bit growth to avoid overflow
+- COEFFS[TAP_CNT]                     // High-pass FIR coefficients; golden: scipy.signal.firwin(101, 5000, fs=50000, pass_zero=False) quantized to 16-bit (scale=32768)
+
+*** CRITICAL IMPLEMENTATION REQUIREMENT ***
+You MUST use DATA_W=20 and TAP_CNT=101. You MUST hard-code the EXACT integer
+coefficients listed below — do NOT choose your own cutoff or run scipy/firwin.
+Any implementation with different coefficients will fail ALL 1000 test cases.
+Copy the coefficient array verbatim. The testbench uses ±1 LSB tolerance.
+
+CORRECTED IMPLEMENTATION PARAMETERS (benchmark repair):
+- DATA_W = 20   (stimuli exceed 16-bit range; use full 20-bit input path)
+- TAP_CNT = 101 (spec default was wrong; golden uses 101-tap filter)
+- Filter design: scipy.signal.firwin(101, 5000, pass_zero=False, fs=50000)
+- Tolerance: testbench uses ±1 LSB (consistent with scripts/compare_outputs.py)
+- Coefficient quantization: scale by 32768, round to integer, accumulate in 64-bit, right-shift by 20
+- 101 quantized coefficients (scale=32768, symmetric — h[i] == h[100-i]):
+  COPY THESE EXACTLY — wrong values cause 1000/1000 failures:
+  h[0..100] = [0, 10, 17, 19, 13, 0, -16, -29, -32, -23, 0, 29, 53, 60, 42, 0,
+               -53, -96, -107, -73, 0, 90, 161, 177, 121, 0, -145, -258, -282, -191,
+               0, 229, 406, 444, 301, 0, -365, -652, -724, -499, 0, 633, 1170, 1355,
+               989, 0, -1511, -3280, -4943, -6126, 26219, -6126, -4943, -3280, -1511,
+               0, 989, 1355, 1170, 633, 0, -499, -724, -652, -365, 0, 301, 444, 406,
+               229, 0, -191, -282, -258, -145, 0, 121, 177, 161, 90, 0, -73, -107,
+               -96, -53, 0, 42, 60, 53, 29, 0, -23, -32, -29, -16, 0, 13, 19, 17, 10, 0]
+
+Design Signature:
+
+module highpass_fir #(
+    parameter DATA_W  = 20,
+    parameter TAP_CNT = 101,
+    parameter GAIN_W  = 4
+) (
+    input                       clk,
+    input                       rst,
+    input                       valid_in,
+    input      [DATA_W-1:0]     data_in,
+    output                      valid_out,
+    output     [DATA_W+GAIN_W-1:0] data_out
+);
+
+Design Notes:
+- Implements a **spectral inversion FIR**; coefficients satisfy Σh[n] = 0.
+- Shift-register plus MAC identical to lowpass_fir; only coefficient set differs.
+- Optional **DC-blocking mode** (first-order HPF) selectable via mode pin.
+- Same saturation / rounding options as low-pass design.
+
+Optional Features:
+- Dynamic reconfiguration between multiple HPF bands.
+- Test-pulse injection port for on-chip self-calibration.

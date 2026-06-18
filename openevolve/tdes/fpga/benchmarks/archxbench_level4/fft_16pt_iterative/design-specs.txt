@@ -1,0 +1,94 @@
+Design Name: fft16_fixed_iterative
+Module Name: fft16_iterative
+
+Inputs:
+- clk                          // Clock input
+- rst                          // Synchronous reset
+- start                        // Pulse to begin FFT or IFFT
+- mode                         // 0: FFT, 1: IFFT
+- data_real_in[15:0][DATA_W-1:0] // Real parts of input
+- data_imag_in[15:0][DATA_W-1:0] // Imaginary parts of input
+
+Outputs:
+- data_real_out[15:0][DATA_W+GAIN_W-1:0] // Real part of output
+- data_imag_out[15:0][DATA_W+GAIN_W-1:0] // Imag part of output
+- done                         // High when computation is complete
+
+Parameters:
+- N = 16                       // FFT size
+- DATA_W = 12                  // Bit-width of input
+- COEFF_W = 16                 // Twiddle coefficient bit-width
+- GAIN_W = 4                   // Bit-growth in output
+
+Design Signature:
+
+module fft16_iterative #(
+    parameter N = 16,
+    parameter DATA_W = 12,
+    parameter COEFF_W = 16,
+    parameter GAIN_W = 4
+) (
+    input clk,
+    input rst,
+    input start,
+    input mode, // 0: FFT, 1: IFFT
+    input signed [DATA_W-1:0] data_real_in [0:N-1],
+    input signed [DATA_W-1:0] data_imag_in [0:N-1],
+    output signed [DATA_W+GAIN_W-1:0] data_real_out [0:N-1],
+    output signed [DATA_W+GAIN_W-1:0] data_imag_out [0:N-1],
+    output done
+);
+
+Design Notes:
+- Use a butterfly unit:
+  • Accepts two complex inputs and a twiddle factor.
+  • Computes sum/difference and applies complex rotation.
+- Use a finite-state controller to:
+  • Iterate over log₂(N) stages
+  • Index twiddle factors and pairs to be processed
+- Twiddle factors stored in ROM (cos/sin for FFT; conjugated for IFFT)
+- Optional:
+
+Twiddle Factor Convention (CRITICAL — must match this exactly):
+  Representation: Q1.15 signed fixed-point, COEFF_W=16 bits.
+  Encoding: cos_q15[k] = round(cos(2*pi*k/N) * 32768), clipped to [-32768, 32767].
+            sin_q15[k] = round(sin(2*pi*k/N) * 32768), clipped to [-32768, 32767].
+  Note: 1.0 maps to 32767 (0x7FFF), not 32768, due to the clip.
+        -1.0 maps to -32768 (0x8000) which is representable as the minimum Q1.15 value.
+
+  Twiddle Factor Table (N=16, k=0..8 shown; k=9..15 by symmetry):
+    W[ 0]: cos_q15 =  32767  (0x7FFF), sin_q15 =      0  (0x0000)  // 1.0, 0.0
+    W[ 1]: cos_q15 =  30274  (0x7642), sin_q15 =  12540  (0x30FC)  // cos(pi/8), sin(pi/8)
+    W[ 2]: cos_q15 =  23170  (0x5A82), sin_q15 =  23170  (0x5A82)  // cos(pi/4), sin(pi/4)
+    W[ 3]: cos_q15 =  12540  (0x30FC), sin_q15 =  30274  (0x7642)  // cos(3pi/8), sin(3pi/8)
+    W[ 4]: cos_q15 =      0  (0x0000), sin_q15 =  32767  (0x7FFF)  // 0.0, 1.0
+    W[ 5]: cos_q15 = -12540  (0xCF04), sin_q15 =  30274  (0x7642)  // cos(5pi/8), sin(5pi/8)
+    W[ 6]: cos_q15 = -23170  (0xA57E), sin_q15 =  23170  (0x5A82)  // cos(6pi/8), sin(6pi/8)
+    W[ 7]: cos_q15 = -30274  (0x89BE), sin_q15 =  12540  (0x30FC)  // cos(7pi/8), sin(7pi/8)
+    W[ 8]: cos_q15 = -32768  (0x8000), sin_q15 =      0  (0x0000)  // -1.0, 0.0
+
+  Butterfly operation (DIT, FFT mode, e^{-j2pi} convention):
+    // W[tw] = cos_q15[tw] - j*sin_q15[tw]   (standard DFT: e^{-j2pi*k/N})
+    // Twiddle multiply: (xr[q]+j*xi[q]) * (cos - j*sin)
+    //   tr_real = (xr[q]*cos_q15[tw] + xi[q]*sin_q15[tw] + 2^14) >> 15  // Q1.15 round
+    //   tr_imag = (xi[q]*cos_q15[tw] - xr[q]*sin_q15[tw] + 2^14) >> 15
+    x[p].re' = x[p].re + tr_real;   x[p].im' = x[p].im + tr_imag
+    x[q].re' = x[p].re - tr_real;   x[q].im' = x[p].im - tr_imag
+
+Output Scaling Convention:
+  NO per-stage scaling. The output grows by up to N=16x (GAIN_W=4 extra bits).
+  X[0] = sum(input) — DC bin equals input sum, no division.
+  Output width: DATA_W + GAIN_W = 12 + 4 = 16 bits signed.
+
+Verification Tolerance:
+  The golden values in tb_selfcheck.v were derived from floating-point DFT on
+  floating-point stimuli (stimuli_float.json), then rounded to integers. The testbench
+  integer stimuli are round(float_stimuli), which differ from the original float inputs
+  by up to 0.5. This introduces an inherent +-2 LSB maximum error between a correct
+  fixed-point implementation using integer inputs and the golden values.
+  The testbench accepts outputs within +-2 of each golden value.
+
+Mode Input:
+  mode = 0 (FFT):  use twiddle W[k] = cos_q15[k] - j * sin_q15[k]
+  mode = 1 (IFFT): use conjugated twiddle W[k] = cos_q15[k] + j * sin_q15[k], then divide by N=16
+                   (i.e., negate the imaginary twiddle component)

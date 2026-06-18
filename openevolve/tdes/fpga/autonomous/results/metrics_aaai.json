@@ -1,0 +1,1256 @@
+{
+  "fp_mult_pipeline__C4__sonnet-4-6__123": {
+    "condition": "C4",
+    "llm_calls": 12,
+    "best_passes": 30,
+    "total_tests": 30,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_exp_calc",
+      "fp_mant_mult",
+      "fp_normalize_round",
+      "fp_special_case"
+    ],
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 182.7
+  },
+  "fp_mult_pipeline__C4__sonnet-4-6__42": {
+    "condition": "C4",
+    "llm_calls": 26,
+    "best_passes": 30,
+    "total_tests": 30,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_exp_calc",
+      "fp_mant_mult",
+      "fp_special_detect",
+      "fp_normalize",
+      "fp_round",
+      "fp_pack"
+    ],
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 492.9
+  },
+  "fp_mult_pipeline__C4__sonnet-4-6__456": {
+    "condition": "C4",
+    "llm_calls": 11,
+    "best_passes": 30,
+    "total_tests": 30,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_mul_exp",
+      "fp_normalize",
+      "fp_round",
+      "fp_pack"
+    ],
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 175.4
+  },
+  "fp_mult_pipeline__C2__sonnet-4-6__123": {
+    "condition": "C2",
+    "llm_calls": 1,
+    "best_passes": 30,
+    "total_tests": 30,
+    "solved": true,
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 47.3
+  },
+  "fp_mult_pipeline__C2__sonnet-4-6__42": {
+    "condition": "C2",
+    "llm_calls": 1,
+    "best_passes": 30,
+    "total_tests": 30,
+    "solved": true,
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 43.3
+  },
+  "fp_mult_pipeline__C2__sonnet-4-6__456": {
+    "condition": "C2",
+    "llm_calls": 1,
+    "best_passes": 30,
+    "total_tests": 30,
+    "solved": true,
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 47.7
+  },
+  "fp_mult_pipeline__C3__sonnet-4-6__42": {
+    "condition": "C3",
+    "llm_calls": 7,
+    "best_passes": 28,
+    "total_tests": 30,
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_exp_calc",
+      "fp_mant_mult",
+      "fp_normalize",
+      "fp_round",
+      "fp_pack"
+    ],
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 142.9
+  },
+  "fp_mult_pipeline__C3__sonnet-4-6__456": {
+    "condition": "C3",
+    "llm_calls": 7,
+    "best_passes": 28,
+    "total_tests": 30,
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_exp_calc",
+      "fp_mant_mult",
+      "fp_normalize",
+      "fp_round",
+      "fp_pack"
+    ],
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 132.9
+  },
+  "fp_mult_pipeline__C5__sonnet-4-6__123": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_exp_mant_calc",
+      "fp_normalize",
+      "fp_sticky",
+      "fp_round",
+      "fp_pack"
+    ],
+    "tests_compiled": 6,
+    "tests_pass_ref": 6,
+    "best_passes": 6,
+    "total_tests": 30,
+    "evolution_gens": 3,
+    "llm_calls": 28,
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 856.5
+  },
+  "fp_mult_pipeline__C5__sonnet-4-6__42": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_exp_mant_calc",
+      "fp_normalize",
+      "fp_round",
+      "fp_pack"
+    ],
+    "tests_compiled": 5,
+    "tests_pass_ref": 3,
+    "best_passes": 7,
+    "total_tests": 30,
+    "evolution_gens": 4,
+    "llm_calls": 28,
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 692.8
+  },
+  "fp_mult_pipeline__C5__sonnet-4-6__456": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_exp_add",
+      "fp_man_mult",
+      "fp_normalize",
+      "fp_round",
+      "fp_pack"
+    ],
+    "tests_compiled": 6,
+    "tests_pass_ref": 3,
+    "best_passes": 8,
+    "total_tests": 30,
+    "evolution_gens": 4,
+    "llm_calls": 40,
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 1276.4
+  },
+  "fp_mult_pipeline__C1__sonnet-4-6__123": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 30,
+    "total_tests": 30,
+    "solved": true,
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 255.4
+  },
+  "fp_mult_pipeline__C1__sonnet-4-6__42": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 29,
+    "total_tests": 30,
+    "solved": false,
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 232.1
+  },
+  "fp_mult_pipeline__C1__sonnet-4-6__456": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 30,
+    "total_tests": 30,
+    "solved": true,
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 243.1
+  },
+  "fp_adder_pipeline__C4__sonnet-4-6__123": {
+    "condition": "C4",
+    "llm_calls": 12,
+    "best_passes": 23,
+    "total_tests": 23,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize",
+      "fp_lzc27",
+      "fp_round_pack"
+    ],
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 236.6
+  },
+  "fp_adder_pipeline__C4__sonnet-4-6__42": {
+    "condition": "C4",
+    "llm_calls": 13,
+    "best_passes": 23,
+    "total_tests": 23,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_align",
+      "fp_add_sub_sig",
+      "fp_normalize",
+      "fp_round_pack"
+    ],
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 280.1
+  },
+  "fp_adder_pipeline__C2__sonnet-4-6__123": {
+    "condition": "C2",
+    "llm_calls": 1,
+    "best_passes": 23,
+    "total_tests": 23,
+    "solved": true,
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 75.4
+  },
+  "fp_adder_pipeline__C2__sonnet-4-6__42": {
+    "condition": "C2",
+    "llm_calls": 4,
+    "best_passes": 23,
+    "total_tests": 23,
+    "solved": true,
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 287.0
+  },
+  "fp_adder_pipeline__C2__sonnet-4-6__456": {
+    "condition": "C2",
+    "llm_calls": 3,
+    "best_passes": 23,
+    "total_tests": 23,
+    "solved": true,
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 218.4
+  },
+  "fp_adder_pipeline__C3__sonnet-4-6__42": {
+    "condition": "C3",
+    "llm_calls": 6,
+    "best_passes": 22,
+    "total_tests": 23,
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_align",
+      "fp_add_sub",
+      "fp_normalize",
+      "fp_round_pack"
+    ],
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 389.5
+  },
+  "fp_adder_pipeline__C5__sonnet-4-6__123": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_align",
+      "fp_add_sub_stage",
+      "fp_normalize",
+      "fp_round_pack"
+    ],
+    "tests_compiled": 5,
+    "tests_pass_ref": 2,
+    "best_passes": 7,
+    "total_tests": 23,
+    "evolution_gens": 3,
+    "llm_calls": 24,
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 1274.3
+  },
+  "fp_adder_pipeline__C5__sonnet-4-6__42": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_align",
+      "fp_add_sub",
+      "fp_normalize",
+      "fp_round_pack"
+    ],
+    "tests_compiled": 5,
+    "tests_pass_ref": 4,
+    "best_passes": 7,
+    "total_tests": 23,
+    "evolution_gens": 4,
+    "llm_calls": 24,
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 743.2
+  },
+  "fp_adder_pipeline__C5__sonnet-4-6__456": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_align",
+      "fp_addsub_sig",
+      "fp_normalize",
+      "fp_round_pack"
+    ],
+    "tests_compiled": 5,
+    "tests_pass_ref": 3,
+    "best_passes": 8,
+    "total_tests": 23,
+    "evolution_gens": 3,
+    "llm_calls": 22,
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 799.4
+  },
+  "fp_adder_pipeline__C1__sonnet-4-6__123": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 23,
+    "total_tests": 23,
+    "solved": true,
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 382.5
+  },
+  "fp_adder_pipeline__C1__sonnet-4-6__42": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 22,
+    "total_tests": 23,
+    "solved": false,
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 343.8
+  },
+  "fp_adder_pipeline__C1__sonnet-4-6__456": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 23,
+    "total_tests": 23,
+    "solved": true,
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 372.5
+  },
+  "low_pass_fir__C5__sonnet-4-6__42": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "fir_coeff_rom",
+      "fir_pre_adder",
+      "fir_mac"
+    ],
+    "tests_compiled": 3,
+    "tests_pass_ref": 3,
+    "best_passes": 0,
+    "total_tests": 969,
+    "evolution_gens": 4,
+    "llm_calls": 25,
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 923.0
+  },
+  "low_pass_fir__C5__sonnet-4-6__123": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "fir_coeff_rom",
+      "fir_mac",
+      "fir_round"
+    ],
+    "tests_compiled": 3,
+    "tests_pass_ref": 3,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "evolution_gens": 4,
+    "llm_calls": 23,
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 724.6
+  },
+  "low_pass_fir__C4__sonnet-4-6__42": {
+    "condition": "C4",
+    "llm_calls": 29,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "decomp_modules": [
+      "fir_coeff_rom",
+      "fir_pre_adder",
+      "fir_mac",
+      "fir_output_round"
+    ],
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 925.4
+  },
+  "low_pass_fir__C5__sonnet-4-6__456": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "coeff_rom",
+      "tap_presum",
+      "mult_array",
+      "accumulator",
+      "output_stage"
+    ],
+    "tests_compiled": 5,
+    "tests_pass_ref": 5,
+    "best_passes": 20,
+    "total_tests": 1000,
+    "evolution_gens": 5,
+    "llm_calls": 36,
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 852.1
+  },
+  "low_pass_fir__C4__sonnet-4-6__123": {
+    "condition": "C4",
+    "llm_calls": 29,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "decomp_modules": [
+      "fir_coeff_rom",
+      "fir_pre_adder",
+      "fir_mac",
+      "fir_output_stage"
+    ],
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 712.4
+  },
+  "fp_adder_pipeline__C4__sonnet-4-6__456": {
+    "condition": "C4",
+    "llm_calls": 29,
+    "best_passes": 4,
+    "total_tests": 23,
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_align",
+      "fp_add_sub",
+      "fp_norm_round"
+    ],
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 924.6
+  },
+  "fp_mult_pipeline__C3__sonnet-4-6__123": {
+    "condition": "C3",
+    "llm_calls": 7,
+    "best_passes": 29,
+    "total_tests": 30,
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_exp_calc",
+      "fp_mant_mult",
+      "fp_normalize",
+      "fp_round",
+      "fp_pack"
+    ],
+    "design": "fp_mult_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 145.4
+  },
+  "fp_adder_pipeline__C3__sonnet-4-6__123": {
+    "condition": "C3",
+    "llm_calls": 6,
+    "best_passes": 17,
+    "total_tests": 23,
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_align",
+      "fp_add_sub",
+      "fp_normalize",
+      "fp_round_pack"
+    ],
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 567.3
+  },
+  "fp_adder_pipeline__C3__sonnet-4-6__456": {
+    "condition": "C3",
+    "llm_calls": 6,
+    "best_passes": 8,
+    "total_tests": 23,
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_align",
+      "fp_add_sub_sig",
+      "fp_normalize",
+      "fp_round_pack"
+    ],
+    "design": "fp_adder_pipeline",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 238.0
+  },
+  "fft_16pt_iterative__C1__sonnet-4-6__42": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 331.0
+  },
+  "fft_16pt_iterative__C1__sonnet-4-6__123": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 327.0
+  },
+  "fft_16pt_iterative__C1__sonnet-4-6__456": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 282.9
+  },
+  "fft_16pt_iterative__C2__sonnet-4-6__42": {
+    "condition": "C2",
+    "llm_calls": 1,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 57.0
+  },
+  "fft_16pt_iterative__C2__sonnet-4-6__123": {
+    "condition": "C2",
+    "llm_calls": 2,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 102.8
+  },
+  "fft_16pt_iterative__C2__sonnet-4-6__456": {
+    "condition": "C2",
+    "llm_calls": 1,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 42.2
+  },
+  "fft_16pt_iterative__C3__sonnet-4-6__42": {
+    "condition": "C3",
+    "llm_calls": 3,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "decomp_modules": [
+      "twiddle_rom",
+      "butterfly_unit"
+    ],
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 200.0
+  },
+  "fft_16pt_iterative__C3__sonnet-4-6__123": {
+    "condition": "C3",
+    "llm_calls": 5,
+    "best_passes": 8,
+    "total_tests": 33,
+    "solved": false,
+    "decomp_modules": [
+      "dit_index_calc",
+      "twiddle_rom",
+      "butterfly_unit",
+      "ifft_normalize"
+    ],
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 224.7
+  },
+  "fft_16pt_iterative__C3__sonnet-4-6__456": {
+    "condition": "C3",
+    "llm_calls": 6,
+    "best_passes": 4,
+    "total_tests": 33,
+    "solved": false,
+    "decomp_modules": [
+      "bit_reverse_unit",
+      "twiddle_rom",
+      "twiddle_index_calc",
+      "butterfly_pair_index",
+      "butterfly_unit"
+    ],
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 222.4
+  },
+  "fft_16pt_iterative__C4__sonnet-4-6__42": {
+    "condition": "C4",
+    "llm_calls": 14,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "decomp_modules": [
+      "twiddle_rom",
+      "butterfly_unit",
+      "bit_reverse_index",
+      "stage_control"
+    ],
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 439.0
+  },
+  "fft_16pt_iterative__C4__sonnet-4-6__123": {
+    "condition": "C4",
+    "llm_calls": 4,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "decomp_modules": [
+      "butterfly_unit"
+    ],
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 235.4
+  },
+  "fft_16pt_iterative__C4__sonnet-4-6__456": {
+    "condition": "C4",
+    "llm_calls": 4,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "decomp_modules": [
+      "butterfly_unit"
+    ],
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 173.9
+  },
+  "low_pass_fir__C2__sonnet-4-6__123": {
+    "condition": "C2",
+    "llm_calls": 30,
+    "best_passes": 20,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 1036.9
+  },
+  "low_pass_fir__C2__sonnet-4-6__42": {
+    "condition": "C2",
+    "llm_calls": 30,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 1283.2
+  },
+  "low_pass_fir__C2__sonnet-4-6__456": {
+    "condition": "C2",
+    "llm_calls": 30,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 1087.0
+  },
+  "low_pass_fir__C1__sonnet-4-6__123": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 209.7
+  },
+  "low_pass_fir__C1__sonnet-4-6__42": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 192.7
+  },
+  "low_pass_fir__C1__sonnet-4-6__456": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "low_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 181.2
+  },
+  "band_pass_fir__C2__sonnet-4-6__123": {
+    "condition": "C2",
+    "llm_calls": 30,
+    "best_passes": 10,
+    "total_tests": 1001,
+    "solved": false,
+    "design": "band_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 1376.2
+  },
+  "band_pass_fir__C2__sonnet-4-6__42": {
+    "condition": "C2",
+    "llm_calls": 7,
+    "best_passes": 1001,
+    "total_tests": 1001,
+    "solved": true,
+    "design": "band_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 262.2
+  },
+  "band_pass_fir__C2__sonnet-4-6__456": {
+    "condition": "C2",
+    "llm_calls": 30,
+    "best_passes": 10,
+    "total_tests": 1001,
+    "solved": false,
+    "design": "band_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 1322.5
+  },
+  "band_pass_fir__C1__sonnet-4-6__123": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 1,
+    "total_tests": 1001,
+    "solved": false,
+    "design": "band_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 153.7
+  },
+  "band_pass_fir__C1__sonnet-4-6__42": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 1,
+    "total_tests": 1001,
+    "solved": false,
+    "design": "band_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 220.0
+  },
+  "band_pass_fir__C1__sonnet-4-6__456": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 1,
+    "total_tests": 1001,
+    "solved": false,
+    "design": "band_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 167.4
+  },
+  "high_pass_fir__C2__sonnet-4-6__123": {
+    "condition": "C2",
+    "llm_calls": 30,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "high_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 993.1
+  },
+  "high_pass_fir__C2__sonnet-4-6__42": {
+    "condition": "C2",
+    "llm_calls": 30,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "high_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 926.2
+  },
+  "high_pass_fir__C2__sonnet-4-6__456": {
+    "condition": "C2",
+    "llm_calls": 30,
+    "best_passes": 20,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "high_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 1211.2
+  },
+  "high_pass_fir__C1__sonnet-4-6__123": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 20,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "high_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 171.5
+  },
+  "high_pass_fir__C1__sonnet-4-6__42": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "high_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 179.4
+  },
+  "high_pass_fir__C1__sonnet-4-6__456": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 2,
+    "total_tests": 1000,
+    "solved": false,
+    "design": "high_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 186.2
+  },
+  "fft_16pt_iterative__C5__sonnet-4-6__42": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "bit_reverse_unit",
+      "twiddle_rom",
+      "butterfly_unit",
+      "stage_controller"
+    ],
+    "tests_compiled": 4,
+    "tests_pass_ref": 3,
+    "best_passes": 2,
+    "total_tests": 33,
+    "evolution_gens": 3,
+    "llm_calls": 26,
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 835.6
+  },
+  "fft_16pt_iterative__C5__sonnet-4-6__123": {
+    "condition": "C5",
+    "solved": true,
+    "decomp_modules": [
+      "stage_controller",
+      "twiddle_rom",
+      "butterfly_unit"
+    ],
+    "tests_compiled": 3,
+    "tests_pass_ref": 3,
+    "best_passes": 33,
+    "total_tests": 33,
+    "evolution_gens": 4,
+    "llm_calls": 22,
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 758.5
+  },
+  "fft_16pt_iterative__C5__sonnet-4-6__456": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "bit_reverse_unit",
+      "twiddle_rom",
+      "butterfly_unit"
+    ],
+    "tests_compiled": 3,
+    "tests_pass_ref": 3,
+    "best_passes": 4,
+    "total_tests": 33,
+    "evolution_gens": 4,
+    "llm_calls": 19,
+    "design": "fft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 526.9
+  },
+  "ifft_16pt_iterative__C1__sonnet-4-6__42": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 424.0
+  },
+  "ifft_16pt_iterative__C1__sonnet-4-6__123": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 337.4
+  },
+  "ifft_16pt_iterative__C1__sonnet-4-6__456": {
+    "condition": "C1",
+    "llm_calls": 5,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 305.7
+  },
+  "ifft_16pt_iterative__C2__sonnet-4-6__42": {
+    "condition": "C2",
+    "llm_calls": 1,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 71.0
+  },
+  "ifft_16pt_iterative__C2__sonnet-4-6__123": {
+    "condition": "C2",
+    "llm_calls": 3,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 166.5
+  },
+  "ifft_16pt_iterative__C2__sonnet-4-6__456": {
+    "condition": "C2",
+    "llm_calls": 1,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 46.8
+  },
+  "ifft_16pt_iterative__C3__sonnet-4-6__42": {
+    "condition": "C3",
+    "llm_calls": 4,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "decomp_modules": [
+      "butterfly_unit",
+      "twiddle_lut",
+      "bit_reversal_lut"
+    ],
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 305.4
+  },
+  "ifft_16pt_iterative__C3__sonnet-4-6__123": {
+    "condition": "C3",
+    "llm_calls": 2,
+    "best_passes": 18,
+    "total_tests": 33,
+    "solved": false,
+    "decomp_modules": [
+      "butterfly_unit"
+    ],
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 176.8
+  },
+  "ifft_16pt_iterative__C3__sonnet-4-6__456": {
+    "condition": "C3",
+    "llm_calls": 5,
+    "best_passes": 22,
+    "total_tests": 33,
+    "solved": false,
+    "decomp_modules": [
+      "butterfly_unit",
+      "twiddle_rom",
+      "bit_reversal_lut",
+      "output_scaler"
+    ],
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 204.0
+  },
+  "ifft_16pt_iterative__C4__sonnet-4-6__42": {
+    "condition": "C4",
+    "llm_calls": 14,
+    "best_passes": 22,
+    "total_tests": 33,
+    "solved": false,
+    "decomp_modules": [
+      "bit_reversal",
+      "twiddle_rom",
+      "butterfly_index_gen",
+      "butterfly_unit"
+    ],
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 333.9
+  },
+  "ifft_16pt_iterative__C4__sonnet-4-6__123": {
+    "condition": "C4",
+    "llm_calls": 3,
+    "best_passes": 33,
+    "total_tests": 33,
+    "solved": true,
+    "decomp_modules": [
+      "butterfly_unit"
+    ],
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 81.5
+  },
+  "ifft_16pt_iterative__C4__sonnet-4-6__456": {
+    "condition": "C4",
+    "llm_calls": 28,
+    "best_passes": 22,
+    "total_tests": 33,
+    "solved": false,
+    "decomp_modules": [
+      "butterfly_index_calc",
+      "twiddle_rom",
+      "butterfly_unit"
+    ],
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 731.3
+  },
+  "ifft_16pt_iterative__C5__sonnet-4-6__42": {
+    "condition": "C5",
+    "solved": true,
+    "decomp_modules": [
+      "bit_reversal",
+      "twiddle_rom",
+      "butterfly_unit",
+      "output_scaler"
+    ],
+    "tests_compiled": 4,
+    "tests_pass_ref": 4,
+    "best_passes": 33,
+    "total_tests": 33,
+    "evolution_gens": 3,
+    "llm_calls": 26,
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 543.1
+  },
+  "ifft_16pt_iterative__C5__sonnet-4-6__123": {
+    "condition": "C5",
+    "solved": true,
+    "decomp_modules": [
+      "bit_reversal_permuter",
+      "twiddle_rom",
+      "butterfly_unit",
+      "stage_control"
+    ],
+    "tests_compiled": 4,
+    "tests_pass_ref": 3,
+    "best_passes": 33,
+    "total_tests": 33,
+    "evolution_gens": 4,
+    "llm_calls": 30,
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 795.0
+  },
+  "ifft_16pt_iterative__C5__sonnet-4-6__456": {
+    "condition": "C5",
+    "solved": false,
+    "decomp_modules": [
+      "bfly_index_calc",
+      "twiddle_rom",
+      "butterfly_unit"
+    ],
+    "tests_compiled": 3,
+    "tests_pass_ref": 3,
+    "best_passes": 27,
+    "total_tests": 33,
+    "evolution_gens": 4,
+    "llm_calls": 24,
+    "design": "ifft_16pt_iterative",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 651.5
+  },
+  "band_pass_fir__C3__sonnet-4-6__42": {
+    "error": "Decomposition failed after 3 attempts: Could not find reference modules. Wrap each in <file name=\"X.v\" type=\"reference\">...</file>",
+    "design": "band_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 397.8
+  },
+  "band_pass_fir__C3__sonnet-4-6__123": {
+    "condition": "C3",
+    "llm_calls": 3,
+    "best_passes": 1,
+    "total_tests": 1001,
+    "solved": false,
+    "decomp_modules": [
+      "fir_mac",
+      "fir_scaler"
+    ],
+    "design": "band_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 123,
+    "wall_seconds": 54.1
+  },
+  "band_pass_fir__C3__sonnet-4-6__456": {
+    "error": "Decomposition failed after 3 attempts: /tmp/tdes_fpga_p4v4yjqc/bandpass_fir.v:168: error: Unknown module type: fir_mac_tree\n/tmp/tdes_fpga_p4v4yjqc/bandpass_fir.v:383: error: Unknown module type: fir_output_scaler\n4 error(s) during elaboration.\n*** These modules were missing:\n        fir_mac_tree referenced 1 times.\n        fir_output_scaler referenced 1 times.\n***",
+    "design": "band_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 456,
+    "wall_seconds": 335.5
+  },
+  "band_pass_fir__C4__sonnet-4-6__42": {
+    "condition": "C4",
+    "llm_calls": 29,
+    "best_passes": 1,
+    "total_tests": 1001,
+    "solved": false,
+    "decomp_modules": [
+      "fir_mac",
+      "fir_scaler"
+    ],
+    "design": "band_pass_fir",
+    "model": "claude-sonnet-4-6",
+    "seed": 42,
+    "wall_seconds": 1411.5
+  }
+}

@@ -1,0 +1,57 @@
+Design Name: bandpass_fir_streaming
+Module Name: bandpass_fir
+
+Inputs:
+- clk                         // Clock signal
+- rst                         // Synchronous reset (active-high)
+- valid_in                    // Input-sample valid
+- data_in[DATA_W-1:0]         // Serial input sample stream
+
+Outputs:
+- valid_out                   // Output-sample valid
+- data_out[DATA_W+GAIN_W-1:0] // Filtered sample (extended width)
+
+Parameters:
+- DATA_W   = 20              // Bit width of input sample (input signal uses IN_SCALE=32768, exceeds 16-bit range)
+- TAP_CNT  = 31              // Odd number of FIR taps (31–255); golden generated with ~101 taps
+- GAIN_W   = 4               // Bit growth to avoid overflow
+- COEFFS  [0:TAP_CNT-1]      // Band-pass FIR coefficients; golden: scipy.signal.firwin(101, [800, 3000], fs=50000, pass_zero=False) quantized to 16-bit (scale=32768)
+
+*** CRITICAL IMPLEMENTATION REQUIREMENT ***
+You MUST use DATA_W=20 and TAP_CNT=101. You MUST hard-code the EXACT integer
+coefficients listed below — do NOT choose your own cutoff or run scipy/firwin.
+Any implementation with different coefficients will fail ALL 1000 test cases.
+Copy the coefficient array verbatim. The testbench uses ±1 LSB tolerance.
+
+CORRECTED IMPLEMENTATION PARAMETERS (benchmark repair):
+- DATA_W = 20   (stimuli exceed 16-bit range; use full 20-bit input path)
+- TAP_CNT = 101 (spec default was wrong; golden uses 101-tap filter)
+- Filter design: scipy.signal.firwin(101, [800, 3000], pass_zero=False, fs=50000)
+- Tolerance: testbench uses ±1 LSB (consistent with scripts/compare_outputs.py)
+- Coefficient quantization: scale by 32768, round to integer, accumulate in 64-bit, right-shift by 20
+- 101 quantized coefficients (scale=32768, symmetric — h[i] == h[100-i]):
+  COPY THESE EXACTLY — wrong values cause 1000/1000 failures:
+  h[0..100] = [16, 10, 6, 2, 0, 1, 5, 13, 26, 42, 59, 77, 90, 97, 93, 77, 47, 5,
+               -45, -99, -149, -187, -207, -204, -178, -132, -73, -14, 31, 46, 16,
+               -67, -208, -403, -638, -891, -1134, -1333, -1455, -1471, -1359, -1111,
+               -730, -235, 341, 955, 1555, 2091, 2513, 2784, 2877, 2784, 2513, 2091,
+               1555, 955, 341, -235, -730, -1111, -1359, -1471, -1455, -1333, -1134,
+               -891, -638, -403, -208, -67, 16, 46, 31, -14, -73, -132, -178, -204,
+               -207, -187, -149, -99, -45, 5, 47, 77, 93, 97, 90, 77, 59, 42, 26, 13,
+               5, 1, 0, 2, 6, 10, 16]
+
+Design Signature:
+
+```verilog
+module bandpass_fir #(
+    parameter DATA_W  = 20,
+    parameter TAP_CNT = 101,
+    parameter GAIN_W  = 4
+) (
+    input                       clk,
+    input                       rst,
+    input                       valid_in,
+    input      [DATA_W-1:0]     data_in,
+    output                      valid_out,
+    output     [DATA_W+GAIN_W-1:0] data_out
+);

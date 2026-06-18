@@ -55,8 +55,9 @@ tdes_repair_results*/
 # TDES-FPGA: local EDA toolchain + cloned benchmark repos (not vendored)
 tools/
 openevolve/tdes/fpga/benchmarks/rtllm/
-openevolve/tdes/fpga/benchmarks/archxbench/
 openevolve/tdes/fpga/benchmarks/resbench/
+# archxbench vendored at level-4 with our bug fixes applied
+# (original repo is unmaintained; fixes documented in autonomous/RESULTS.md)
 
 # Test cache
 .pytest_cache/

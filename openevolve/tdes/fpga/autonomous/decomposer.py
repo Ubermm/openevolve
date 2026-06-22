@@ -9,8 +9,6 @@ import re
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
-import anthropic
-
 from openevolve.tdes.fpga.autonomous.prompts import DECOMPOSE_SYSTEM, DECOMPOSE_USER
 from openevolve.tdes.fpga.verilog_runner import simulate
 
@@ -121,11 +119,10 @@ def decompose(
     testbench: str,
     *,
     model: str = "claude-sonnet-4-6",
-    api_key: str,
+    client,
     max_retries: int = 3,
     top_module_name: str = "fp_mult_pipeline",
 ) -> Decomposition:
-    client = anthropic.Anthropic(api_key=api_key)
     user_prompt = DECOMPOSE_USER.format(
         problem_description=problem_description,
         design_specs=design_specs,

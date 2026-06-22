@@ -150,7 +150,8 @@ def _run(cmd: List[str], cwd: str, timeout: int):
     if os.name != "nt":
         popen_kwargs["start_new_session"] = True  # own process group for killpg
     proc = subprocess.Popen(
-        cmd, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, **popen_kwargs
+        cmd, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+        text=True, encoding="utf-8", errors="replace", **popen_kwargs,
     )
     try:
         out, err = proc.communicate(timeout=timeout)
@@ -186,6 +187,7 @@ def simulate(
     verilog_std: str = "2012",
     iverilog_path: Optional[str] = None,
     vvp_path: Optional[str] = None,
+    data_dir: Optional[str] = None,
 ) -> SimResult:
     """Compile + simulate a candidate against one testbench."""
     iverilog = iverilog_path or find_tool(["iverilog"])
@@ -197,6 +199,15 @@ def simulate(
         )
 
     with tempfile.TemporaryDirectory(prefix="tdes_fpga_") as tmp:
+        if data_dir:
+            import shutil
+            for sub in ("inputs", "outputs", "scripts"):
+                src = os.path.join(data_dir, sub)
+                if os.path.isdir(src):
+                    shutil.copytree(src, os.path.join(tmp, sub))
+            dst_out = os.path.join(tmp, "outputs")
+            if not os.path.isdir(dst_out):
+                os.makedirs(dst_out, exist_ok=True)
         src_files = _write_sources(modules, testbench, tmp)
         sim_out = os.path.join(tmp, "sim.vvp")
         compile_cmd = [iverilog, f"-g{verilog_std}", "-o", sim_out] + src_files

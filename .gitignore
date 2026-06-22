@@ -51,7 +51,18 @@ tdes_combopt_results*/
 tdes_combopt_output*/
 tdes_repair_results*/
 .anthropic_key
-
+.openai_key
+.AWS_BEARER_TOKEN_BEDROCK
+_test_bedrock*.py
+_check_*.py
+_cost_estimate.py
+_full_status.py
+_list_profiles.py
+_request_quota.py
+_launch_*.sh
+_test_bedrock_run.sh
+tdes_aaai_v2_*/
+tdes_aaai_v3/
 # TDES-FPGA: local EDA toolchain + cloned benchmark repos (not vendored)
 tools/
 openevolve/tdes/fpga/benchmarks/rtllm/

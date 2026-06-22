@@ -7,8 +7,6 @@ import re
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 
-import anthropic
-
 from openevolve.tdes.fpga.autonomous.decomposer import Decomposition, SubModule
 from openevolve.tdes.fpga.autonomous.prompts import TEST_GEN_SYSTEM, TEST_GEN_USER
 from openevolve.tdes.fpga.verilog_runner import simulate
@@ -57,11 +55,10 @@ def generate_tests(
     design_description: str,
     *,
     model: str = "claude-sonnet-4-6",
-    api_key: str,
+    client,
     max_retries: int = 3,
 ) -> List[GeneratedTest]:
     """Generate unit testbenches for each sub-module in the decomposition."""
-    client = anthropic.Anthropic(api_key=api_key)
     tests = []
 
     for i, sub in enumerate(decomposition.sub_modules):
@@ -96,7 +93,7 @@ def generate_tests(
 
 
 def _generate_one_test(
-    client: anthropic.Anthropic,
+    client,
     model: str,
     sub: SubModule,
     user_prompt: str,

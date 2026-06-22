@@ -8,16 +8,24 @@
   C5: decompose_tdes       — auto-decompose, auto-test, full TDES evolution
 
 Usage (from WSL):
+    # Anthropic models (Claude)
     export ANTHROPIC_API_KEY=$(tr -d '[:space:]' < /mnt/c/Users/halag/Primera/novo/openevolve/.anthropic_key)
+    # OpenAI models (GPT-4o, o3-mini, etc.) — optional, auto-loaded from .openai_key
+    export OPENAI_API_KEY=$(tr -d '[:space:]' < /mnt/c/Users/halag/Primera/novo/openevolve/.openai_key)
+
     cd /mnt/c/Users/halag/Primera/novo/openevolve
 
-    # Smoke test: single cell
+    # Anthropic (original)
     /opt/openevolve-venv/bin/python -m openevolve.tdes.fpga.autonomous.run_aaai \
-        --designs fp_mult_pipeline --conditions C5 --seeds 42 --output tdes_aaai_smoke
+        --designs fp_mult_pipeline --conditions C4 --seeds 42 --models claude-sonnet-4-6
+
+    # OpenAI
+    /opt/openevolve-venv/bin/python -m openevolve.tdes.fpga.autonomous.run_aaai \
+        --designs fp_mult_pipeline --conditions C4 --seeds 42 --models gpt-4o
 
     # Full experiment
     /opt/openevolve-venv/bin/python -m openevolve.tdes.fpga.autonomous.run_aaai \
-        --designs all --conditions all --models claude-sonnet-4-6 --seeds 42 123 456 --output tdes_aaai_results
+        --designs all --conditions all --models claude-sonnet-4-6 gpt-4o --seeds 42 123 456 --output tdes_aaai_results
 """
 
 from __future__ import annotations
@@ -37,8 +45,7 @@ try:
 except Exception:
     pass
 
-import anthropic
-
+from openevolve.tdes.fpga.autonomous.client import LLMClient
 from openevolve.tdes.fpga.autonomous.decomposer import (
     Decomposition,
     decompose,
@@ -63,22 +70,36 @@ from openevolve.tdes.types import Candidate, TestLevel, TestVector
 
 logger = logging.getLogger(__name__)
 
-_BENCH_ROOT = os.path.join(
+_ARCHX_ROOT = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    "..", "benchmarks", "archxbench", "level-4",
+    "..", "benchmarks", "archxbench",
 )
 
-ALL_DESIGNS = [
-    "fp_mult_pipeline",
-    "fp_adder_pipeline",
-    "fft_16pt_iterative",
-    "ifft_16pt_iterative",
-    "band_pass_fir",
-    "high_pass_fir",
-    "low_pass_fir",
-]
+_LEVEL_DESIGNS = {
+    "L2": [
+        "aes128_single_round", "cla_32bit_pipe", "dadda_mult_pipe",
+        "rca_32bit_pipe", "wallace_tree_mult_pipe",
+    ],
+    "L3": [
+        "fp_adder", "fp_multiplier", "gauss_siedel",
+        "gradient_descent", "newton_raphson_polynomial", "newton_raphson_sqrt",
+    ],
+    "L4": [
+        "fp_mult_pipeline", "fp_adder_pipeline",
+        "fft_16pt_iterative", "ifft_16pt_iterative",
+        "band_pass_fir", "high_pass_fir", "low_pass_fir",
+    ],
+}
 
-ALL_CONDITIONS = ["C1", "C2", "C3", "C4", "C5"]
+_LEVEL_DIRS = {
+    "L2": os.path.join(_ARCHX_ROOT, "level-2"),
+    "L3": os.path.join(_ARCHX_ROOT, "level-3"),
+    "L4": os.path.join(_ARCHX_ROOT, "level-4"),
+}
+
+ALL_DESIGNS = _LEVEL_DESIGNS["L4"]  # backwards compat
+
+ALL_CONDITIONS = ["C1", "C2", "C3", "C4", "C4i", "C4i-noStudy", "C4i-stateless", "C4i-rawFail", "C4i-noRef", "C5"]
 
 def _prepare_data_dir(design_dir: str) -> Optional[str]:
     """Return design_dir if it contains inputs/ or outputs/ subdirectories."""
@@ -102,6 +123,16 @@ _GEN_SUB_SYSTEM = (
     "...</file> tags and nothing else."
 )
 
+_C4I_SYSTEM = (
+    "You are an expert digital design engineer solving a Verilog sub-module "
+    "through iterative investigation and refinement. You study specifications "
+    "carefully, reason about bit-level behavior, analyze test failures by "
+    "computing expected vs actual values, and fix root causes — not symptoms.\n\n"
+    "When writing Verilog, wrap it in "
+    "<file name=\"{module}.v\" type=\"implementation\">...</file> tags.\n"
+    "When analyzing (no code change needed), just explain your reasoning."
+)
+
 _FILE_RE = re.compile(
     r'<file\s+name="[^"]+"\s+type="[^"]+"\s*>\s*\n?(.*?)</file>',
     re.DOTALL,
@@ -120,8 +151,12 @@ def _extract_verilog(text: str) -> Optional[str]:
 
 
 def _count_tb_passes(sim_output: str) -> Tuple[int, int]:
-    passes = sim_output.count("[PASS]") + len(re.findall(r"TDES_PASS:", sim_output))
-    fails = sim_output.count("[FAIL]") + len(re.findall(r"TDES_FAIL:", sim_output))
+    # Match all known testbench pass/fail formats:
+    #   [PASS], TDES_PASS:, ✓ PASS [...], Case N: PASS |, PASS., : PASS, --> PASS/FAIL
+    passes = len(re.findall(r'\bPASS\b', sim_output))
+    fails = len(re.findall(r'\bFAIL\b', sim_output))
+    # Exclude "pass/fail" in comments/descriptions (lowercase or part of variable names)
+    # The \b word boundary + uppercase PASS/FAIL handles this naturally
     return passes, passes + fails
 
 
@@ -147,8 +182,45 @@ def _save_metrics(path, metrics):
 
 def _save_cell(cell_dir, result):
     os.makedirs(cell_dir, exist_ok=True)
+
+    # Save Verilog sources as individual files (for qualitative analysis)
+    sources = result.pop("_sources", None)
+    decomp_desc = result.pop("_decomp_descriptions", None)
+    top_source = result.pop("_top_source", None)
+
+    if sources:
+        src_dir = os.path.join(cell_dir, "verilog")
+        os.makedirs(src_dir, exist_ok=True)
+        for name, src in sources.items():
+            with open(os.path.join(src_dir, f"{name}.v"), "w", encoding="utf-8") as f:
+                f.write(src)
+
+    if decomp_desc:
+        with open(os.path.join(cell_dir, "decomposition.json"), "w") as f:
+            json.dump({"top_source_file": "verilog/" + (result.get("decomp_modules", ["top"])[0] if result.get("decomp_modules") else "top") + ".v",
+                       "sub_modules": decomp_desc}, f, indent=2)
+
     with open(os.path.join(cell_dir, "result.json"), "w") as f:
         json.dump(result, f, indent=2)
+
+
+def _sub_context(decomp, index: int) -> str:
+    """Describe a sub-module's position in the pipeline."""
+    subs = decomp.sub_modules
+    if index == 0:
+        nxt = subs[1] if len(subs) > 1 else None
+        ctx = "First pipeline stage — receives raw inputs from the top module."
+        if nxt:
+            ctx += f" Feeds into `{nxt.name}` ({nxt.description})."
+        return ctx
+    if index == len(subs) - 1:
+        prev = subs[index - 1]
+        return f"Final pipeline stage. Receives from `{prev.name}` ({prev.description}). Output goes to top module."
+    prev, nxt = subs[index - 1], subs[index + 1]
+    return (
+        f"Receives from `{prev.name}` ({prev.description}), "
+        f"feeds into `{nxt.name}` ({nxt.description})."
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -157,7 +229,7 @@ def _save_cell(cell_dir, result):
 
 def run_C1(
     top_name: str, testbench: str, model: str,
-    client: anthropic.Anthropic, problem_desc: str, design_specs: str,
+    client: LLMClient, problem_desc: str, design_specs: str,
     data_dir: Optional[str] = None,
 ) -> dict:
     prompt = (
@@ -201,7 +273,7 @@ def run_C1(
 
 def run_C2(
     top_name: str, testbench: str, model: str,
-    client: anthropic.Anthropic, problem_desc: str, design_specs: str,
+    client: LLMClient, problem_desc: str, design_specs: str,
     data_dir: Optional[str] = None,
 ) -> dict:
     prompt_base = (
@@ -262,24 +334,26 @@ def run_C2(
 
 def run_C3(
     top_name: str, testbench: str, model: str,
-    api_key: str, problem_desc: str, design_specs: str,
+    client: LLMClient, problem_desc: str, design_specs: str,
     data_dir: Optional[str] = None,
 ) -> dict:
     decomp = decompose(
         problem_desc, design_specs, testbench,
-        model=model, api_key=api_key, top_module_name=top_name,
+        model=model, client=client, top_module_name=top_name,
     )
     validate_against_testbench(decomp, testbench)  # side-effects only, like C4
 
-    client = anthropic.Anthropic(api_key=api_key)
     total_calls = 1  # decomposition
     modules = {top_name: decomp.top_source}
 
-    for sub in decomp.sub_modules:
+    for i, sub in enumerate(decomp.sub_modules):
         total_calls += 1
+        context = _sub_context(decomp, i)
         prompt = (
             f"Module name: {sub.name}\n\n"
             f"Description: {sub.description}\n\n"
+            f"Pipeline context: {context}\n\n"
+            f"## Full Design Specification\n\n{design_specs}\n\n"
             f"Module declaration:\n```verilog\n{sub.skeleton_source}\n```\n\n"
             f"Write the complete implementation."
         )
@@ -318,27 +392,25 @@ def run_C3(
 
 def run_C4(
     top_name: str, testbench: str, model: str,
-    api_key: str, problem_desc: str, design_specs: str,
+    client: LLMClient, problem_desc: str, design_specs: str,
     data_dir: Optional[str] = None,
 ) -> dict:
     decomp = decompose(
         problem_desc, design_specs, testbench,
-        model=model, api_key=api_key, top_module_name=top_name,
+        model=model, client=client, top_module_name=top_name,
     )
     ref_ok, _ = validate_against_testbench(decomp, testbench)
 
-    client = anthropic.Anthropic(api_key=api_key)
     total_calls = 1  # decomposition
     modules = {top_name: decomp.top_source}
     rounds_per_module = max(1, 28 // len(decomp.sub_modules))
 
-    for sub in decomp.sub_modules:
+    for idx, sub in enumerate(decomp.sub_modules):
         current_source = sub.skeleton_source
+        context = _sub_context(decomp, idx)
         for rnd in range(rounds_per_module):
             total_calls += 1
-            # Test against original TB with current state
             test_modules = dict(modules)
-            # Use references for other modules, current for this one
             for other in decomp.sub_modules:
                 if other.name == sub.name:
                     test_modules[other.name] = current_source
@@ -350,20 +422,22 @@ def run_C4(
             sim = simulate(test_modules, testbench, timeout=60, data_dir=data_dir)
             feedback = ""
             if sim.compiled:
-                fail_lines = [l for l in sim.stdout.split("\n") if "[FAIL]" in l][:5]
+                fail_lines = [l for l in sim.stdout.split("\n") if "[FAIL]" in l][:10]
                 p, t = _count_tb_passes(sim.stdout)
                 if p == t and t > 0:
                     break
                 feedback = (
-                    f"\n\nPrevious attempt passed {p}/{t} tests.\n"
-                    f"Failures:\n" + "\n".join(fail_lines)
+                    f"\n\n## Test Results ({p}/{t} passed)\n\n"
+                    f"Failing tests:\n" + "\n".join(fail_lines)
                 )
             elif sim.compile_error:
-                feedback = f"\n\nCompilation error:\n{sim.compile_error[:300]}"
+                feedback = f"\n\n## Compilation Error\n\n```\n{sim.compile_error[:500]}\n```"
 
             prompt = (
                 f"Module name: {sub.name}\n\n"
                 f"Description: {sub.description}\n\n"
+                f"Pipeline context: {context}\n\n"
+                f"## Full Design Specification\n\n{design_specs}\n\n"
                 f"Current source:\n```verilog\n{current_source}\n```"
                 f"{feedback}\n\n"
                 f"Write the corrected complete implementation."
@@ -383,12 +457,18 @@ def run_C4(
         modules[sub.name] = current_source
 
     # Final validation
+    _artifacts = {
+        "_sources": dict(modules),
+        "_decomp_descriptions": {s.name: s.description for s in decomp.sub_modules},
+        "_top_source": decomp.top_source,
+    }
     sim = simulate(modules, testbench, timeout=60, data_dir=data_dir)
     if not sim.compiled:
         return {
             "condition": "C4", "solved": False, "llm_calls": total_calls,
             "error": "final compile failed",
             "decomp_modules": decomp.module_names,
+            **_artifacts,
         }
 
     p, t = _count_tb_passes(sim.stdout)
@@ -397,6 +477,239 @@ def run_C4(
         "condition": "C4", "llm_calls": total_calls,
         "best_passes": p, "total_tests": t,
         "solved": solved, "decomp_modules": decomp.module_names,
+        **_artifacts,
+    }
+
+
+# ---------------------------------------------------------------------------
+# C4i: Decompose + Investigative CEGIS (multi-turn, reason-then-fix)
+# ---------------------------------------------------------------------------
+
+def _parse_fail_details(sim_stdout: str) -> str:
+    """Extract structured failure info: test ID, expected, got values."""
+    lines = []
+    for line in sim_stdout.split("\n"):
+        if re.search(r'\bFAIL\b', line):
+            lines.append(line.strip())
+    if not lines:
+        return "No specific failure lines found in output."
+    return "\n".join(lines[:15])
+
+
+def _build_study_prompt(sub, context: str, design_specs: str,
+                        testbench: str, reference_source: str) -> str:
+    """Build the initial study prompt — the model investigates before coding."""
+    return (
+        f"## Your Task\n\n"
+        f"You need to implement the Verilog module `{sub.name}`.\n"
+        f"Before writing any code, study the specification and reference "
+        f"implementation carefully. Identify the key algorithmic steps, "
+        f"bit widths, edge cases, and timing requirements.\n\n"
+        f"## Module Description\n\n{sub.description}\n\n"
+        f"## Pipeline Context\n\n{context}\n\n"
+        f"## Full Design Specification\n\n{design_specs}\n\n"
+        f"## Reference Implementation (from the decomposer)\n\n"
+        f"This may have bugs — treat it as a starting point, not gospel:\n"
+        f"```verilog\n{reference_source}\n```\n\n"
+        f"## System Testbench (ground truth)\n\n"
+        f"Your module will be tested against this testbench. Study it to "
+        f"understand the exact expected I/O behavior:\n"
+        f"```verilog\n{testbench[:3000]}\n```\n\n"
+        f"## Instructions\n\n"
+        f"1. First, explain your understanding of what this module must do — "
+        f"key computations, bit widths, special cases.\n"
+        f"2. Then write your implementation inside "
+        f"<file name=\"{sub.name}.v\" type=\"implementation\">...</file> tags."
+    )
+
+
+def _build_fix_prompt_diagnostic(sub, current_source: str, sim_result,
+                                 pass_count: int, total_tests: int,
+                                 design_specs: str) -> str:
+    """Diagnostic fix prompt — reason about WHY, then fix."""
+    if not sim_result.compiled:
+        error_info = sim_result.compile_error or sim_result.stderr or "Unknown"
+        return (
+            f"## Compilation Failed\n\n"
+            f"```\n{error_info[:800]}\n```\n\n"
+            f"## Current Source\n\n```verilog\n{current_source}\n```\n\n"
+            f"Analyze the compilation error. Identify the exact line and "
+            f"root cause. Then provide the corrected implementation in "
+            f"<file name=\"{sub.name}.v\" type=\"implementation\">...</file> tags."
+        )
+
+    fail_details = _parse_fail_details(sim_result.stdout)
+    return (
+        f"## Test Results: {pass_count}/{total_tests} passed\n\n"
+        f"### Failing Tests\n\n```\n{fail_details}\n```\n\n"
+        f"## Current Source\n\n```verilog\n{current_source}\n```\n\n"
+        f"## Design Specification (for reference)\n\n{design_specs}\n\n"
+        f"## Instructions\n\n"
+        f"1. **Diagnose**: Look at the expected vs actual values in the "
+        f"failing tests. What specific computation is wrong? Is it a "
+        f"bit-width issue, rounding error, sign handling, special case, "
+        f"or pipeline timing problem?\n"
+        f"2. **Root cause**: Identify the exact lines in your current source "
+        f"that produce the wrong result.\n"
+        f"3. **Fix**: Provide the corrected implementation in "
+        f"<file name=\"{sub.name}.v\" type=\"implementation\">...</file> tags."
+    )
+
+
+def _build_fix_prompt_raw(sub, current_source: str, sim_result,
+                          pass_count: int, total_tests: int,
+                          design_specs: str) -> str:
+    """Raw fix prompt — just show fail lines, ask to fix (C4-style)."""
+    if not sim_result.compiled:
+        error_info = sim_result.compile_error or sim_result.stderr or "Unknown"
+        return (
+            f"Compilation error:\n{error_info[:500]}\n\n"
+            f"Current source:\n```verilog\n{current_source}\n```\n\n"
+            f"Write the corrected complete implementation."
+        )
+
+    fail_lines = [l.strip() for l in sim_result.stdout.split("\n")
+                  if re.search(r'\bFAIL\b', l)][:10]
+    return (
+        f"Previous attempt passed {pass_count}/{total_tests} tests.\n"
+        f"Failures:\n" + "\n".join(fail_lines) + "\n\n"
+        f"Current source:\n```verilog\n{current_source}\n```\n\n"
+        f"Write the corrected complete implementation."
+    )
+
+
+def run_C4i(
+    top_name: str, testbench: str, model: str,
+    client: LLMClient, problem_desc: str, design_specs: str,
+    data_dir: Optional[str] = None,
+    *,
+    condition_label: str = "C4i",
+    study: bool = True,
+    multi_turn: bool = True,
+    diagnostic: bool = True,
+    show_ref: bool = True,
+) -> dict:
+    """Investigative CEGIS with ablation flags.
+
+    Flags:
+        study: include initial study phase (spec + reference analysis)
+        multi_turn: preserve conversation history across rounds
+        diagnostic: use structured diagnostic feedback (vs raw fail lines)
+        show_ref: show reference implementation in study prompt
+    """
+    decomp = decompose(
+        problem_desc, design_specs, testbench,
+        model=model, client=client, top_module_name=top_name,
+    )
+    ref_ok, _ = validate_against_testbench(decomp, testbench)
+
+    total_calls = 1  # decomposition
+    modules = {top_name: decomp.top_source}
+    rounds_per_module = max(2, 28 // len(decomp.sub_modules))
+    module_solve_rounds = {}
+    build_fix = _build_fix_prompt_diagnostic if diagnostic else _build_fix_prompt_raw
+
+    for idx, sub in enumerate(decomp.sub_modules):
+        context = _sub_context(decomp, idx)
+        current_source = sub.skeleton_source
+        conversation = []
+
+        if study:
+            ref_src = sub.reference_source if show_ref else "(not provided)"
+            study_prompt = _build_study_prompt(
+                sub, context, design_specs, testbench, ref_src,
+            )
+            conversation.append({"role": "user", "content": study_prompt})
+
+            try:
+                total_calls += 1
+                resp = client.messages.create(
+                    model=model, max_tokens=8000,
+                    system=_C4I_SYSTEM.format(module=sub.name),
+                    messages=conversation,
+                )
+                reply = resp.content[0].text
+                conversation.append({"role": "assistant", "content": reply})
+                source = _extract_verilog(reply)
+                if source:
+                    current_source = source
+            except Exception as e:
+                logger.warning("C4i %s study: %s", sub.name, e)
+                current_source = sub.reference_source
+        else:
+            current_source = sub.reference_source
+
+        best_passes, best_total = 0, 0
+        for rnd in range(rounds_per_module - (1 if study else 0)):
+            test_modules = dict(modules)
+            for other in decomp.sub_modules:
+                if other.name == sub.name:
+                    test_modules[other.name] = current_source
+                elif other.name not in modules or modules.get(other.name) == other.skeleton_source:
+                    test_modules[other.name] = other.reference_source
+                else:
+                    test_modules[other.name] = modules[other.name]
+
+            sim = simulate(test_modules, testbench, timeout=60, data_dir=data_dir)
+            if sim.compiled:
+                p, t = _count_tb_passes(sim.stdout)
+                if p > best_passes:
+                    best_passes, best_total = p, t
+                if p == t and t > 0:
+                    module_solve_rounds[sub.name] = rnd + 1
+                    logger.info("C4i %s solved at round %d (%d/%d)", sub.name, rnd + 1, p, t)
+                    break
+            else:
+                p, t = 0, 0
+
+            fix_prompt = build_fix(sub, current_source, sim, p, t, design_specs)
+
+            if not multi_turn:
+                conversation = []
+            conversation.append({"role": "user", "content": fix_prompt})
+
+            try:
+                total_calls += 1
+                resp = client.messages.create(
+                    model=model, max_tokens=8000,
+                    system=_C4I_SYSTEM.format(module=sub.name),
+                    messages=conversation,
+                )
+                reply = resp.content[0].text
+                conversation.append({"role": "assistant", "content": reply})
+                source = _extract_verilog(reply)
+                if source:
+                    current_source = source
+            except Exception as e:
+                logger.warning("C4i %s rnd %d: %s", sub.name, rnd, e)
+                if len(conversation) > 8:
+                    conversation = conversation[:2] + conversation[-4:]
+
+        modules[sub.name] = current_source
+
+    # Final validation
+    sim = simulate(modules, testbench, timeout=60, data_dir=data_dir)
+    if not sim.compiled:
+        return {
+            "condition": condition_label, "solved": False, "llm_calls": total_calls,
+            "error": "final compile failed",
+            "decomp_modules": decomp.module_names,
+            "module_solve_rounds": module_solve_rounds,
+            "_sources": dict(modules),
+            "_decomp_descriptions": {s.name: s.description for s in decomp.sub_modules},
+            "_top_source": decomp.top_source,
+        }
+
+    p, t = _count_tb_passes(sim.stdout)
+    solved = t > 0 and p == t
+    return {
+        "condition": condition_label, "llm_calls": total_calls,
+        "best_passes": p, "total_tests": t,
+        "solved": solved, "decomp_modules": decomp.module_names,
+        "module_solve_rounds": module_solve_rounds,
+        "_sources": dict(modules),
+        "_decomp_descriptions": {s.name: s.description for s in decomp.sub_modules},
+        "_top_source": decomp.top_source,
     }
 
 
@@ -406,18 +719,18 @@ def run_C4(
 
 def run_C5(
     top_name: str, testbench: str, model: str,
-    api_key: str, problem_desc: str, design_specs: str,
+    client: LLMClient, problem_desc: str, design_specs: str,
     cell_dir: str,
     data_dir: Optional[str] = None,
 ) -> dict:
     decomp = decompose(
         problem_desc, design_specs, testbench,
-        model=model, api_key=api_key, top_module_name=top_name,
+        model=model, client=client, top_module_name=top_name,
     )
     design_desc = _extract_design_description(problem_desc)
     tests = generate_tests(
         decomp, testbench, design_desc,
-        model=model, api_key=api_key,
+        model=model, client=client,
     )
     pass_count, total, failures = validate_tests_against_reference(tests, decomp)
 
@@ -487,17 +800,30 @@ def run_C5(
 # Cell runner
 # ---------------------------------------------------------------------------
 
+def _resolve_design_dir(design: str) -> str:
+    """Find the benchmark directory for a design name across all ArchXBench levels."""
+    for level, designs in _LEVEL_DESIGNS.items():
+        if design in designs:
+            return os.path.join(_LEVEL_DIRS[level], design)
+    # Fallback: search all level dirs
+    for level, ddir in _LEVEL_DIRS.items():
+        candidate = os.path.join(ddir, design)
+        if os.path.isdir(candidate):
+            return candidate
+    return os.path.join(_LEVEL_DIRS["L4"], design)
+
+
 def run_cell(
     design: str, condition: str, model: str, seed: int,
-    api_key: str, output_dir: str,
+    anthropic_key: str, openai_key: str, output_dir: str,
 ) -> dict:
-    design_dir = os.path.join(_BENCH_ROOT, design)
+    design_dir = _resolve_design_dir(design)
     if not os.path.isdir(design_dir):
         return {"error": f"Design not found: {design_dir}"}
 
     problem_desc, design_specs, testbench = read_benchmark(design_dir)
     top_name = _extract_top_module_name(design_specs)
-    client = anthropic.Anthropic(api_key=api_key)
+    client = LLMClient.from_model(model, anthropic_key=anthropic_key, openai_key=openai_key)
     cell_dir = os.path.join(output_dir, design, condition, str(seed))
     data_dir = _prepare_data_dir(design_dir)
 
@@ -510,11 +836,25 @@ def run_cell(
         elif condition == "C2":
             result = run_C2(top_name, testbench, model, client, problem_desc, design_specs, data_dir)
         elif condition == "C3":
-            result = run_C3(top_name, testbench, model, api_key, problem_desc, design_specs, data_dir)
+            result = run_C3(top_name, testbench, model, client, problem_desc, design_specs, data_dir)
         elif condition == "C4":
-            result = run_C4(top_name, testbench, model, api_key, problem_desc, design_specs, data_dir)
+            result = run_C4(top_name, testbench, model, client, problem_desc, design_specs, data_dir)
+        elif condition == "C4i":
+            result = run_C4i(top_name, testbench, model, client, problem_desc, design_specs, data_dir)
+        elif condition == "C4i-noStudy":
+            result = run_C4i(top_name, testbench, model, client, problem_desc, design_specs, data_dir,
+                             condition_label="C4i-noStudy", study=False)
+        elif condition == "C4i-stateless":
+            result = run_C4i(top_name, testbench, model, client, problem_desc, design_specs, data_dir,
+                             condition_label="C4i-stateless", multi_turn=False)
+        elif condition == "C4i-rawFail":
+            result = run_C4i(top_name, testbench, model, client, problem_desc, design_specs, data_dir,
+                             condition_label="C4i-rawFail", diagnostic=False)
+        elif condition == "C4i-noRef":
+            result = run_C4i(top_name, testbench, model, client, problem_desc, design_specs, data_dir,
+                             condition_label="C4i-noRef", show_ref=False)
         elif condition == "C5":
-            result = run_C5(top_name, testbench, model, api_key, problem_desc, design_specs, cell_dir, data_dir)
+            result = run_C5(top_name, testbench, model, client, problem_desc, design_specs, cell_dir, data_dir)
         else:
             result = {"error": f"Unknown condition: {condition}"}
     except Exception as e:
@@ -525,6 +865,8 @@ def run_cell(
     result["model"] = model
     result["seed"] = seed
     result["wall_seconds"] = round(time.time() - t0, 1)
+    result["total_input_tokens"] = client.total_input_tokens
+    result["total_output_tokens"] = client.total_output_tokens
     _save_cell(cell_dir, result)
     return result
 
@@ -533,13 +875,22 @@ def run_cell(
 # Main
 # ---------------------------------------------------------------------------
 
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+_metrics_lock = threading.Lock()
+
+
 def main():
     parser = argparse.ArgumentParser(description="AAAI Experiment Runner")
-    parser.add_argument("--designs", nargs="+", default=["fp_mult_pipeline"])
-    parser.add_argument("--conditions", nargs="+", default=["C5"])
+    parser.add_argument("--designs", nargs="+", default=["fp_mult_pipeline"],
+                        help="Design names or 'all'. Use 'L2', 'L3', 'L4' to select by level.")
+    parser.add_argument("--conditions", nargs="+", default=["C4i"])
     parser.add_argument("--models", nargs="+", default=["claude-sonnet-4-6"])
     parser.add_argument("--seeds", nargs="+", type=int, default=[42])
     parser.add_argument("--output", default="tdes_aaai_results")
+    parser.add_argument("--parallel", type=int, default=4,
+                        help="Max concurrent cells (0 = sequential)")
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -547,48 +898,99 @@ def main():
         format="%(asctime)s %(name)s %(levelname)s %(message)s",
     )
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
-    if not api_key:
+    # Load Anthropic key
+    anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if not anthropic_key:
         key_file = os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
             "..", "..", "..", "..", ".anthropic_key",
         )
         if os.path.exists(key_file):
             with open(key_file) as f:
-                api_key = f.read().strip()
-    if not api_key:
-        print("ERROR: Set ANTHROPIC_API_KEY or place key in .anthropic_key")
+                anthropic_key = f.read().strip()
+
+    # Load OpenAI key (optional — only needed for gpt-* / o*-series models)
+    openai_key = os.environ.get("OPENAI_API_KEY", "")
+    if not openai_key:
+        oai_file = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "..", "..", "..", "..", ".openai_key",
+        )
+        if os.path.exists(oai_file):
+            with open(oai_file) as f:
+                openai_key = f.read().strip()
+
+    if not anthropic_key and not openai_key:
+        print("ERROR: No API key found. Set ANTHROPIC_API_KEY / OPENAI_API_KEY or place keys in .anthropic_key / .openai_key")
         sys.exit(1)
 
-    if args.designs == ["all"]:
-        args.designs = ALL_DESIGNS
+    # Expand level shorthands and "all"
+    expanded_designs = []
+    for d in args.designs:
+        if d.upper() in _LEVEL_DESIGNS:
+            expanded_designs.extend(_LEVEL_DESIGNS[d.upper()])
+        elif d == "all":
+            for level_designs in _LEVEL_DESIGNS.values():
+                expanded_designs.extend(level_designs)
+        else:
+            expanded_designs.append(d)
+    args.designs = expanded_designs
     if args.conditions == ["all"]:
         args.conditions = ALL_CONDITIONS
 
     metrics_path = os.path.join(args.output, "metrics.json")
     metrics = _load_metrics(metrics_path)
 
-    total_cells = len(args.designs) * len(args.conditions) * len(args.models) * len(args.seeds)
-    done = 0
-
+    # Build work list (skip completed cells)
+    work = []
+    skipped = 0
     for design in args.designs:
         for condition in args.conditions:
             for model in args.models:
                 for seed in args.seeds:
                     key = _cell_key(design, condition, model, seed)
                     if key in metrics and not metrics[key].get("error"):
-                        logger.info("Skipping completed cell: %s", key)
-                        done += 1
+                        skipped += 1
                         continue
+                    work.append((design, condition, model, seed, key))
 
-                    result = run_cell(design, condition, model, seed, api_key, args.output)
-                    metrics[key] = result
-                    _save_metrics(metrics_path, metrics)
-                    done += 1
-                    logger.info(
-                        "Progress: %d/%d cells (%.0f%%)",
+    total_cells = len(work) + skipped
+    logger.info("Total: %d cells (%d to run, %d already done)", total_cells, len(work), skipped)
+
+    if not work:
+        print("All cells already completed.")
+        return
+
+    done = skipped
+
+    def _run_and_save(item):
+        nonlocal done
+        design, condition, model, seed, key = item
+        result = run_cell(design, condition, model, seed, anthropic_key, openai_key, args.output)
+        with _metrics_lock:
+            metrics[key] = result
+            _save_metrics(metrics_path, metrics)
+            done += 1
+            logger.info("Progress: %d/%d cells (%.0f%%) — %s: %s (%s/%s)",
                         done, total_cells, 100 * done / total_cells,
-                    )
+                        key, "SOLVED" if result.get("solved") else "FAILED",
+                        result.get("best_passes", "?"), result.get("total_tests", "?"))
+        return key, result
+
+    max_workers = max(1, args.parallel) if args.parallel else 1
+
+    if max_workers == 1:
+        for item in work:
+            _run_and_save(item)
+    else:
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {executor.submit(_run_and_save, item): item for item in work}
+            for future in as_completed(futures):
+                try:
+                    future.result()
+                except Exception as e:
+                    item = futures[future]
+                    logger.error("Cell %s crashed: %s", item[4], e)
 
     # Summary
     print("\n" + "=" * 70)

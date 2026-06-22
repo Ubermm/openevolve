@@ -1,0 +1,1626 @@
+{
+  "fp_adder__C4i-noStudy__gpt-5.5__42": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack_classify",
+      "fp_special_cases",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack_classify": 1,
+      "fp_special_cases": 1,
+      "fp_align": 1,
+      "fp_addsub": 1,
+      "fp_normalize_round_pack": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 1275.9,
+    "total_input_tokens": 6021,
+    "total_output_tokens": 8965
+  },
+  "fp_adder__C4i-noStudy__gpt-5.5__123": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_align": 1,
+      "fp_addsub": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 689.7,
+    "total_input_tokens": 6021,
+    "total_output_tokens": 9272
+  },
+  "fp_adder__C4i-noStudy__gpt-5.5__456": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align",
+      "fp_add_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_align": 1,
+      "fp_add_normalize_round": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 103.6,
+    "total_input_tokens": 6021,
+    "total_output_tokens": 7878
+  },
+  "fp_adder__C4i-noStudy__gpt-5.5__789": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack_classify",
+      "fp_special_cases",
+      "fp_align_add",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack_classify": 1,
+      "fp_special_cases": 1,
+      "fp_align_add": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 1271.7,
+    "total_input_tokens": 6021,
+    "total_output_tokens": 8687
+  },
+  "fp_adder__C4i-noStudy__gpt-5.5__1024": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_align": 1,
+      "fp_addsub": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 693.2,
+    "total_input_tokens": 6021,
+    "total_output_tokens": 8737
+  },
+  "fp_adder__C4i-stateless__gpt-5.5__42": {
+    "condition": "C4i-stateless",
+    "llm_calls": 17,
+    "best_passes": 35,
+    "total_tests": 36,
+    "solved": false,
+    "decomp_modules": [
+      "fpa_unpack",
+      "fpa_special",
+      "fpa_add_core",
+      "fpa_result_select"
+    ],
+    "module_solve_rounds": {
+      "fpa_unpack": 1,
+      "fpa_special": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 1822.7,
+    "total_input_tokens": 42903,
+    "total_output_tokens": 91330
+  },
+  "fp_adder__C4i-stateless__gpt-5.5__123": {
+    "condition": "C4i-stateless",
+    "llm_calls": 5,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fpa_unpack",
+      "fpa_special_cases",
+      "fpa_align_add",
+      "fpa_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fpa_unpack": 1,
+      "fpa_special_cases": 1,
+      "fpa_align_add": 1,
+      "fpa_normalize_round": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 338.3,
+    "total_input_tokens": 17212,
+    "total_output_tokens": 23637
+  },
+  "fp_adder__C4i-stateless__gpt-5.5__456": {
+    "condition": "C4i-stateless",
+    "llm_calls": 6,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_align": 1,
+      "fp_addsub": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 300.8,
+    "total_input_tokens": 19167,
+    "total_output_tokens": 23288
+  },
+  "fp_adder__C4i-stateless__gpt-5.5__789": {
+    "condition": "C4i-stateless",
+    "llm_calls": 6,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_align": 1,
+      "fp_addsub": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 289.8,
+    "total_input_tokens": 19223,
+    "total_output_tokens": 23235
+  },
+  "fp_adder__C4i-stateless__gpt-5.5__1024": {
+    "condition": "C4i-stateless",
+    "llm_calls": 6,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special": 1,
+      "fp_align": 1,
+      "fp_addsub": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 946.6,
+    "total_input_tokens": 25675,
+    "total_output_tokens": 31440
+  },
+  "fp_adder__C4i-rawFail__gpt-5.5__42": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 6,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align_add",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_align_add": 1,
+      "fp_normalize_round_pack": 2
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 393.3,
+    "total_input_tokens": 24035,
+    "total_output_tokens": 27439
+  },
+  "fp_adder__C4i-rawFail__gpt-5.5__123": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 6,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_align": 1,
+      "fp_addsub": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 367.3,
+    "total_input_tokens": 19482,
+    "total_output_tokens": 25994
+  },
+  "fp_adder__C4i-rawFail__gpt-5.5__456": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 6,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align",
+      "fp_add_significands",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_align": 1,
+      "fp_add_significands": 1,
+      "fp_normalize_round_pack": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 318.2,
+    "total_input_tokens": 19872,
+    "total_output_tokens": 23758
+  },
+  "fp_adder__C4i-rawFail__gpt-5.5__789": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 5,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fpa_unpack",
+      "fpa_special_cases",
+      "fpa_align_add",
+      "fpa_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fpa_unpack": 1,
+      "fpa_special_cases": 1,
+      "fpa_align_add": 1,
+      "fpa_normalize_round": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 296.3,
+    "total_input_tokens": 17776,
+    "total_output_tokens": 21667
+  },
+  "fp_adder__C4i-rawFail__gpt-5.5__1024": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 6,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_extract",
+      "fp_special_cases",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_extract": 1,
+      "fp_special_cases": 1,
+      "fp_align": 1,
+      "fp_addsub": 1,
+      "fp_normalize_round_pack": 1
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 326.1,
+    "total_input_tokens": 19593,
+    "total_output_tokens": 23975
+  },
+  "fp_adder__C4i-noRef__gpt-5.5__42": {
+    "condition": "C4i-noRef",
+    "llm_calls": 16,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack_classify",
+      "fp_special_cases",
+      "fp_align_add",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack_classify": 2,
+      "fp_special_cases": 3,
+      "fp_align_add": 4,
+      "fp_normalize_round": 6
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 1375.8,
+    "total_input_tokens": 128983,
+    "total_output_tokens": 103424
+  },
+  "fp_adder__C4i-noRef__gpt-5.5__123": {
+    "condition": "C4i-noRef",
+    "llm_calls": 15,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align_add",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 2,
+      "fp_special_cases": 3,
+      "fp_align_add": 2
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 1225.8,
+    "total_input_tokens": 118885,
+    "total_output_tokens": 95664
+  },
+  "fp_adder__C4i-noRef__gpt-5.5__456": {
+    "condition": "C4i-noRef",
+    "llm_calls": 16,
+    "best_passes": 32,
+    "total_tests": 36,
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 2,
+      "fp_special_cases": 4,
+      "fp_align": 2,
+      "fp_addsub": 2
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 1151.1,
+    "total_input_tokens": 77396,
+    "total_output_tokens": 84901
+  },
+  "fp_adder__C4i-noRef__gpt-5.5__789": {
+    "condition": "C4i-noRef",
+    "llm_calls": 18,
+    "best_passes": 36,
+    "total_tests": 36,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_align",
+      "fp_addsub",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 2,
+      "fp_special_cases": 4,
+      "fp_align": 2,
+      "fp_addsub": 4
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 1345.6,
+    "total_input_tokens": 103538,
+    "total_output_tokens": 97446
+  },
+  "fp_adder__C4i-noRef__gpt-5.5__1024": {
+    "condition": "C4i-noRef",
+    "llm_calls": 15,
+    "best_passes": 32,
+    "total_tests": 36,
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack_classify",
+      "fp_special_cases",
+      "fp_align",
+      "fp_add_sub",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack_classify": 2,
+      "fp_special_cases": 3,
+      "fp_align": 2,
+      "fp_add_sub": 2
+    },
+    "design": "fp_adder",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 1229.5,
+    "total_input_tokens": 78943,
+    "total_output_tokens": 92333
+  },
+  "fp_multiplier__C4i-noStudy__gpt-5.5__42": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_multiply_core",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_multiply_core": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 106.6,
+    "total_input_tokens": 2979,
+    "total_output_tokens": 7677
+  },
+  "fp_multiplier__C4i-noStudy__gpt-5.5__123": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_mul_core",
+      "fp_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_mul_core": 1,
+      "fp_round_pack": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 100.5,
+    "total_input_tokens": 2979,
+    "total_output_tokens": 8362
+  },
+  "fp_multiplier__C4i-noStudy__gpt-5.5__456": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_mantissa_multiply",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_mantissa_multiply": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 89.7,
+    "total_input_tokens": 2979,
+    "total_output_tokens": 7388
+  },
+  "fp_multiplier__C4i-noStudy__gpt-5.5__789": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 29,
+    "best_passes": 6,
+    "total_tests": 10,
+    "solved": false,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_multiply_core",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {},
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 2016.6,
+    "total_input_tokens": 240703,
+    "total_output_tokens": 133375
+  },
+  "fp_multiplier__C4i-noStudy__gpt-5.5__1024": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_mantissa_mult",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_mantissa_mult": 1,
+      "fp_normalize_round_pack": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 104.6,
+    "total_input_tokens": 2979,
+    "total_output_tokens": 7741
+  },
+  "fp_multiplier__C4i-stateless__gpt-5.5__42": {
+    "condition": "C4i-stateless",
+    "llm_calls": 5,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_operand_unpack",
+      "fp_special_case_handler",
+      "fp_significand_multiplier",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_operand_unpack": 1,
+      "fp_special_case_handler": 1,
+      "fp_significand_multiplier": 1,
+      "fp_normalize_round_pack": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 226.6,
+    "total_input_tokens": 12844,
+    "total_output_tokens": 15630
+  },
+  "fp_multiplier__C4i-stateless__gpt-5.5__123": {
+    "condition": "C4i-stateless",
+    "llm_calls": 6,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fpm_unpack",
+      "fpm_special_cases",
+      "fpm_significand_multiply",
+      "fpm_normalize_round_pack",
+      "fpm_result_select"
+    ],
+    "module_solve_rounds": {
+      "fpm_unpack": 1,
+      "fpm_special_cases": 1,
+      "fpm_significand_multiply": 1,
+      "fpm_normalize_round_pack": 1,
+      "fpm_result_select": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 241.6,
+    "total_input_tokens": 15103,
+    "total_output_tokens": 17053
+  },
+  "fp_multiplier__C4i-stateless__gpt-5.5__456": {
+    "condition": "C4i-stateless",
+    "llm_calls": 5,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fpm_classify",
+      "fpm_special_case",
+      "fpm_multiply_core",
+      "fpm_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fpm_classify": 1,
+      "fpm_special_case": 1,
+      "fpm_multiply_core": 1,
+      "fpm_normalize_round": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 262.2,
+    "total_input_tokens": 12823,
+    "total_output_tokens": 16697
+  },
+  "fp_multiplier__C4i-stateless__gpt-5.5__789": {
+    "condition": "C4i-stateless",
+    "llm_calls": 5,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_significand_multiply",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_significand_multiply": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 373.3,
+    "total_input_tokens": 12894,
+    "total_output_tokens": 19731
+  },
+  "fp_multiplier__C4i-stateless__gpt-5.5__1024": {
+    "condition": "C4i-stateless",
+    "llm_calls": 5,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_significand_multiplier",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_significand_multiplier": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 442.2,
+    "total_input_tokens": 12702,
+    "total_output_tokens": 16860
+  },
+  "fp_multiplier__C4i-rawFail__gpt-5.5__42": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 5,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_operand_unpack",
+      "fp_special_case_handler",
+      "fp_significand_product",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_operand_unpack": 1,
+      "fp_special_case_handler": 1,
+      "fp_significand_product": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 473.2,
+    "total_input_tokens": 12819,
+    "total_output_tokens": 17657
+  },
+  "fp_multiplier__C4i-rawFail__gpt-5.5__123": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 5,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack_classify",
+      "fp_special_cases",
+      "fp_significand_multiplier",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack_classify": 1,
+      "fp_special_cases": 1,
+      "fp_significand_multiplier": 1,
+      "fp_normalize_round": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 342.6,
+    "total_input_tokens": 13138,
+    "total_output_tokens": 19545
+  },
+  "fp_multiplier__C4i-rawFail__gpt-5.5__456": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 5,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_significand_multiply",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 1,
+      "fp_special_cases": 1,
+      "fp_significand_multiply": 1,
+      "fp_normalize_round_pack": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 401.8,
+    "total_input_tokens": 12629,
+    "total_output_tokens": 21334
+  },
+  "fp_multiplier__C4i-rawFail__gpt-5.5__789": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 5,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack_classify",
+      "fp_special_case_handler",
+      "fp_significand_multiplier",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack_classify": 1,
+      "fp_special_case_handler": 1,
+      "fp_significand_multiplier": 1,
+      "fp_normalize_round_pack": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 397.7,
+    "total_input_tokens": 12701,
+    "total_output_tokens": 22747
+  },
+  "fp_multiplier__C4i-rawFail__gpt-5.5__1024": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 5,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_operand_decode",
+      "fp_special_case",
+      "fp_multiply_core",
+      "fp_result_select"
+    ],
+    "module_solve_rounds": {
+      "fp_operand_decode": 1,
+      "fp_special_case": 1,
+      "fp_multiply_core": 1,
+      "fp_result_select": 1
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 444.0,
+    "total_input_tokens": 13051,
+    "total_output_tokens": 18234
+  },
+  "fp_multiplier__C4i-noRef__gpt-5.5__42": {
+    "condition": "C4i-noRef",
+    "llm_calls": 12,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_mantissa_multiply",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 3,
+      "fp_special_cases": 2,
+      "fp_mantissa_multiply": 4,
+      "fp_normalize_round": 2
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 2097.7,
+    "total_input_tokens": 49828,
+    "total_output_tokens": 50694
+  },
+  "fp_multiplier__C4i-noRef__gpt-5.5__123": {
+    "condition": "C4i-noRef",
+    "llm_calls": 9,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_mantissa_multiplier",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 2,
+      "fp_special_cases": 2,
+      "fp_mantissa_multiplier": 2,
+      "fp_normalize_round": 2
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 745.6,
+    "total_input_tokens": 20089,
+    "total_output_tokens": 41831
+  },
+  "fp_multiplier__C4i-noRef__gpt-5.5__456": {
+    "condition": "C4i-noRef",
+    "llm_calls": 14,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_mantissa_mul_exp",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 6,
+      "fp_special_cases": 2,
+      "fp_mantissa_mul_exp": 3,
+      "fp_normalize_round": 2
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 3689.0,
+    "total_input_tokens": 93533,
+    "total_output_tokens": 76932
+  },
+  "fp_multiplier__C4i-noRef__gpt-5.5__789": {
+    "condition": "C4i-noRef",
+    "llm_calls": 9,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_operand_unpack",
+      "fp_special_cases",
+      "fp_significand_multiplier",
+      "fp_normalize_round"
+    ],
+    "module_solve_rounds": {
+      "fp_operand_unpack": 2,
+      "fp_special_cases": 2,
+      "fp_significand_multiplier": 2,
+      "fp_normalize_round": 2
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 1025.2,
+    "total_input_tokens": 26944,
+    "total_output_tokens": 51570
+  },
+  "fp_multiplier__C4i-noRef__gpt-5.5__1024": {
+    "condition": "C4i-noRef",
+    "llm_calls": 10,
+    "best_passes": 10,
+    "total_tests": 10,
+    "solved": true,
+    "decomp_modules": [
+      "fp_unpack",
+      "fp_special_cases",
+      "fp_significand_multiplier",
+      "fp_normalize_round_pack"
+    ],
+    "module_solve_rounds": {
+      "fp_unpack": 3,
+      "fp_special_cases": 2,
+      "fp_significand_multiplier": 2,
+      "fp_normalize_round_pack": 2
+    },
+    "design": "fp_multiplier",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 925.0,
+    "total_input_tokens": 37352,
+    "total_output_tokens": 48160
+  },
+  "gauss_siedel__C4i-noStudy__gpt-5.5__42": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs2x2_reciprocal",
+      "gs2x2_iteration_step",
+      "gs2x2_result_selector"
+    ],
+    "module_solve_rounds": {
+      "gs2x2_reciprocal": 1,
+      "gs2x2_iteration_step": 1,
+      "gs2x2_result_selector": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 375.2,
+    "total_input_tokens": 9194,
+    "total_output_tokens": 20882
+  },
+  "gauss_siedel__C4i-noStudy__gpt-5.5__123": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 22,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "fixed_reciprocal",
+      "gs_iteration_2x2",
+      "fixed_direct_2x2_solver",
+      "gs_case_override"
+    ],
+    "module_solve_rounds": {
+      "gs_case_override": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 3584.5,
+    "total_input_tokens": 170464,
+    "total_output_tokens": 155669
+  },
+  "gauss_siedel__C4i-noStudy__gpt-5.5__456": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal_comb",
+      "gs_iteration_step_comb",
+      "gs_direct_solve_2x2_comb",
+      "gs_result_select_comb"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal_comb": 1,
+      "gs_iteration_step_comb": 1,
+      "gs_direct_solve_2x2_comb": 1,
+      "gs_result_select_comb": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 196.5,
+    "total_input_tokens": 4559,
+    "total_output_tokens": 10374
+  },
+  "gauss_siedel__C4i-noStudy__gpt-5.5__789": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 28,
+    "best_passes": 49,
+    "total_tests": 50,
+    "solved": false,
+    "decomp_modules": [
+      "gs_reciprocal_pair",
+      "gs_iteration_2x2",
+      "gs_special_case_select"
+    ],
+    "module_solve_rounds": {},
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 3923.8,
+    "total_input_tokens": 372448,
+    "total_output_tokens": 184364
+  },
+  "gauss_siedel__C4i-noStudy__gpt-5.5__1024": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 1,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal",
+      "gs_iteration_core",
+      "gs_direct_solve_2x2",
+      "gs_result_adjust"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal": 1,
+      "gs_iteration_core": 1,
+      "gs_direct_solve_2x2": 1,
+      "gs_result_adjust": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 157.8,
+    "total_input_tokens": 4559,
+    "total_output_tokens": 10532
+  },
+  "gauss_siedel__C4i-stateless__gpt-5.5__42": {
+    "condition": "C4i-stateless",
+    "llm_calls": 4,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal_pair",
+      "gs_iteration_step",
+      "gs_solution_postprocess"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal_pair": 1,
+      "gs_iteration_step": 1,
+      "gs_solution_postprocess": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 265.4,
+    "total_input_tokens": 14276,
+    "total_output_tokens": 19019
+  },
+  "gauss_siedel__C4i-stateless__gpt-5.5__123": {
+    "condition": "C4i-stateless",
+    "llm_calls": 4,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_fixed_reciprocal",
+      "gs_iteration_step",
+      "gs_solution_selector"
+    ],
+    "module_solve_rounds": {
+      "gs_fixed_reciprocal": 1,
+      "gs_iteration_step": 1,
+      "gs_solution_selector": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 308.7,
+    "total_input_tokens": 13729,
+    "total_output_tokens": 21701
+  },
+  "gauss_siedel__C4i-stateless__gpt-5.5__456": {
+    "condition": "C4i-stateless",
+    "llm_calls": 5,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal",
+      "gs_iteration_step",
+      "gs_direct_solve_2x2",
+      "gs_solution_select"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal": 1,
+      "gs_iteration_step": 1,
+      "gs_direct_solve_2x2": 1,
+      "gs_solution_select": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 323.4,
+    "total_input_tokens": 16126,
+    "total_output_tokens": 21419
+  },
+  "gauss_siedel__C4i-stateless__gpt-5.5__789": {
+    "condition": "C4i-stateless",
+    "llm_calls": 6,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs2x2_input_normalizer",
+      "gs2x2_direct_solve",
+      "gs2x2_case_override",
+      "gs2x2_result_select"
+    ],
+    "module_solve_rounds": {
+      "gs2x2_input_normalizer": 1,
+      "gs2x2_direct_solve": 2,
+      "gs2x2_case_override": 1,
+      "gs2x2_result_select": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 297.3,
+    "total_input_tokens": 16933,
+    "total_output_tokens": 21080
+  },
+  "gauss_siedel__C4i-stateless__gpt-5.5__1024": {
+    "condition": "C4i-stateless",
+    "llm_calls": 4,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal_pair",
+      "gs_iteration_step",
+      "gs_output_select"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal_pair": 1,
+      "gs_iteration_step": 1,
+      "gs_output_select": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 274.9,
+    "total_input_tokens": 13683,
+    "total_output_tokens": 18613
+  },
+  "gauss_siedel__C4i-rawFail__gpt-5.5__42": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 18,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_fixed_reciprocal",
+      "gs_iteration_2x2",
+      "gs_override_cases_2x2",
+      "gs_output_select_2x2"
+    ],
+    "module_solve_rounds": {
+      "gs_override_cases_2x2": 2,
+      "gs_output_select_2x2": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 1612.5,
+    "total_input_tokens": 128683,
+    "total_output_tokens": 91687
+  },
+  "gauss_siedel__C4i-rawFail__gpt-5.5__123": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 5,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_fp_reciprocal",
+      "gs_iteration_2x2",
+      "gs_direct_solve_2x2",
+      "gs_expected_override_2x2"
+    ],
+    "module_solve_rounds": {
+      "gs_fp_reciprocal": 1,
+      "gs_iteration_2x2": 1,
+      "gs_direct_solve_2x2": 1,
+      "gs_expected_override_2x2": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 281.8,
+    "total_input_tokens": 16807,
+    "total_output_tokens": 20480
+  },
+  "gauss_siedel__C4i-rawFail__gpt-5.5__456": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 5,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal_unit",
+      "gs_iteration_step",
+      "gs_known_case_override",
+      "gs_output_select"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal_unit": 1,
+      "gs_iteration_step": 1,
+      "gs_known_case_override": 1,
+      "gs_output_select": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 279.6,
+    "total_input_tokens": 16651,
+    "total_output_tokens": 20724
+  },
+  "gauss_siedel__C4i-rawFail__gpt-5.5__789": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 4,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal",
+      "gs_iteration_2x2",
+      "gs_solution_postprocess"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal": 1,
+      "gs_iteration_2x2": 1,
+      "gs_solution_postprocess": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 278.1,
+    "total_input_tokens": 13314,
+    "total_output_tokens": 17302
+  },
+  "gauss_siedel__C4i-rawFail__gpt-5.5__1024": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 4,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal",
+      "gs_iteration_core",
+      "gs_output_adjust"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal": 1,
+      "gs_iteration_core": 1,
+      "gs_output_adjust": 1
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 242.1,
+    "total_input_tokens": 13506,
+    "total_output_tokens": 16389
+  },
+  "gauss_siedel__C4i-noRef__gpt-5.5__42": {
+    "condition": "C4i-noRef",
+    "llm_calls": 9,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal",
+      "gs_iteration_step",
+      "gs_direct_solve_2x2",
+      "gs_output_adjust"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal": 1,
+      "gs_iteration_step": 2,
+      "gs_direct_solve_2x2": 2,
+      "gs_output_adjust": 3
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 834.9,
+    "total_input_tokens": 32843,
+    "total_output_tokens": 52358
+  },
+  "gauss_siedel__C4i-noRef__gpt-5.5__123": {
+    "condition": "C4i-noRef",
+    "llm_calls": 9,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal",
+      "gs_iteration_step",
+      "gs_expected_override",
+      "gs_result_select"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal": 2,
+      "gs_iteration_step": 2,
+      "gs_expected_override": 2,
+      "gs_result_select": 2
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 613.6,
+    "total_input_tokens": 30874,
+    "total_output_tokens": 40303
+  },
+  "gauss_siedel__C4i-noRef__gpt-5.5__456": {
+    "condition": "C4i-noRef",
+    "llm_calls": 13,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_fixed_reciprocal",
+      "gs_iteration_step_2x2",
+      "gs_direct_2x2_core",
+      "gs_output_adjust_2x2"
+    ],
+    "module_solve_rounds": {
+      "gs_fixed_reciprocal": 2,
+      "gs_iteration_step_2x2": 3,
+      "gs_direct_2x2_core": 1,
+      "gs_output_adjust_2x2": 6
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 1059.7,
+    "total_input_tokens": 84955,
+    "total_output_tokens": 72842
+  },
+  "gauss_siedel__C4i-noRef__gpt-5.5__789": {
+    "condition": "C4i-noRef",
+    "llm_calls": 13,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_reciprocal",
+      "gs_iteration_2x2",
+      "gs_convergence_check",
+      "gs_special_case_corrector"
+    ],
+    "module_solve_rounds": {
+      "gs_reciprocal": 1,
+      "gs_iteration_2x2": 3,
+      "gs_convergence_check": 2,
+      "gs_special_case_corrector": 6
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 958.9,
+    "total_input_tokens": 105954,
+    "total_output_tokens": 65579
+  },
+  "gauss_siedel__C4i-noRef__gpt-5.5__1024": {
+    "condition": "C4i-noRef",
+    "llm_calls": 21,
+    "best_passes": 50,
+    "total_tests": 50,
+    "solved": true,
+    "decomp_modules": [
+      "gs_fixed_reciprocal",
+      "gs_iteration_step",
+      "gs_direct_solve_2x2",
+      "gs_result_select"
+    ],
+    "module_solve_rounds": {
+      "gs_direct_solve_2x2": 3,
+      "gs_result_select": 3
+    },
+    "design": "gauss_siedel",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 1780.1,
+    "total_input_tokens": 147257,
+    "total_output_tokens": 114224
+  },
+  "gradient_descent__C4i-noStudy__gpt-5.5__42": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_derivative_calc",
+      "gd_step_calc",
+      "gd_update_calc"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 4239.4,
+    "total_input_tokens": 238560,
+    "total_output_tokens": 112607
+  },
+  "gradient_descent__C4i-noStudy__gpt-5.5__123": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_quadratic_derivative",
+      "gd_fixed_step",
+      "gd_fixed_update"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 4139.3,
+    "total_input_tokens": 240303,
+    "total_output_tokens": 100663
+  },
+  "gradient_descent__C4i-noStudy__gpt-5.5__456": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 26,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gradient_descent_sign_extend",
+      "gradient_descent_derivative",
+      "gradient_descent_step",
+      "gradient_descent_update",
+      "gradient_descent_resize"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 3446.2,
+    "total_input_tokens": 121003,
+    "total_output_tokens": 95827
+  },
+  "gradient_descent__C4i-noStudy__gpt-5.5__789": {
+    "condition": "C4i-noStudy",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_poly_derivative",
+      "gd_poly_step",
+      "gd_poly_update"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 3674.9,
+    "total_input_tokens": 247092,
+    "total_output_tokens": 110437
+  },
+  "gradient_descent__C4i-noStudy__gpt-5.5__1024": {
+    "condition": "C4i-noStudy",
+    "solved": false,
+    "llm_calls": 28,
+    "error": "final compile failed",
+    "decomp_modules": [
+      "gd_derivative",
+      "gd_scaled_step",
+      "gd_update"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 3012.8,
+    "total_input_tokens": 227088,
+    "total_output_tokens": 92942
+  },
+  "gradient_descent__C4i-stateless__gpt-5.5__42": {
+    "condition": "C4i-stateless",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gradient_descent_derivative",
+      "gradient_descent_step",
+      "gradient_descent_update"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 3245.9,
+    "total_input_tokens": 45011,
+    "total_output_tokens": 101404
+  },
+  "gradient_descent__C4i-stateless__gpt-5.5__123": {
+    "condition": "C4i-stateless",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_poly_derivative",
+      "gd_poly_step",
+      "gd_poly_update"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 3486.8,
+    "total_input_tokens": 45346,
+    "total_output_tokens": 111691
+  }
+}

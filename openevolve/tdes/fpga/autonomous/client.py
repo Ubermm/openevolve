@@ -167,7 +167,7 @@ class LLMClient:
         anthropic_key: Optional[str] = None,
         openai_key: Optional[str] = None,
     ) -> "LLMClient":
-        use_bedrock = os.environ.get("USE_BEDROCK", "1") != "0"
+        use_bedrock = False
         bedrock_region = os.environ.get("BEDROCK_REGION", "us-east-1")
         return cls(
             anthropic_key=anthropic_key,

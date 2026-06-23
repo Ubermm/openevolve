@@ -1,0 +1,37 @@
+Title: 1D Convolution — Causal Streaming FIR Filter
+
+Objective:
+Design a streaming 1-D convolution accelerator that applies a fixed 5-tap causal
+FIR filter to serial input data. The module accepts one sample per clock and
+produces one filtered output per clock starting from the very first input
+(zero latency). Samples that arrive before the kernel window is full are
+zero-padded on the left.
+
+Background:
+The filter implements a causal (non-centered) convolution:
+
+    output[n] = floor( SUM_{k=0}^{KERNEL_SIZE-1} kernel[k] * x[n-k] / 2^GAIN_W )
+
+where x[m] = 0 for m < 0 (zero-padding). The kernel coefficients are the fixed
+Gaussian-approximation tap weights [2, 8, 12, 8, 2]. GAIN_W = 4 provides the
+normalizing right-shift (divide by 16 and truncate to integer).
+
+Because the filter is causal, the first output uses only kernel[0]*x[0] (the
+remaining taps see zeros). There is NO pipeline fill latency — valid_out must
+assert on the same clock as valid_in from the very first sample.
+
+Design Constraints:
+- Input: serial 1-D sample stream, one sample per clock when valid_in is high.
+- Kernel: hardcoded 5-tap weights [2, 8, 12, 8, 2] (not parameterized).
+- Arithmetic: multiply-accumulate in DATA_W + GAIN_W + ceil(log2(KERNEL_SIZE))
+  bits, then right-shift by GAIN_W to produce the DATA_W + GAIN_W bit output.
+- Throughput: 1 output per clock for every valid input, with zero latency.
+- Edge handling: zero-padding only (left edge pads with zeros).
+
+Performance Expectation:
+The accelerator must present one filtered sample for every valid input sample,
+starting from the first cycle. There is no fill latency. valid_out tracks
+valid_in with no delay.
+
+Deliverables:
+- Verilog implementation of the conv1d module matching the design-specs signature.

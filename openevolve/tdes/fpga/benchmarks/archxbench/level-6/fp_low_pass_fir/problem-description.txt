@@ -1,0 +1,23 @@
+Title: Floating‐Point Low‐Pass FIR Filter — Streaming DSP Pipeline
+
+Objective:
+Design a parameterizable streaming hardware accelerator that performs low‐pass finite-impulse-response (FIR) filtering on a continuous stream of 32‐bit IEEE‐754 single‐precision floating‐point samples. After the pipeline is filled, the core must produce one filtered output per cycle.
+
+Background:
+Low‐pass FIR filters are fundamental in digital signal processing for removing high‐frequency components (e.g., anti‐aliasing prior to down‐sampling). Implementing a floating‐point FIR in hardware allows wide dynamic range and easier coefficient scaling compared to fixed‐point.
+
+Design Constraints:
+- Input: 32‐bit IEEE‐754 values (hex‐encoded) one sample per clock with valid handshake.
+- Filter length: odd number of taps, configurable from 15 to 127.
+- Coefficients: 32‐bit IEEE‐754 floating‐point, stored in on‐chip ROM or loaded at runtime.
+- Throughput: 1 sample/clock after latency (taps − 1) + MAC pipeline depth.
+- Edge handling: implicit zero‐extension (zero padding).
+- Arithmetic: floating‐point adders and multipliers, pipelined to sustain throughput.
+- Precision: IEEE‐754 single‐precision throughout.
+- Handshaking: valid_in/valid_out signals, no back‐pressure (assume free‐running stream).
+
+Performance Expectation:
+After an initial delay of (TAP_CNT−1) cycles plus internal multiplier‐adder pipeline depths, the module must accept a new floating‐point sample each cycle and produce one floating‐point result each cycle.
+
+Deliverables:
+- Verilog module `fp_lowpass_fir_streaming` implementing the low‐pass FIR.

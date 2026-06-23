@@ -205,6 +205,10 @@ def simulate(
                 src = os.path.join(data_dir, sub)
                 if os.path.isdir(src):
                     shutil.copytree(src, os.path.join(tmp, sub))
+            # Copy .mem files from benchmark root (needed by some L6 testbenches)
+            for f in os.listdir(data_dir):
+                if f.endswith(".mem"):
+                    shutil.copy2(os.path.join(data_dir, f), os.path.join(tmp, f))
             dst_out = os.path.join(tmp, "outputs")
             if not os.path.isdir(dst_out):
                 os.makedirs(dst_out, exist_ok=True)

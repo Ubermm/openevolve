@@ -7,11 +7,11 @@
 #       --designs booth_multiplier --conditions tdes_full single_agent pass5
 
 tdes:
-  pop_size: 3
-  max_generations: 3
+  pop_size: 5
+  max_generations: 6
   window_size: 3
   diff_based: false
-  suite_timeout: 90
+  suite_timeout: 120
   synth_target: ice40
   output_dir: tdes_fpga_results/runs
   random_seed: 42
@@ -24,5 +24,5 @@ llm:
   timeout: 240
   retries: 2
   models:
-    - name: "claude-opus-4-6"
+    - name: "claude-sonnet-4-6"
       weight: 1.0

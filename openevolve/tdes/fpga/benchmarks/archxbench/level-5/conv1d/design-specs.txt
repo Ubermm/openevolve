@@ -1,0 +1,42 @@
+Design Name: conv1d_streaming
+Module Name: conv1d
+
+Inputs:
+- clk                         // Clock signal
+- rst                         // Synchronous reset (active-high)
+- valid_in                    // Input-sample valid
+- data_in[DATA_W-1:0]         // Serial input sample stream
+
+Outputs:
+- valid_out                   // Output-sample valid (asserts same cycle as valid_in)
+- data_out[DATA_W+GAIN_W-1:0] // Convolved sample (extended width)
+
+Parameters:
+- DATA_W      = 8                     // Bit width of input sample
+- KERNEL_SIZE = 5                     // Kernel length (fixed at 5)
+- GAIN_W      = 4                     // Right-shift for normalization (divide by 2^GAIN_W = 16)
+
+Design Signature:
+
+module conv1d #(
+    parameter DATA_W      = 8,
+    parameter KERNEL_SIZE = 5,
+    parameter GAIN_W      = 4
+) (
+    input                       clk,
+    input                       rst,
+    input                       valid_in,
+    input      [DATA_W-1:0]     data_in,
+    output                      valid_out,
+    output     [DATA_W+GAIN_W-1:0] data_out
+);
+
+Design Notes:
+- Hardcode the 5-tap kernel coefficients as [2, 8, 12, 8, 2] inside the module.
+- Use a shift-register tap chain of length KERNEL_SIZE to form the sliding window.
+- Multiply-accumulate: for each valid input, compute
+    MAC = kernel[0]*x[n] + kernel[1]*x[n-1] + ... + kernel[4]*x[n-4]
+  where x[m] = 0 for m < 0.
+- Output: data_out = MAC >> GAIN_W (right-shift by 4, i.e., integer division by 16).
+- valid_out must assert on the same clock cycle as valid_in — there is no pipeline
+  fill delay. The first output corresponds to kernel[0]*data_in[0] >> GAIN_W.

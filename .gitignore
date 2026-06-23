@@ -88,3 +88,11 @@ problems
 # TDES-MAE: results + CIFAR cache (not vendored)
 tdes_mae_results*/
 openevolve/tdes/mae/data/
+
+# EC2 credentials and instance config
+*.pem
+ec2_instance.json
+
+# L5/L6 probe outputs (not formal results)
+tdes_l5_*/
+tdes_l6_*/

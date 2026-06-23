@@ -2928,18 +2928,18 @@
     "llm_calls": 29,
     "error": "final compile failed",
     "decomp_modules": [
-      "poly_eval_cubic_fixed",
-      "fixed_div_newton_step",
-      "convergence_check_fixed",
-      "root_verify_fixed"
+      "nr_fixed_poly_eval_cubic",
+      "nr_fixed_divide",
+      "nr_newton_update",
+      "nr_root_verifier"
     ],
     "module_solve_rounds": {},
     "design": "newton_raphson_polynomial",
     "model": "gpt-5.5",
     "seed": 1024,
-    "wall_seconds": 2501.0,
-    "total_input_tokens": 247290,
-    "total_output_tokens": 111417
+    "wall_seconds": 1707.2,
+    "total_input_tokens": 267774,
+    "total_output_tokens": 111822
   },
   "newton_raphson_sqrt__C4i__sonnet-4-6__42": {
     "condition": "C4i",
@@ -5864,26 +5864,36 @@
     "llm_calls": 28,
     "error": "final compile failed",
     "decomp_modules": [
-      "coeff_rom",
-      "mult",
-      "accumulator"
+      "comb_mul",
+      "comb_sum",
+      "comb_round"
     ],
     "module_solve_rounds": {},
     "design": "band_pass_fir",
     "model": "o4-mini",
     "seed": 42,
-    "wall_seconds": 451.7,
-    "total_input_tokens": 342343,
-    "total_output_tokens": 64730
+    "wall_seconds": 1495.0,
+    "total_input_tokens": 338201,
+    "total_output_tokens": 60787
   },
   "band_pass_fir__C4i__o4-mini__456": {
-    "error": "Decomposition failed after 3 attempts: /tmp/tdes_fpga_11m42ypr/coeff_mem.v:9: error: localparam must have a value.\n/tmp/tdes_fpga_11m42ypr/coeff_mem.v:9: syntax error\n/tmp/tdes_fpga_11m42ypr/coeff_mem.v:21: error: Invalid module item.",
+    "condition": "C4i",
+    "llm_calls": 28,
+    "best_passes": 2,
+    "total_tests": 1001,
+    "solved": false,
+    "decomp_modules": [
+      "coeff_rom",
+      "multiply_unit",
+      "shift15"
+    ],
+    "module_solve_rounds": {},
     "design": "band_pass_fir",
     "model": "o4-mini",
     "seed": 456,
-    "wall_seconds": 143.6,
-    "total_input_tokens": 86579,
-    "total_output_tokens": 24787
+    "wall_seconds": 710.0,
+    "total_input_tokens": 376196,
+    "total_output_tokens": 91240
   },
   "band_pass_fir__C4i__o4-mini__789": {
     "condition": "C4i",

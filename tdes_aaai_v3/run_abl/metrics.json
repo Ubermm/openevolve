@@ -1569,21 +1569,23 @@
   },
   "gradient_descent__C4i-noStudy__gpt-5.5__1024": {
     "condition": "C4i-noStudy",
+    "llm_calls": 29,
+    "best_passes": 0,
+    "total_tests": 0,
     "solved": false,
-    "llm_calls": 28,
-    "error": "final compile failed",
     "decomp_modules": [
-      "gd_derivative",
-      "gd_scaled_step",
-      "gd_update"
+      "gd_poly_derivative",
+      "gd_poly_scale",
+      "gd_poly_update",
+      "gd_poly_output"
     ],
     "module_solve_rounds": {},
     "design": "gradient_descent",
     "model": "gpt-5.5",
     "seed": 1024,
-    "wall_seconds": 3012.8,
-    "total_input_tokens": 227088,
-    "total_output_tokens": 92942
+    "wall_seconds": 3466.7,
+    "total_input_tokens": 186440,
+    "total_output_tokens": 112789
   },
   "gradient_descent__C4i-stateless__gpt-5.5__42": {
     "condition": "C4i-stateless",
@@ -1622,5 +1624,604 @@
     "wall_seconds": 3486.8,
     "total_input_tokens": 45346,
     "total_output_tokens": 111691
+  },
+  "gradient_descent__C4i-stateless__gpt-5.5__456": {
+    "condition": "C4i-stateless",
+    "llm_calls": 29,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_derivative",
+      "gd_step",
+      "gd_update",
+      "gd_output_cast"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 3273.0,
+    "total_input_tokens": 46685,
+    "total_output_tokens": 117882
+  },
+  "gradient_descent__C4i-stateless__gpt-5.5__789": {
+    "condition": "C4i-stateless",
+    "llm_calls": 29,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_poly_derivative",
+      "gd_poly_step_scale",
+      "gd_poly_update",
+      "gd_poly_abs_converged"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 3185.8,
+    "total_input_tokens": 46439,
+    "total_output_tokens": 114801
+  },
+  "gradient_descent__C4i-stateless__gpt-5.5__1024": {
+    "condition": "C4i-stateless",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_derivative_calc",
+      "gd_step_calc",
+      "gd_update_calc"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 3146.4,
+    "total_input_tokens": 45719,
+    "total_output_tokens": 108555
+  },
+  "gradient_descent__C4i-rawFail__gpt-5.5__42": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 29,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_derivative_calc",
+      "gd_step_calc",
+      "gd_update_calc",
+      "gd_iter_done_check"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 2807.8,
+    "total_input_tokens": 121211,
+    "total_output_tokens": 83653
+  },
+  "gradient_descent__C4i-rawFail__gpt-5.5__123": {
+    "condition": "C4i-rawFail",
+    "solved": false,
+    "llm_calls": 26,
+    "error": "final compile failed",
+    "decomp_modules": [
+      "gd_sign_extend",
+      "gd_gradient_term",
+      "gd_add_b",
+      "gd_scale_product",
+      "gd_update_x"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 2154.8,
+    "total_input_tokens": 81888,
+    "total_output_tokens": 52485
+  },
+  "gradient_descent__C4i-rawFail__gpt-5.5__456": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_derivative",
+      "gd_step",
+      "gd_update"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 3096.0,
+    "total_input_tokens": 154160,
+    "total_output_tokens": 80086
+  },
+  "gradient_descent__C4i-rawFail__gpt-5.5__789": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_poly_derivative",
+      "gd_poly_step",
+      "gd_poly_update"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 3033.0,
+    "total_input_tokens": 145690,
+    "total_output_tokens": 74168
+  },
+  "gradient_descent__C4i-rawFail__gpt-5.5__1024": {
+    "condition": "C4i-rawFail",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_derivative_calc",
+      "gd_step_calc",
+      "gd_update_calc"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 3010.5,
+    "total_input_tokens": 156254,
+    "total_output_tokens": 86329
+  },
+  "gradient_descent__C4i-noRef__gpt-5.5__42": {
+    "condition": "C4i-noRef",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_derivative_fixed",
+      "gd_step_fixed",
+      "gd_update_fixed"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 3062.4,
+    "total_input_tokens": 219254,
+    "total_output_tokens": 105482
+  },
+  "gradient_descent__C4i-noRef__gpt-5.5__123": {
+    "condition": "C4i-noRef",
+    "solved": false,
+    "llm_calls": 28,
+    "error": "final compile failed",
+    "decomp_modules": [
+      "gd_derivative",
+      "gd_step_scale",
+      "gd_update"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 2909.6,
+    "total_input_tokens": 220044,
+    "total_output_tokens": 102232
+  },
+  "gradient_descent__C4i-noRef__gpt-5.5__456": {
+    "condition": "C4i-noRef",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "gd_poly_derivative",
+      "gd_poly_step",
+      "gd_poly_update"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 3687.8,
+    "total_input_tokens": 228062,
+    "total_output_tokens": 119172
+  },
+  "gradient_descent__C4i-noRef__gpt-5.5__789": {
+    "condition": "C4i-noRef",
+    "solved": false,
+    "llm_calls": 28,
+    "error": "final compile failed",
+    "decomp_modules": [
+      "gd_derivative_calc",
+      "gd_step_calc",
+      "gd_update_calc"
+    ],
+    "module_solve_rounds": {},
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 3457.0,
+    "total_input_tokens": 203705,
+    "total_output_tokens": 115137
+  },
+  "gradient_descent__C4i-noRef__gpt-5.5__1024": {
+    "error": "Connection error.",
+    "design": "gradient_descent",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-noStudy__gpt-5.5__42": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-noStudy__gpt-5.5__123": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-noStudy__gpt-5.5__456": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-noStudy__gpt-5.5__789": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-noStudy__gpt-5.5__1024": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 31.3,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-stateless__gpt-5.5__42": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-stateless__gpt-5.5__123": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 31.3,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-stateless__gpt-5.5__456": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 31.3,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-stateless__gpt-5.5__789": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 31.3,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-stateless__gpt-5.5__1024": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 31.6,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-rawFail__gpt-5.5__42": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-rawFail__gpt-5.5__123": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-rawFail__gpt-5.5__456": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-rawFail__gpt-5.5__789": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 31.3,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-rawFail__gpt-5.5__1024": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-noRef__gpt-5.5__42": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-noRef__gpt-5.5__123": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-noRef__gpt-5.5__456": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-noRef__gpt-5.5__789": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_polynomial__C4i-noRef__gpt-5.5__1024": {
+    "error": "Connection error.",
+    "design": "newton_raphson_polynomial",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 31.3,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-noStudy__gpt-5.5__42": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 31.6,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-noStudy__gpt-5.5__123": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 31.3,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-noStudy__gpt-5.5__456": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-noStudy__gpt-5.5__789": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-noStudy__gpt-5.5__1024": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-stateless__gpt-5.5__42": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-stateless__gpt-5.5__123": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-stateless__gpt-5.5__456": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-stateless__gpt-5.5__789": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-stateless__gpt-5.5__1024": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-rawFail__gpt-5.5__42": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 31.3,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-rawFail__gpt-5.5__123": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 31.3,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-rawFail__gpt-5.5__456": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 31.3,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-rawFail__gpt-5.5__789": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-rawFail__gpt-5.5__1024": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 31.6,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-noRef__gpt-5.5__42": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-noRef__gpt-5.5__123": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 123,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-noRef__gpt-5.5__456": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 456,
+    "wall_seconds": 31.5,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-noRef__gpt-5.5__789": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 789,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+  "newton_raphson_sqrt__C4i-noRef__gpt-5.5__1024": {
+    "error": "Connection error.",
+    "design": "newton_raphson_sqrt",
+    "model": "gpt-5.5",
+    "seed": 1024,
+    "wall_seconds": 31.4,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
   }
 }

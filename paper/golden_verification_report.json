@@ -1,0 +1,458 @@
+{
+  "timestamp": "2026-06-23T09:59:45.891051Z",
+  "designs": {
+    "conv1d__C4tl": {
+      "design": "conv1d",
+      "level": 5,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/conv1d/C4tl/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": false,
+      "golden_total": 11,
+      "golden_correct": 0,
+      "golden_mismatches": 11,
+      "sim_stdout_tail": "[INFO] out[13] = 0\n[INFO] out[14] = 0\n[INFO] out[15] = 0\n[PASS] conv1d test completed\n/tmp/tmpavwhgr7w/tb.v:83: $finish called at 185000 (1ps)",
+      "errors": [],
+      "mismatch_samples": [
+        {
+          "idx": 0,
+          "golden": "16",
+          "dut": "0"
+        },
+        {
+          "idx": 1,
+          "golden": "86",
+          "dut": "0"
+        },
+        {
+          "idx": 2,
+          "golden": "211",
+          "dut": "0"
+        },
+        {
+          "idx": 3,
+          "golden": "336",
+          "dut": "0"
+        },
+        {
+          "idx": 4,
+          "golden": "422",
+          "dut": "0"
+        },
+        {
+          "idx": 5,
+          "golden": "473",
+          "dut": "0"
+        },
+        {
+          "idx": 6,
+          "golden": "490",
+          "dut": "0"
+        },
+        {
+          "idx": 7,
+          "golden": "473",
+          "dut": "0"
+        },
+        {
+          "idx": 8,
+          "golden": "422",
+          "dut": "0"
+        },
+        {
+          "idx": 9,
+          "golden": "346",
+          "dut": "0"
+        }
+      ],
+      "verilog_files": 5,
+      "dut_output_bytes": 58,
+      "dut_len": 11,
+      "golden_len": 16
+    },
+    "conv1d__C4i": {
+      "design": "conv1d",
+      "level": 5,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/conv1d/C4i/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": null,
+      "golden_total": 0,
+      "golden_correct": 0,
+      "golden_mismatches": 0,
+      "sim_stdout_tail": "[INFO] out[13] = x\n[INFO] out[14] = x\n[INFO] out[15] = x\n[PASS] conv1d test completed\n/tmp/tmp69do7fno/tb.v:83: $finish called at 185000 (1ps)",
+      "errors": [
+        "WARNING: 'always @* found no sensitivities' \u2014 may cause all-x outputs",
+        "JSON parse error: Expecting value: line 2 column 3 (char 4)"
+      ],
+      "mismatch_samples": [],
+      "verilog_files": 5,
+      "dut_output_bytes": 53
+    },
+    "conv2d__C4tl": {
+      "design": "conv2d",
+      "level": 5,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/conv2d/C4tl/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": null,
+      "golden_total": 0,
+      "golden_correct": 0,
+      "golden_mismatches": 0,
+      "sim_stdout_tail": "[INFO] out[4093] = x\n[INFO] out[4094] = x\n[INFO] out[4095] = x\n[PASS] conv2d test completed\n/tmp/tmpp4mfmi_t/tb.v:74: $finish called at 40985000 (1ps)",
+      "errors": [
+        "WARNING: 'always @* found no sensitivities' \u2014 may cause all-x outputs",
+        "JSON parse error: Expecting value: line 2 column 3 (char 4)"
+      ],
+      "mismatch_samples": [],
+      "verilog_files": 6,
+      "dut_output_bytes": 19838
+    },
+    "conv2d__C4i": {
+      "design": "conv2d",
+      "level": 5,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/conv2d/C4i/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": null,
+      "golden_total": 0,
+      "golden_correct": 0,
+      "golden_mismatches": 0,
+      "sim_stdout_tail": "[INFO] out[4093] = x\n[INFO] out[4094] = x\n[INFO] out[4095] = x\n[PASS] conv2d test completed\n/tmp/tmpgwuz0v3q/tb.v:74: $finish called at 40985000 (1ps)",
+      "errors": [
+        "JSON parse error: Expecting value: line 2 column 3 (char 4)"
+      ],
+      "mismatch_samples": [],
+      "verilog_files": 6,
+      "dut_output_bytes": 20148
+    },
+    "dct_idct_8pt_pipelined__C4tl": {
+      "design": "dct_idct_8pt_pipelined",
+      "level": 5,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/dct_idct_8pt_pipelined/C4tl/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": false,
+      "golden_match": null,
+      "golden_total": 0,
+      "golden_correct": 0,
+      "golden_mismatches": 0,
+      "sim_stdout_tail": "[PASS] DCT/IDCT 1D-8 pipeline test complete\n/tmp/tmpsp97ttrm/tb.v:130: $finish called at 395000 (1ps)",
+      "errors": [
+        "No golden_output.json in benchmark"
+      ],
+      "mismatch_samples": [],
+      "verilog_files": 5,
+      "dut_output_bytes": 72,
+      "stdout_passes": 1,
+      "stdout_fails": 0
+    },
+    "dct_idct_8pt_pipelined__C4i": {
+      "design": "dct_idct_8pt_pipelined",
+      "level": 5,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/dct_idct_8pt_pipelined/C4i/42/verilog",
+      "compiled": true,
+      "simulated": false,
+      "dut_output_written": false,
+      "golden_exists": false,
+      "golden_match": null,
+      "golden_total": 0,
+      "golden_correct": 0,
+      "golden_mismatches": 0,
+      "sim_stdout_tail": "",
+      "errors": [
+        "Simulation timed out (120s)"
+      ],
+      "mismatch_samples": [],
+      "verilog_files": 4
+    },
+    "harris_corner_detection__C4tl": {
+      "design": "harris_corner_detection",
+      "level": 5,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/harris_corner_detection/C4tl/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": null,
+      "golden_total": 0,
+      "golden_correct": 0,
+      "golden_mismatches": 0,
+      "sim_stdout_tail": "[PASS] harris_corner test completed\n/tmp/tmpiudurree/tb.v:95: $finish called at 655385000 (1ps)",
+      "errors": [
+        "JSON parse error: Expecting value: line 16389 column 3 (char 81939)"
+      ],
+      "mismatch_samples": [],
+      "verilog_files": 6,
+      "dut_output_bytes": 327678
+    },
+    "harris_corner_detection__C4i": {
+      "design": "harris_corner_detection",
+      "level": 5,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/harris_corner_detection/C4i/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": null,
+      "golden_total": 0,
+      "golden_correct": 0,
+      "golden_mismatches": 0,
+      "sim_stdout_tail": "[PASS] harris_corner test completed\n/tmp/tmpbtroteym/tb.v:95: $finish called at 655385000 (1ps)",
+      "errors": [
+        "JSON parse error: Expecting value: line 16391 column 3 (char 81949)"
+      ],
+      "mismatch_samples": [],
+      "verilog_files": 6,
+      "dut_output_bytes": 327683
+    },
+    "unsharp_mask__C4tl": {
+      "design": "unsharp_mask",
+      "level": 5,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/unsharp_mask/C4tl/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": false,
+      "golden_total": 65535,
+      "golden_correct": 62256,
+      "golden_mismatches": 3279,
+      "sim_stdout_tail": "[PASS] unsharp_mask completed\n/tmp/tmp6axqgtkf/tb.v:69: $finish called at 655385000 (1ps)",
+      "errors": [],
+      "mismatch_samples": [
+        {
+          "idx": 0,
+          "golden": "192",
+          "dut": "168"
+        },
+        {
+          "idx": 1,
+          "golden": "184",
+          "dut": "160"
+        },
+        {
+          "idx": 2,
+          "golden": "168",
+          "dut": "160"
+        },
+        {
+          "idx": 255,
+          "golden": "160",
+          "dut": "168"
+        },
+        {
+          "idx": 256,
+          "golden": "160",
+          "dut": "120"
+        },
+        {
+          "idx": 257,
+          "golden": "144",
+          "dut": "96"
+        },
+        {
+          "idx": 258,
+          "golden": "112",
+          "dut": "96"
+        },
+        {
+          "idx": 511,
+          "golden": "96",
+          "dut": "160"
+        },
+        {
+          "idx": 513,
+          "golden": "88",
+          "dut": "64"
+        },
+        {
+          "idx": 514,
+          "golden": "72",
+          "dut": "64"
+        }
+      ],
+      "verilog_files": 5,
+      "dut_output_bytes": 411614,
+      "dut_len": 65535,
+      "golden_len": 65536
+    },
+    "unsharp_mask__C4i": {
+      "design": "unsharp_mask",
+      "level": 5,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/unsharp_mask/C4i/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": false,
+      "golden_total": 65535,
+      "golden_correct": 62765,
+      "golden_mismatches": 2770,
+      "sim_stdout_tail": "[PASS] unsharp_mask completed\n/tmp/tmpr9ytn8zl/tb.v:69: $finish called at 655385000 (1ps)",
+      "errors": [],
+      "mismatch_samples": [
+        {
+          "idx": 0,
+          "golden": "192",
+          "dut": "168"
+        },
+        {
+          "idx": 1,
+          "golden": "184",
+          "dut": "160"
+        },
+        {
+          "idx": 2,
+          "golden": "168",
+          "dut": "160"
+        },
+        {
+          "idx": 255,
+          "golden": "160",
+          "dut": "168"
+        },
+        {
+          "idx": 256,
+          "golden": "160",
+          "dut": "120"
+        },
+        {
+          "idx": 257,
+          "golden": "144",
+          "dut": "96"
+        },
+        {
+          "idx": 258,
+          "golden": "112",
+          "dut": "96"
+        },
+        {
+          "idx": 511,
+          "golden": "96",
+          "dut": "160"
+        },
+        {
+          "idx": 513,
+          "golden": "88",
+          "dut": "64"
+        },
+        {
+          "idx": 514,
+          "golden": "72",
+          "dut": "64"
+        }
+      ],
+      "verilog_files": 6,
+      "dut_output_bytes": 411566,
+      "dut_len": 65535,
+      "golden_len": 65536
+    },
+    "aes_encryption__C4tl": {
+      "design": "aes_encryption",
+      "level": 6,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_l6_quick/aes_encryption/C4tl/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": true,
+      "golden_total": 8,
+      "golden_correct": 8,
+      "golden_mismatches": 0,
+      "sim_stdout_tail": "[PASS] AES-128 encryption vectors done\n/tmp/tmpufrzmvgj/tb.v:88: $finish called at 975000 (1ps)",
+      "errors": [],
+      "mismatch_samples": [],
+      "verilog_files": 5,
+      "dut_output_bytes": 307,
+      "dut_len": 8,
+      "golden_len": 8
+    },
+    "aes_encryption__C4i": {
+      "design": "aes_encryption",
+      "level": 6,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_aaai_v3/run_l5l6/aes_encryption/C4i/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": true,
+      "golden_total": 8,
+      "golden_correct": 8,
+      "golden_mismatches": 0,
+      "sim_stdout_tail": "[PASS] AES-128 encryption vectors done\n/tmp/tmpn7jc8m48/tb.v:88: $finish called at 975000 (1ps)",
+      "errors": [],
+      "mismatch_samples": [],
+      "verilog_files": 7,
+      "dut_output_bytes": 307,
+      "dut_len": 8,
+      "golden_len": 8
+    },
+    "aes_decryption__C4tl": {
+      "design": "aes_decryption",
+      "level": 6,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_l6_quick/aes_decryption/C4tl/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": true,
+      "golden_total": 8,
+      "golden_correct": 8,
+      "golden_mismatches": 0,
+      "sim_stdout_tail": "[PASS] AES\u2010128 decryption vectors done\n/tmp/tmp9x2whgbe/tb.v:59: $finish called at 175000 (1ps)",
+      "errors": [],
+      "mismatch_samples": [],
+      "verilog_files": 4,
+      "dut_output_bytes": 307,
+      "dut_len": 8,
+      "golden_len": 8
+    },
+    "fft_streaming_64pt__C4tl": {
+      "design": "fft_streaming_64pt",
+      "level": 6,
+      "verilog_dir": "/mnt/c/Users/halag/Primera/Novo/openevolve/tdes_l6_quick/fft_streaming_64pt/C4tl/42/verilog",
+      "compiled": true,
+      "simulated": true,
+      "dut_output_written": true,
+      "golden_exists": true,
+      "golden_match": false,
+      "golden_total": 2,
+      "golden_correct": 0,
+      "golden_mismatches": 2,
+      "sim_stdout_tail": "[PASS] fft64_streaming test completed\n/tmp/tmph4qwk1bu/tb.v:109: $finish called at 735000 (1ps)",
+      "errors": [],
+      "mismatch_samples": [
+        {
+          "idx": 0,
+          "golden": "[1.88983135054943, 2.0232904142411803, 2.6559919686148796, 13.370611079040785, -0.02096475669091097, 1.4087974444168683, 2.9929500902119215, 9.87483017772292, -10.454483228220347, -3.6433838189680654, -2.276047165502807, -1.6910130580076375, -1.3682919591553606, -1.1653329252673847, -1.0270222921198644, -0.9275254816534697, -0.8531210452400987, -0.7958510974664963, -0.7507888790655632, -0.7147267674947968, -0.6854916012652341, -0.6615631611870985, -0.6418500207435002, -0.6255519949434301, -0.6120726188120091, -0.6009617504000246, -0.5918769773941857, -0.5845571442211398, -0.578803928333643, -0.5744689206873694, -0.5714445886237596, -0.5696580772834051, -0.5690671815513425, -0.569658077283405, -0.5714445886237596, -0.5744689206873694, -0.5788039283336428, -0.584557144221139, -0.5918769773941857, -0.6009617504000238, -0.6120726188120091, -0.6255519949434301, -0.6418500207435003, -0.6615631611870996, -0.6854916012652338, -0.7147267674947981, -0.750788879065563, -0.7958510974664958, -0.8531210452400987, -0.9275254816534695, -1.0270222921198644, -1.165332925267387, -1.3682919591553613, -1.6910130580076395, -2.276047165502807, -3.6433838189680654, -10.454483228220347, 9.874830177722922, 2.9929500902119215, 1.4087974444168698, -0.020964756690911523, 13.370611079040787, 2.6559919686148796, 2.0232904142411807]",
+          "dut": "{'real': 0, 'imag': 0}"
+        },
+        {
+          "idx": 1,
+          "golden": "[0.0, -0.8274923438769682, -2.510071046275313, -28.239623147154383, 4.5978620962718635, 2.3347263092315984, 1.612192205056334, 1.2440232194717038, 1.0154376615316005, 0.8569756506922149, 0.7391059471734808, 0.6470226886342447, 0.5724286711495552, 0.5102844631006204, 0.45733681450260655, 0.41138255666765045, 0.3708708175833182, 0.3346743806721403, 0.30195146265947337, 0.2720585603470709, 0.2444934993044912, 0.21885705442633174, 0.19482637893664684, 0.17213616112952346, 0.1505649659872027, 0.12992513099538194, 0.11005514295558061, 0.09081377232802712, 0.07207546605529513, 0.05372664655480541, 0.03566266188182188, 0.01778519707982007, 0.0, -0.01778519707982007, -0.0356626618818221, -0.05372664655480719, -0.07207546605529469, -0.09081377232802645, -0.11005514295558061, -0.12992513099538205, -0.1505649659872027, -0.172136161129523, -0.19482637893664678, -0.21885705442633235, -0.2444934993044911, -0.2720585603470703, -0.30195146265947337, -0.3346743806721403, -0.3708708175833182, -0.4113825566676502, -0.4573368145026063, -0.5102844631006209, -0.5724286711495552, -0.6470226886342441, -0.7391059471734807, -0.8569756506922156, -1.0154376615316005, -1.244023219471704, -1.612192205056334, -2.334726309231599, -4.597862096271864, 28.239623147154383, 2.5100710462753124, 0.8274923438769685]",
+          "dut": "{'real': 0, 'imag': 0}"
+        }
+      ],
+      "verilog_files": 6,
+      "dut_output_bytes": 1641,
+      "dut_len": 63,
+      "golden_len": 2
+    }
+  },
+  "summary": {
+    "verified": 3,
+    "failed": 4,
+    "no_golden": 7,
+    "not_found": 2
+  }
+}

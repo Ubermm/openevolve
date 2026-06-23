@@ -785,10 +785,10 @@ def run_C4i(
 # ---------------------------------------------------------------------------
 
 _C4TL_SYSTEM = (
-    "You are an expert digital design engineer fixing a specific Verilog "
-    "sub-module. You have been told exactly which module is causing system "
-    "test failures. Study the failing traces, compare with the reference "
-    "implementation, and fix the root cause.\n\n"
+    "You are an expert hardware verification and design engineer. "
+    "You always reason before you code: trace signal values through the "
+    "datapath, compute expected intermediate results by hand, and identify "
+    "the exact root cause before writing any fix.\n\n"
     "When writing Verilog, wrap it in "
     "<file name=\"{module}.v\" type=\"implementation\">...</file> tags."
 )
@@ -917,9 +917,10 @@ def run_C4tl(
             logger.warning("C4tl %s initial: %s", sub.name, e)
             modules[sub.name] = sub.reference_source
 
-    # Step 3-5: Test → localize → repair loop
+    # Step 3-5: Test → localize → repair loop (with golden comparison for L5/L6)
     max_rounds = 28 - len(decomp.sub_modules)
     best_passes, best_total = 0, 0
+    golden_correct, golden_total_count = 0, 0
 
     for rnd in range(max_rounds):
         # Step 3: Full system test
@@ -927,19 +928,71 @@ def run_C4tl(
         full_modules[top_name] = decomp.top_source
         sim = simulate(full_modules, testbench, timeout=60, data_dir=data_dir)
 
+        golden_feedback = ""
         if sim.compiled:
             p, t = _count_tb_passes(sim.stdout)
             if p > best_passes:
                 best_passes, best_total = p, t
-            if p == t and t > 0:
+
+            # Golden comparison for L5/L6 (file-based testbenches that always say PASS)
+            if data_dir and p == t and t > 0:
+                import tempfile as _tf
+                # Re-simulate in a persistent dir to get dut_output.json
+                with _tf.TemporaryDirectory() as gtmp:
+                    import shutil
+                    for sub_d in ("inputs", "outputs"):
+                        src = os.path.join(data_dir, sub_d)
+                        if os.path.isdir(src):
+                            shutil.copytree(src, os.path.join(gtmp, sub_d))
+                    os.makedirs(os.path.join(gtmp, "outputs"), exist_ok=True)
+                    for name, src in full_modules.items():
+                        with open(os.path.join(gtmp, f"{name}.v"), "w") as f:
+                            f.write(src)
+                    tb_file = os.path.join(gtmp, "tb.v")
+                    with open(tb_file, "w") as f:
+                        f.write(testbench)
+                    srcs = [os.path.join(gtmp, f) for f in os.listdir(gtmp) if f.endswith(".v")]
+                    import subprocess
+                    subprocess.run(["iverilog", "-g2012", "-o", os.path.join(gtmp, "sim.vvp")] + srcs,
+                                   capture_output=True, text=True, encoding="utf-8", errors="replace")
+                    subprocess.run(["vvp", os.path.join(gtmp, "sim.vvp")],
+                                   capture_output=True, text=True, cwd=gtmp, timeout=120,
+                                   encoding="utf-8", errors="replace")
+
+                    gp, gt, gdetail = _run_golden_comparison(data_dir, gtmp)
+                    golden_correct, golden_total_count = gp, gt
+                    if gt > 0 and gp == gt:
+                        logger.info("C4tl GOLDEN VERIFIED at round %d (%d/%d)", rnd + 1, gp, gt)
+                        best_passes, best_total = gp, gt
+                        break
+                    elif gt > 0:
+                        golden_feedback = (
+                            f"\n\n## Golden Output Comparison ({gp}/{gt} correct)\n\n"
+                            f"The testbench says PASS but the output does NOT match the golden reference.\n"
+                            f"```\n{gdetail}\n```\n"
+                        )
+                        logger.info("C4tl round %d: TB says PASS but golden %d/%d", rnd + 1, gp, gt)
+                        p, t = gp, gt  # Use golden scores for localization
+                        best_passes = max(best_passes, gp)
+                        best_total = gt
+            elif p == t and t > 0 and not data_dir:
                 logger.info("C4tl SOLVED at round %d (%d/%d)", rnd + 1, p, t)
                 break
         else:
             p, t = 0, 0
 
         # Check for Icarus sensitivity warning
+        icarus_warning = ""
         if _has_icarus_sensitivity_warning(sim.stderr):
-            logger.warning("C4tl: Icarus 'no sensitivities' warning — may cause all-x")
+            icarus_warning = (
+                "\n\n## Icarus Verilog Warning\n\n"
+                "**`always @* found no sensitivities`** was detected during compilation. "
+                "This means a combinational block has no inputs in its sensitivity list, "
+                "causing all outputs to be X (undefined). Common cause: coefficient ROMs "
+                "using `always @*` with hardcoded values. Fix: use `assign` statements "
+                "or `always @(address)` with explicit signals.\n"
+            )
+            logger.warning("C4tl: Icarus 'no sensitivities' warning — feeding back to LLM")
 
         # Step 4: Trace-lift to localize fault
         culprit, scores = _localize_fault(
@@ -947,8 +1000,6 @@ def run_C4tl(
         )
 
         if culprit is None:
-            # Can't localize — repair the module with worst pass rate
-            # Fall back to sequential repair
             culprit = min(
                 (s.name for s in decomp.sub_modules),
                 key=lambda n: scores.get(n, (0, 0))[0],
@@ -959,7 +1010,7 @@ def run_C4tl(
             break
 
         logger.info("C4tl round %d: culprit=%s (scores: %s)", rnd + 1, culprit,
-                    {n: f"{p}/{t}" for n, (p, t) in scores.items()})
+                    {n: f"{sp}/{st}" for n, (sp, st) in scores.items()})
 
         # Step 5: Repair the culprit with targeted feedback
         fail_details = _parse_fail_details(sim.stdout) if sim.compiled else (
@@ -977,16 +1028,28 @@ def run_C4tl(
             f"identified **`{culprit}`** as the module causing failures.\n\n"
             f"### Per-Module Scores (each tested with reference for all others)\n\n"
             f"```\n{score_summary}\n```\n\n"
-            f"### System Test Failures\n\n```\n{fail_details}\n```\n\n"
+            f"### System Test Failures\n\n```\n{fail_details}\n```\n"
+            f"{golden_feedback}"
+            f"{icarus_warning}\n"
             f"### Current Implementation of `{culprit}`\n\n"
             f"```verilog\n{modules[culprit]}\n```\n\n"
             f"### Reference Implementation (oracle)\n\n"
             f"```verilog\n{culprit_sub.reference_source}\n```\n\n"
             f"### Design Specification\n\n{design_specs}\n\n"
-            f"## Task\n\n"
-            f"1. Compare your implementation with the reference to find the bug\n"
-            f"2. Fix **only** `{culprit}` — preserve exact module name and ports\n"
-            f"3. Provide the corrected implementation in "
+            f"## Task — Reason, then Fix\n\n"
+            f"You MUST follow this structure:\n\n"
+            f"### Step 1: Trace the datapath\n"
+            f"Pick the first failing test input. Trace the signal values through "
+            f"each pipeline stage of `{culprit}`, computing expected intermediate "
+            f"values by hand. Show your arithmetic.\n\n"
+            f"### Step 2: Identify the root cause\n"
+            f"Compare your traced values against the actual output. At which exact "
+            f"line does the computation diverge from the expected? Is it a bit-width "
+            f"issue, wrong indexing, incorrect truncation, missing sign extension, "
+            f"timing mismatch, or logic error?\n\n"
+            f"### Step 3: Fix\n"
+            f"Provide the corrected implementation of **only** `{culprit}` — "
+            f"preserve exact module name and ports. Wrap in "
             f"<file name=\"{culprit}.v\" type=\"implementation\">...</file> tags."
         )
 
@@ -1023,12 +1086,19 @@ def run_C4tl(
         }
 
     p, t = _count_tb_passes(sim.stdout)
-    solved = t > 0 and p == t
+    # For L5/L6 with golden comparison, use golden results as truth
+    if golden_total_count > 0:
+        solved = golden_correct == golden_total_count
+        best_passes = golden_correct
+        best_total = golden_total_count
+    else:
+        solved = t > 0 and p == t
     return {
         "condition": "C4tl", "llm_calls": total_calls,
-        "best_passes": p, "total_tests": t,
+        "best_passes": best_passes, "total_tests": best_total,
         "solved": solved, "decomp_modules": decomp.module_names,
         "ref_passes": ref_passes, "ref_total": ref_total,
+        "golden_correct": golden_correct, "golden_total": golden_total_count,
         "module_solve_rounds": module_solve_rounds,
         **_artifacts,
     }

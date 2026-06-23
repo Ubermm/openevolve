@@ -44,7 +44,11 @@ class PipelineResult:
 
 
 def read_benchmark(design_dir: str) -> Tuple[str, str, str]:
-    """Read the three ArchXBench benchmark files.
+    """Read ArchXBench benchmark files.
+
+    Returns (problem_desc, design_specs, testbench).
+    design_specs includes README.md content if present (L5/L6 have
+    kernel coefficients and constants there).
 
     Prefers ``tb_selfcheck.v`` (self-checking, inline [PASS]/[FAIL]) over the
     original testbench.  Falls back to ``tb.v`` or ``tb_<design>.v``.
@@ -69,9 +73,18 @@ def read_benchmark(design_dir: str) -> Tuple[str, str, str]:
     with open(tb_path, encoding="utf-8") as f:
         testbench = f.read()
 
+    design_specs = _read("design-specs.txt")
+
+    # Append README.md if present (L5/L6 have kernel coefficients there)
+    readme_path = os.path.join(design_dir, "README.md")
+    if os.path.exists(readme_path):
+        with open(readme_path, encoding="utf-8") as f:
+            readme = f.read()
+        design_specs += "\n\n## Additional Notes (README)\n\n" + readme
+
     return (
         _read("problem-description.txt"),
-        _read("design-specs.txt"),
+        design_specs,
         testbench,
     )
 

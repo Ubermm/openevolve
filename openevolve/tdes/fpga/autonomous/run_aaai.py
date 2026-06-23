@@ -89,17 +89,28 @@ _LEVEL_DESIGNS = {
         "fft_16pt_iterative", "ifft_16pt_iterative",
         "band_pass_fir", "high_pass_fir", "low_pass_fir",
     ],
+    "L5": [
+        "conv1d", "conv2d", "dct_idct_8pt_pipelined",
+        "harris_corner_detection", "systolic_gemm", "unsharp_mask",
+    ],
+    "L6": [
+        "aes_decryption", "aes_encryption", "conv_3d",
+        "fft_streaming_64pt", "fp_band_pass_fir", "fp_high_pass_fir",
+        "fp_low_pass_fir", "multich_conv2d", "quantized_matmul",
+    ],
 }
 
 _LEVEL_DIRS = {
     "L2": os.path.join(_ARCHX_ROOT, "level-2"),
     "L3": os.path.join(_ARCHX_ROOT, "level-3"),
     "L4": os.path.join(_ARCHX_ROOT, "level-4"),
+    "L5": os.path.join(_ARCHX_ROOT, "level-5"),
+    "L6": os.path.join(_ARCHX_ROOT, "level-6"),
 }
 
 ALL_DESIGNS = _LEVEL_DESIGNS["L4"]  # backwards compat
 
-ALL_CONDITIONS = ["C1", "C2", "C3", "C4", "C4i", "C4i-noStudy", "C4i-stateless", "C4i-rawFail", "C4i-noRef", "C5"]
+ALL_CONDITIONS = ["C1", "C2", "C3", "C4", "C4i", "C4i-noStudy", "C4i-stateless", "C4i-rawFail", "C4i-noRef", "C4tl", "C5"]
 
 def _prepare_data_dir(design_dir: str) -> Optional[str]:
     """Return design_dir if it contains inputs/ or outputs/ subdirectories."""
@@ -151,13 +162,69 @@ def _extract_verilog(text: str) -> Optional[str]:
 
 
 def _count_tb_passes(sim_output: str) -> Tuple[int, int]:
-    # Match all known testbench pass/fail formats:
-    #   [PASS], TDES_PASS:, ✓ PASS [...], Case N: PASS |, PASS., : PASS, --> PASS/FAIL
+    """Count PASS/FAIL from simulation output. Works for all testbench formats."""
     passes = len(re.findall(r'\bPASS\b', sim_output))
     fails = len(re.findall(r'\bFAIL\b', sim_output))
-    # Exclude "pass/fail" in comments/descriptions (lowercase or part of variable names)
-    # The \b word boundary + uppercase PASS/FAIL handles this naturally
     return passes, passes + fails
+
+
+def _has_icarus_sensitivity_warning(sim_stderr: str) -> bool:
+    """Detect 'always @* found no sensitivities' — causes all-x outputs."""
+    return "found no sensitivities" in (sim_stderr or "")
+
+
+def _run_golden_comparison(data_dir: str, sim_workdir: str) -> Tuple[int, int, str]:
+    """Run post-sim golden comparison for L5/L6 designs.
+
+    Compares outputs/dut_output.json against outputs/golden_output.json.
+    Returns (passes, total, detail_string).
+    """
+    import json as _json
+
+    dut_path = os.path.join(sim_workdir, "outputs", "dut_output.json")
+    golden_path = os.path.join(data_dir, "outputs", "golden_output.json")
+
+    if not os.path.exists(dut_path):
+        return 0, 1, "DUT output file not written"
+    if not os.path.exists(golden_path):
+        return 0, 1, "Golden output file not found"
+
+    try:
+        dut = _json.load(open(dut_path))
+        golden = _json.load(open(golden_path))
+    except Exception as e:
+        return 0, 1, f"JSON parse error: {e}"
+
+    # Flatten if nested
+    if isinstance(dut, dict):
+        dut = list(dut.values())
+    if isinstance(golden, dict):
+        golden = list(golden.values())
+    if isinstance(dut, list) and dut and isinstance(dut[0], list):
+        dut = [x for row in dut for x in row]
+    if isinstance(golden, list) and golden and isinstance(golden[0], list):
+        golden = [x for row in golden for x in row]
+
+    n = min(len(golden), len(dut))
+    if n == 0:
+        return 0, 1, "Empty output"
+
+    mismatches = []
+    for i in range(n):
+        try:
+            if abs(float(golden[i]) - float(dut[i])) > 1:
+                mismatches.append((i, golden[i], dut[i]))
+        except (TypeError, ValueError):
+            if golden[i] != dut[i]:
+                mismatches.append((i, golden[i], dut[i]))
+
+    passes = n - len(mismatches)
+    detail_lines = [f"FAIL idx={i}: ref={r} dut={d}" for i, r, d in mismatches[:10]]
+    if not mismatches:
+        detail = f"PASS All {n} samples match"
+    else:
+        detail = f"FAIL {len(mismatches)}/{n} mismatches\n" + "\n".join(detail_lines)
+    return passes, n, detail
 
 
 def _cell_key(design, condition, model, seed):
@@ -714,6 +781,260 @@ def run_C4i(
 
 
 # ---------------------------------------------------------------------------
+# C4tl: Trace-Lifted CEGIS — fault localization via reference-gating
+# ---------------------------------------------------------------------------
+
+_C4TL_SYSTEM = (
+    "You are an expert digital design engineer fixing a specific Verilog "
+    "sub-module. You have been told exactly which module is causing system "
+    "test failures. Study the failing traces, compare with the reference "
+    "implementation, and fix the root cause.\n\n"
+    "When writing Verilog, wrap it in "
+    "<file name=\"{module}.v\" type=\"implementation\">...</file> tags."
+)
+
+
+def _localize_fault(
+    top_name: str, decomp, modules: Dict[str, str],
+    testbench: str, data_dir: Optional[str],
+) -> Tuple[Optional[str], Dict[str, Tuple[int, int]]]:
+    """Trace-lift: swap each candidate with reference to find the culprit.
+
+    Returns (worst_module_name, {module: (passes, total)}).
+    """
+    scores = {}
+    for sub in decomp.sub_modules:
+        test_modules = dict(modules)
+        test_modules[top_name] = decomp.top_source
+        # Swap this module back to reference, keep others as candidates
+        for other in decomp.sub_modules:
+            if other.name == sub.name:
+                test_modules[other.name] = other.reference_source
+            # else keep candidate
+        sim = simulate(test_modules, testbench, timeout=60, data_dir=data_dir)
+        if sim.compiled:
+            p, t = _count_tb_passes(sim.stdout)
+            scores[sub.name] = (p, t)
+        else:
+            scores[sub.name] = (0, 0)
+
+    if not scores:
+        return None, scores
+
+    # The module whose reference-swap gives the BIGGEST improvement is the culprit
+    # (swapping the bad module with reference fixes the most tests)
+    # Equivalently: the module with the highest score when swapped out
+    best_swap = max(scores.items(), key=lambda x: x[1][0])
+    # But we want the module that's CAUSING failures, which is the one
+    # whose swap-to-reference helps the most
+    # If all scores are equal, pick the one with lowest absolute score
+    # when it's the candidate (need to test each as sole candidate too)
+
+    # Simpler: test each module as the ONLY candidate (all others reference)
+    # Already done above. The module with lowest score = worst culprit
+    # Wait — we swapped each to reference. High score = this module was fine.
+    # Low score = even with this swapped to reference, still failing = other modules bad.
+    # The module whose swap MOST improves the score is the culprit.
+
+    # Get baseline (all candidates)
+    baseline_modules = dict(modules)
+    baseline_modules[top_name] = decomp.top_source
+    baseline_sim = simulate(baseline_modules, testbench, timeout=60, data_dir=data_dir)
+    if baseline_sim.compiled:
+        baseline_p, baseline_t = _count_tb_passes(baseline_sim.stdout)
+    else:
+        baseline_p, baseline_t = 0, 0
+
+    # Improvement = score_with_ref_swap - baseline
+    improvements = {}
+    for name, (p, t) in scores.items():
+        improvements[name] = p - baseline_p
+
+    if not improvements:
+        return None, scores
+
+    culprit = max(improvements, key=improvements.get)
+    # Only localize if swapping actually helps
+    if improvements[culprit] <= 0:
+        return None, scores
+
+    return culprit, scores
+
+
+def run_C4tl(
+    top_name: str, testbench: str, model: str,
+    client: "LLMClient", problem_desc: str, design_specs: str,
+    data_dir: Optional[str] = None,
+) -> dict:
+    """Trace-Lifted CEGIS: decompose, validate reference, localize faults, repair.
+
+    1. Decompose into sub-modules; reference must pass system TB
+    2. Generate candidate implementations for all sub-modules
+    3. Run full system — if passes, done
+    4. Trace-lift: swap each candidate with reference to find culprit
+    5. Repair only the culprit module with targeted feedback
+    6. Repeat until solved or budget exhausted
+    """
+    # Step 1: Decompose and validate reference
+    decomp = decompose(
+        problem_desc, design_specs, testbench,
+        model=model, client=client, top_module_name=top_name,
+    )
+    total_calls = 1
+
+    # Validate reference composition passes testbench
+    ref_modules = {top_name: decomp.top_source}
+    ref_modules.update(decomp.reference_modules)
+    ref_sim = simulate(ref_modules, testbench, timeout=60, data_dir=data_dir)
+    ref_passes, ref_total = 0, 0
+    if ref_sim.compiled:
+        ref_passes, ref_total = _count_tb_passes(ref_sim.stdout)
+
+    ref_ok = ref_total > 0 and ref_passes == ref_total
+    if not ref_ok:
+        logger.warning("C4tl: reference composition failed (%d/%d). Proceeding anyway.",
+                       ref_passes, ref_total)
+
+    # Step 2: Generate initial candidates via study prompt
+    modules = {top_name: decomp.top_source}
+    module_solve_rounds = {}
+
+    for idx, sub in enumerate(decomp.sub_modules):
+        context = _sub_context(decomp, idx)
+        study_prompt = _build_study_prompt(
+            sub, context, design_specs, testbench, sub.reference_source,
+        )
+        try:
+            total_calls += 1
+            resp = client.messages.create(
+                model=model, max_tokens=8000,
+                system=_C4TL_SYSTEM.format(module=sub.name),
+                messages=[{"role": "user", "content": study_prompt}],
+            )
+            source = _extract_verilog(resp.content[0].text)
+            modules[sub.name] = source if source else sub.reference_source
+        except Exception as e:
+            logger.warning("C4tl %s initial: %s", sub.name, e)
+            modules[sub.name] = sub.reference_source
+
+    # Step 3-5: Test → localize → repair loop
+    max_rounds = 28 - len(decomp.sub_modules)
+    best_passes, best_total = 0, 0
+
+    for rnd in range(max_rounds):
+        # Step 3: Full system test
+        full_modules = dict(modules)
+        full_modules[top_name] = decomp.top_source
+        sim = simulate(full_modules, testbench, timeout=60, data_dir=data_dir)
+
+        if sim.compiled:
+            p, t = _count_tb_passes(sim.stdout)
+            if p > best_passes:
+                best_passes, best_total = p, t
+            if p == t and t > 0:
+                logger.info("C4tl SOLVED at round %d (%d/%d)", rnd + 1, p, t)
+                break
+        else:
+            p, t = 0, 0
+
+        # Check for Icarus sensitivity warning
+        if _has_icarus_sensitivity_warning(sim.stderr):
+            logger.warning("C4tl: Icarus 'no sensitivities' warning — may cause all-x")
+
+        # Step 4: Trace-lift to localize fault
+        culprit, scores = _localize_fault(
+            top_name, decomp, modules, testbench, data_dir,
+        )
+
+        if culprit is None:
+            # Can't localize — repair the module with worst pass rate
+            # Fall back to sequential repair
+            culprit = min(
+                (s.name for s in decomp.sub_modules),
+                key=lambda n: scores.get(n, (0, 0))[0],
+            )
+
+        culprit_sub = next((s for s in decomp.sub_modules if s.name == culprit), None)
+        if culprit_sub is None:
+            break
+
+        logger.info("C4tl round %d: culprit=%s (scores: %s)", rnd + 1, culprit,
+                    {n: f"{p}/{t}" for n, (p, t) in scores.items()})
+
+        # Step 5: Repair the culprit with targeted feedback
+        fail_details = _parse_fail_details(sim.stdout) if sim.compiled else (
+            sim.compile_error or sim.stderr or "Unknown compilation error"
+        )[:500]
+
+        score_summary = "\n".join(
+            f"  {n}: {sp}/{st} (swapped to reference)"
+            for n, (sp, st) in sorted(scores.items())
+        )
+
+        repair_prompt = (
+            f"## Fault Localization Result\n\n"
+            f"The system testbench passed {p}/{t} tests. Trace-lifted analysis "
+            f"identified **`{culprit}`** as the module causing failures.\n\n"
+            f"### Per-Module Scores (each tested with reference for all others)\n\n"
+            f"```\n{score_summary}\n```\n\n"
+            f"### System Test Failures\n\n```\n{fail_details}\n```\n\n"
+            f"### Current Implementation of `{culprit}`\n\n"
+            f"```verilog\n{modules[culprit]}\n```\n\n"
+            f"### Reference Implementation (oracle)\n\n"
+            f"```verilog\n{culprit_sub.reference_source}\n```\n\n"
+            f"### Design Specification\n\n{design_specs}\n\n"
+            f"## Task\n\n"
+            f"1. Compare your implementation with the reference to find the bug\n"
+            f"2. Fix **only** `{culprit}` — preserve exact module name and ports\n"
+            f"3. Provide the corrected implementation in "
+            f"<file name=\"{culprit}.v\" type=\"implementation\">...</file> tags."
+        )
+
+        try:
+            total_calls += 1
+            resp = client.messages.create(
+                model=model, max_tokens=8000,
+                system=_C4TL_SYSTEM.format(module=culprit),
+                messages=[{"role": "user", "content": repair_prompt}],
+            )
+            source = _extract_verilog(resp.content[0].text)
+            if source:
+                modules[culprit] = source
+        except Exception as e:
+            logger.warning("C4tl repair %s rnd %d: %s", culprit, rnd, e)
+
+    # Final validation
+    _artifacts = {
+        "_sources": dict(modules),
+        "_decomp_descriptions": {s.name: s.description for s in decomp.sub_modules},
+        "_top_source": decomp.top_source,
+    }
+    final_modules = dict(modules)
+    final_modules[top_name] = decomp.top_source
+    sim = simulate(final_modules, testbench, timeout=60, data_dir=data_dir)
+    if not sim.compiled:
+        return {
+            "condition": "C4tl", "solved": False, "llm_calls": total_calls,
+            "error": "final compile failed",
+            "decomp_modules": decomp.module_names,
+            "ref_passes": ref_passes, "ref_total": ref_total,
+            "module_solve_rounds": module_solve_rounds,
+            **_artifacts,
+        }
+
+    p, t = _count_tb_passes(sim.stdout)
+    solved = t > 0 and p == t
+    return {
+        "condition": "C4tl", "llm_calls": total_calls,
+        "best_passes": p, "total_tests": t,
+        "solved": solved, "decomp_modules": decomp.module_names,
+        "ref_passes": ref_passes, "ref_total": ref_total,
+        "module_solve_rounds": module_solve_rounds,
+        **_artifacts,
+    }
+
+
+# ---------------------------------------------------------------------------
 # C5: Full autonomous decompose-test-evolve
 # ---------------------------------------------------------------------------
 
@@ -853,6 +1174,8 @@ def run_cell(
         elif condition == "C4i-noRef":
             result = run_C4i(top_name, testbench, model, client, problem_desc, design_specs, data_dir,
                              condition_label="C4i-noRef", show_ref=False)
+        elif condition == "C4tl":
+            result = run_C4tl(top_name, testbench, model, client, problem_desc, design_specs, data_dir)
         elif condition == "C5":
             result = run_C5(top_name, testbench, model, client, problem_desc, design_specs, cell_dir, data_dir)
         else:

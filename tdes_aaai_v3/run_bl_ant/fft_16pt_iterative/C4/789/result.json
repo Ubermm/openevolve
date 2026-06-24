@@ -1,0 +1,9 @@
+{
+  "error": "Error code: 403 - {'message': 'Model access is denied due to INVALID_PAYMENT_INSTRUMENT:A valid payment instrument must be provided.. Your AWS Marketplace subscription for this model cannot be completed at this time. If you recently fixed this issue, try again after 2 minutes.'}",
+  "design": "fft_16pt_iterative",
+  "model": "claude-opus-4-6",
+  "seed": 789,
+  "wall_seconds": 1.4,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0
+}

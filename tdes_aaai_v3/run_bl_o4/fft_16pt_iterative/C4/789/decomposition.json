@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/twiddle_rom_16.v",
+  "sub_modules": {
+    "twiddle_rom_16": "ROM for 16-point Q1.15 twiddle coefficients",
+    "fft_butterfly": "Radix-2 complex butterfly with fixed-point twiddle multiply and rounding",
+    "fft_addr_gen": "Generate butterfly pair addresses and twiddle index per stage and count"
+  }
+}

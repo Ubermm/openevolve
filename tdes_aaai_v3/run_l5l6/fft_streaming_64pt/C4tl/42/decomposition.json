@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/fft_sign_extend.v",
+  "sub_modules": {
+    "fft_sign_extend": "Combinational sign-extension block that widens input complex samples to the internal/output precision.",
+    "fft_twiddle_rom64": "Combinational twiddle-factor generator for POINTS-point FFT roots of unity in signed Q1.15-style fixed-point format.",
+    "fft_complex_mult_q15": "Combinational fixed-point complex multiplier used for applying FFT twiddle factors.",
+    "fft_complex_addsub": "Combinational complex add/subtract primitive for butterfly arithmetic.",
+    "fft_radix2_butterfly": "Combinational radix-2 butterfly primitive producing sum and difference complex outputs."
+  }
+}

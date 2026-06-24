@@ -1,0 +1,13 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 33,
+  "total_tests": 33,
+  "solved": true,
+  "design": "fft_16pt_iterative",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 843.0,
+  "total_input_tokens": 9840,
+  "total_output_tokens": 39297
+}

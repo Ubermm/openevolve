@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/pe.v",
+  "sub_modules": {
+    "pe": "Pure combinational processing-element next-state block. It forwards north input south, west input east, and computes the signed 32x32 multiply-accumulate next result from the current accumulator.",
+    "systolic_done_control": "Pure combinational control block that advances the 4-bit cycle counter and asserts done after the systolic computation latency.",
+    "result_mapper_4x4": "Pure combinational output mapper that maps the 16 internal PE accumulator registers to the flattened result0 through result15 top-level result ports."
+  }
+}

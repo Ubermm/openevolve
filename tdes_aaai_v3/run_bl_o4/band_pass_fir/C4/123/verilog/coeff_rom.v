@@ -1,0 +1,113 @@
+module coeff_rom #(
+    parameter TAP_CNT = 101
+) (
+    input  wire [$clog2(TAP_CNT)-1:0] addr,
+    output reg  signed [15:0]         coef
+);
+    always @* begin
+        case (addr)
+            7'd0   : coef = 16'sd16;
+            7'd1   : coef = 16'sd10;
+            7'd2   : coef = 16'sd6;
+            7'd3   : coef = 16'sd2;
+            7'd4   : coef = 16'sd0;
+            7'd5   : coef = 16'sd1;
+            7'd6   : coef = 16'sd5;
+            7'd7   : coef = 16'sd13;
+            7'd8   : coef = 16'sd26;
+            7'd9   : coef = 16'sd42;
+            7'd10  : coef = 16'sd59;
+            7'd11  : coef = 16'sd77;
+            7'd12  : coef = 16'sd90;
+            7'd13  : coef = 16'sd97;
+            7'd14  : coef = 16'sd93;
+            7'd15  : coef = 16'sd77;
+            7'd16  : coef = 16'sd47;
+            7'd17  : coef = 16'sd5;
+            7'd18  : coef = -16'sd45;
+            7'd19  : coef = -16'sd99;
+            7'd20  : coef = -16'sd149;
+            7'd21  : coef = -16'sd187;
+            7'd22  : coef = -16'sd207;
+            7'd23  : coef = -16'sd204;
+            7'd24  : coef = -16'sd178;
+            7'd25  : coef = -16'sd132;
+            7'd26  : coef = -16'sd73;
+            7'd27  : coef = -16'sd14;
+            7'd28  : coef = 16'sd31;
+            7'd29  : coef = 16'sd46;
+            7'd30  : coef = 16'sd16;
+            7'd31  : coef = -16'sd67;
+            7'd32  : coef = -16'sd208;
+            7'd33  : coef = -16'sd403;
+            7'd34  : coef = -16'sd638;
+            7'd35  : coef = -16'sd891;
+            7'd36  : coef = -16'sd1134;
+            7'd37  : coef = -16'sd1333;
+            7'd38  : coef = -16'sd1455;
+            7'd39  : coef = -16'sd1471;
+            7'd40  : coef = -16'sd1359;
+            7'd41  : coef = -16'sd1111;
+            7'd42  : coef = -16'sd730;
+            7'd43  : coef = -16'sd235;
+            7'd44  : coef = 16'sd341;
+            7'd45  : coef = 16'sd955;
+            7'd46  : coef = 16'sd1555;
+            7'd47  : coef = 16'sd2091;
+            7'd48  : coef = 16'sd2513;
+            7'd49  : coef = 16'sd2784;
+            7'd50  : coef = 16'sd2877;
+            7'd51  : coef = 16'sd2784;
+            7'd52  : coef = 16'sd2513;
+            7'd53  : coef = 16'sd2091;
+            7'd54  : coef = 16'sd1555;
+            7'd55  : coef = 16'sd955;
+            7'd56  : coef = 16'sd341;
+            7'd57  : coef = -16'sd235;
+            7'd58  : coef = -16'sd730;
+            7'd59  : coef = -16'sd1111;
+            7'd60  : coef = -16'sd1359;
+            7'd61  : coef = -16'sd1471;
+            7'd62  : coef = -16'sd1455;
+            7'd63  : coef = -16'sd1333;
+            7'd64  : coef = -16'sd1134;
+            7'd65  : coef = -16'sd891;
+            7'd66  : coef = -16'sd638;
+            7'd67  : coef = -16'sd403;
+            7'd68  : coef = -16'sd208;
+            7'd69  : coef = -16'sd67;
+            7'd70  : coef = 16'sd16;
+            7'd71  : coef = 16'sd46;
+            7'd72  : coef = 16'sd31;
+            7'd73  : coef = -16'sd14;
+            7'd74  : coef = -16'sd73;
+            7'd75  : coef = -16'sd132;
+            7'd76  : coef = -16'sd178;
+            7'd77  : coef = -16'sd204;
+            7'd78  : coef = -16'sd207;
+            7'd79  : coef = -16'sd187;
+            7'd80  : coef = -16'sd149;
+            7'd81  : coef = -16'sd99;
+            7'd82  : coef = -16'sd45;
+            7'd83  : coef = 16'sd5;
+            7'd84  : coef = 16'sd47;
+            7'd85  : coef = 16'sd77;
+            7'd86  : coef = 16'sd93;
+            7'd87  : coef = 16'sd97;
+            7'd88  : coef = 16'sd90;
+            7'd89  : coef = 16'sd77;
+            7'd90  : coef = 16'sd59;
+            7'd91  : coef = 16'sd42;
+            7'd92  : coef = 16'sd26;
+            7'd93  : coef = 16'sd13;
+            7'd94  : coef = 16'sd5;
+            7'd95  : coef = 16'sd1;
+            7'd96  : coef = 16'sd0;
+            7'd97  : coef = 16'sd2;
+            7'd98  : coef = 16'sd6;
+            7'd99  : coef = 16'sd10;
+            7'd100 : coef = 16'sd16;
+            default: coef = 16'sd0;
+        endcase
+    end
+endmodule

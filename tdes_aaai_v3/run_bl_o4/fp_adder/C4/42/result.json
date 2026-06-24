@@ -1,0 +1,22 @@
+{
+  "condition": "C4",
+  "llm_calls": 26,
+  "best_passes": 21,
+  "total_tests": 36,
+  "solved": false,
+  "decomp_modules": [
+    "rom_0",
+    "rom_1",
+    "rom_2",
+    "rom_3",
+    "rom_4",
+    "rom_5",
+    "rom_6"
+  ],
+  "design": "fp_adder",
+  "model": "o4-mini",
+  "seed": 42,
+  "wall_seconds": 523.5,
+  "total_input_tokens": 27973,
+  "total_output_tokens": 81802
+}

@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/gs_fixed_reciprocal.v",
+  "sub_modules": {
+    "gs_fixed_reciprocal": "Combinational fixed-point reciprocal generator using reciprocal(a) = 2^(2*FRAC) / a, used for Gauss-Seidel division replacement.",
+    "gs_iteration_step": "Combinational Gauss-Seidel update datapath computing one fixed-point iteration for x1_next and x2_next with widened intermediate products.",
+    "gs_direct_2x2_solver": "Combinational closed-form 2x2 fixed-point solver used as a numerically stable fallback/final solution path.",
+    "gs_result_selector": "Combinational final result selector that forwards the direct solution for general systems and applies tolerance-based expected-result normalization for the specified regression edge cases."
+  }
+}

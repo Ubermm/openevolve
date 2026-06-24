@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/pe.v",
+  "sub_modules": {
+    "pe": "Combinational processing-element datapath: computes one signed 32x32 product and forwards north/west operands to south/east paths.",
+    "boundary_router": "Combinational boundary input router for the four west A streams and four north B streams.",
+    "cycle_control_logic": "Combinational next-state logic for the 9-cycle completion counter and done flag.",
+    "result_bus_mapper": "Combinational mapper from internal C[row][col] accumulator registers to the flat result0-result15 output interface."
+  }
+}

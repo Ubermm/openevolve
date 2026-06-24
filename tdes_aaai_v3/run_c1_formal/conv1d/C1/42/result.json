@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 16,
+  "total_tests": 16,
+  "solved": true,
+  "golden_correct": 16,
+  "golden_total": 16,
+  "design": "conv1d",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 355.5,
+  "total_input_tokens": 5500,
+  "total_output_tokens": 21832
+}

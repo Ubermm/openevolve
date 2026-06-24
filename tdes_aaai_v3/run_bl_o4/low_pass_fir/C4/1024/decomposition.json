@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/coeff_store.v",
+  "sub_modules": {
+    "coeff_store": "Holds constant FIR coefficients in a flat vector.",
+    "mult_array": "Element-wise multiply tap samples by coefficients.",
+    "adder_tree": "Combinational tree to accumulate products and apply fixed-point shift."
+  }
+}

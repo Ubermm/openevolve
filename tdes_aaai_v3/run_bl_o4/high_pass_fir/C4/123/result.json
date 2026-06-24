@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "solved": false,
+  "llm_calls": 29,
+  "error": "final compile failed",
+  "decomp_modules": [
+    "fir_coeffs",
+    "mult_by_coeff",
+    "adder",
+    "output_shifter"
+  ],
+  "design": "high_pass_fir",
+  "model": "o4-mini",
+  "seed": 123,
+  "wall_seconds": 494.1,
+  "total_input_tokens": 135651,
+  "total_output_tokens": 73497
+}

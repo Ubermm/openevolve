@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/conv1d_window_next.v",
+  "sub_modules": {
+    "conv1d_window_next": "Combinational next-state generator for the streaming shift-register stencil window. It inserts the current input sample at the newest tap and shifts older taps down the window when valid_in is asserted.",
+    "conv1d_coeff_bank": "Combinational default coefficient provider. It emits packed signed coefficients for supported 3-, 5-, and 7-tap kernels, including the 5-tap [2, 8, 12, 8, 2] kernel used by the supplied README.",
+    "conv1d_mac": "Combinational multiply-accumulate datapath. It multiplies the packed window samples by sign-extended packed coefficients and produces a widened signed accumulation result.",
+    "conv1d_output_cast": "Combinational output-width adapter. It truncates the widened accumulator result to the required DATA_W+GAIN_W output width."
+  }
+}

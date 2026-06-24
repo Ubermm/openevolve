@@ -1,0 +1,17 @@
+{
+  "condition": "C4",
+  "solved": false,
+  "llm_calls": 28,
+  "error": "final compile failed",
+  "decomp_modules": [
+    "coeff_const",
+    "fir_mac",
+    "scaler"
+  ],
+  "design": "band_pass_fir",
+  "model": "o4-mini",
+  "seed": 789,
+  "wall_seconds": 946.5,
+  "total_input_tokens": 80932,
+  "total_output_tokens": 59172
+}

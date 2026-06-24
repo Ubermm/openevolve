@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/fp_unpack.v",
+  "sub_modules": {
+    "fp_unpack": "Extract sign, exponent, fraction and detect zero/inf/nan",
+    "fp_align": "Shift smaller mantissa to align exponents",
+    "fp_add_sub": "Add or subtract aligned mantissas",
+    "fp_normalize": "Normalize the raw sum with exponent adjustment",
+    "fp_round_pack": "Round-to-even, pack, and handle special cases"
+  }
+}

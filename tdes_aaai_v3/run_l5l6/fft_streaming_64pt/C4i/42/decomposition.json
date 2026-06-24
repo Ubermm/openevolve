@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/fft64_sign_extend.v",
+  "sub_modules": {
+    "fft64_sign_extend": "Combinational complex input sign-extension from DATA_W to internal/output width.",
+    "fft64_twiddle_rom": "Combinational 64-entry Q1.15 FFT twiddle-factor lookup table.",
+    "fft64_complex_mult": "Combinational fixed-point complex multiplier for data-by-twiddle multiplication.",
+    "fft64_butterfly": "Combinational radix-style complex butterfly add/subtract unit.",
+    "fft64_output_clip": "Combinational output width formatter used for final complex output assignment."
+  }
+}

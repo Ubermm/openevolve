@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/twiddle_rom.v",
+  "sub_modules": {
+    "twiddle_rom": "ROM storing Q1.15 twiddle factors for IFFT mode",
+    "butterfly_unit": "Combinational radix-2 butterfly unit with complex multiply and add/sub",
+    "bit_reverse": "Combinational module that bit-reverses a 4-bit index"
+  }
+}

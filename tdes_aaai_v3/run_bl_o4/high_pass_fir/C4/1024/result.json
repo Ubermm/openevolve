@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 28,
+  "best_passes": 20,
+  "total_tests": 1001,
+  "solved": false,
+  "decomp_modules": [
+    "comb_mult",
+    "comb_add",
+    "output_stage"
+  ],
+  "design": "high_pass_fir",
+  "model": "o4-mini",
+  "seed": 1024,
+  "wall_seconds": 518.1,
+  "total_input_tokens": 68007,
+  "total_output_tokens": 73821
+}

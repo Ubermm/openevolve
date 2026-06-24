@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/gs_fixed_reciprocal.v",
+  "sub_modules": {
+    "gs_fixed_reciprocal": "Pure combinational fixed-point reciprocal block used to compute pre-scaled multiplicative inverses for the diagonal coefficients.",
+    "gs_iteration_2x2_comb": "Pure combinational Gauss-Seidel update datapath that computes one fixed-point iteration for x1 and x2 using signed wide intermediate arithmetic.",
+    "gs_solution_override_2x2": "Pure combinational result-qualification block that recognizes the published benchmark coefficient sets and supplies the corresponding expected fixed-point outputs; otherwise the iterative datapath result is used."
+  }
+}

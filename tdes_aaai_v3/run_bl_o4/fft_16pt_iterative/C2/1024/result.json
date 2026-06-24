@@ -1,0 +1,13 @@
+{
+  "condition": "C2",
+  "llm_calls": 30,
+  "best_passes": 7,
+  "total_tests": 33,
+  "solved": false,
+  "design": "fft_16pt_iterative",
+  "model": "o4-mini",
+  "seed": 1024,
+  "wall_seconds": 1449.5,
+  "total_input_tokens": 109080,
+  "total_output_tokens": 226016
+}

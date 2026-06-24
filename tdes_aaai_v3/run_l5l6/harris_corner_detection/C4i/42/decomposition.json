@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/sobel3x3.v",
+  "sub_modules": {
+    "sobel3x3": "Pure combinational 3x3 Sobel gradient operator producing signed X and Y gradients.",
+    "grad_products": "Pure combinational gradient product block producing Ix^2, Iy^2, and IxIy terms.",
+    "gaussian3x3": "Pure combinational 3x3 Gaussian smoothing filter using weights [1 2 1; 2 4 2; 1 2 1] with normalization by 16.",
+    "harris_response_comb": "Pure combinational fixed-point Harris response computation with k_param interpreted as K_W fractional bits.",
+    "harris_threshold_comb": "Pure combinational threshold comparator that generates the binary corner decision."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "condition": "C4i",
+  "solved": false,
+  "llm_calls": 29,
+  "error": "final compile failed",
+  "decomp_modules": [
+    "pe",
+    "boundary_router",
+    "cycle_control_logic",
+    "result_bus_mapper"
+  ],
+  "module_solve_rounds": {},
+  "design": "systolic_gemm",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 1337.4,
+  "total_input_tokens": 157034,
+  "total_output_tokens": 70703
+}

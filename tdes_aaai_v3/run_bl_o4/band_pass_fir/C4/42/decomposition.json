@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/coeff_rom.v",
+  "sub_modules": {
+    "coeff_rom": "Coefficient ROM lookup (combination logic)",
+    "signed_mult": "Signed multiplier (combination logic)",
+    "trunc_shifter": "Arithmetic right-shift and truncation (combination logic)"
+  }
+}

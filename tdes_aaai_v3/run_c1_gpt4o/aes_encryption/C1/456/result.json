@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 0,
+  "total_tests": 8,
+  "solved": false,
+  "golden_correct": 0,
+  "golden_total": 8,
+  "design": "aes_encryption",
+  "model": "gpt-4o",
+  "seed": 456,
+  "wall_seconds": 149.9,
+  "total_input_tokens": 3995,
+  "total_output_tokens": 5293
+}

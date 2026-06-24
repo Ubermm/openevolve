@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/usm_gaussian3x3.v",
+  "sub_modules": {
+    "usm_gaussian3x3": "Combinational 3x3 Gaussian stencil using fixed coefficients [1 2 1; 2 4 2; 1 2 1] normalized by 16.",
+    "usm_highpass": "Combinational pointwise subtraction stage that computes signed high-frequency detail as original minus blurred pixel.",
+    "usm_gain_scale": "Combinational pointwise gain stage that multiplies the signed high-frequency component by the unsigned gain input.",
+    "usm_reconstruct_sat": "Combinational pointwise reconstruction stage that adds scaled detail back to the original pixel and saturates to the output pixel range."
+  }
+}

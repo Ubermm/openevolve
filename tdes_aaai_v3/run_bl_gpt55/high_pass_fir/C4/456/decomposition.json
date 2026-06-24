@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/highpass_fir_delay_next.v",
+  "sub_modules": {
+    "highpass_fir_delay_next": "Purely combinational next-state generator for the FIR sample delay line. It inserts the current valid input sample at tap 0 and shifts older samples toward higher tap indices.",
+    "highpass_fir_coeffs": "Purely combinational coefficient ROM/packer. It hard-codes the required 101 signed 16-bit high-pass FIR coefficients verbatim and exposes them as a flattened coefficient bus.",
+    "highpass_fir_mac": "Purely combinational fixed-point multiply-accumulate datapath. It multiplies each delayed signed sample by its signed coefficient and accumulates the full result in a 64-bit signed accumulator.",
+    "highpass_fir_quantize": "Purely combinational output scaler. It performs the required arithmetic right shift by 15 bits and returns the low output-width signed result."
+  }
+}

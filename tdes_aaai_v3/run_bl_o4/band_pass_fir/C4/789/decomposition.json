@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/coeff_const.v",
+  "sub_modules": {
+    "coeff_const": "combinational lookup of quantized FIR coefficients",
+    "fir_mac": "combinational multiply-accumulate of samples and coefficients",
+    "scaler": "combinational scaling (right-shift) to produce final output"
+  }
+}

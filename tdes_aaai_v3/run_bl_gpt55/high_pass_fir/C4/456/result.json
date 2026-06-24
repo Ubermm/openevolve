@@ -1,0 +1,19 @@
+{
+  "condition": "C4",
+  "llm_calls": 29,
+  "best_passes": 5,
+  "total_tests": 1001,
+  "solved": false,
+  "decomp_modules": [
+    "highpass_fir_delay_next",
+    "highpass_fir_coeffs",
+    "highpass_fir_mac",
+    "highpass_fir_quantize"
+  ],
+  "design": "high_pass_fir",
+  "model": "gpt-5.5",
+  "seed": 456,
+  "wall_seconds": 1399.4,
+  "total_input_tokens": 80398,
+  "total_output_tokens": 72485
+}

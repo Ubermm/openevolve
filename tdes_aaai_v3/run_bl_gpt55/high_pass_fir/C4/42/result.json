@@ -1,0 +1,19 @@
+{
+  "condition": "C4",
+  "llm_calls": 29,
+  "best_passes": 4,
+  "total_tests": 1001,
+  "solved": false,
+  "decomp_modules": [
+    "hp_coeff_rom_comb",
+    "hp_sample_coeff_product",
+    "hp_accumulate_products",
+    "hp_quantize_shift"
+  ],
+  "design": "high_pass_fir",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 1244.9,
+  "total_input_tokens": 78670,
+  "total_output_tokens": 63956
+}

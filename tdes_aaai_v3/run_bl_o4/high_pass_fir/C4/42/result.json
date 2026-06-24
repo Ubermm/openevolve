@@ -1,0 +1,17 @@
+{
+  "condition": "C4",
+  "solved": false,
+  "llm_calls": 28,
+  "error": "final compile failed",
+  "decomp_modules": [
+    "hpf_coeff_mem",
+    "hpf_dot_product",
+    "hpf_scaler"
+  ],
+  "design": "high_pass_fir",
+  "model": "o4-mini",
+  "seed": 42,
+  "wall_seconds": 454.1,
+  "total_input_tokens": 88599,
+  "total_output_tokens": 71871
+}

@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/addr_gen.v",
+  "sub_modules": {
+    "addr_gen": "computes butterfly addresses and twiddle index per stage",
+    "twiddle_rom": "lookup of twiddle factor cos/sin in Q1.15",
+    "butterfly_unit": "combines add/sub and complex multiply by twiddle"
+  }
+}

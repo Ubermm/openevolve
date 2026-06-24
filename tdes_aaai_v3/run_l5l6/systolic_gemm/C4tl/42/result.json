@@ -1,0 +1,20 @@
+{
+  "condition": "C4tl",
+  "solved": false,
+  "llm_calls": 29,
+  "error": "final compile failed",
+  "decomp_modules": [
+    "pe",
+    "systolic_done_control",
+    "result_mapper_4x4"
+  ],
+  "ref_passes": 0,
+  "ref_total": 0,
+  "module_solve_rounds": {},
+  "design": "systolic_gemm",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 1994.1,
+  "total_input_tokens": 61025,
+  "total_output_tokens": 86189
+}

@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/bpf_sample_shift.v",
+  "sub_modules": {
+    "bpf_sample_shift": "Pure combinational next-state generator for the FIR sample delay line; inserts the incoming sample at tap 0 and shifts prior samples toward higher tap indices.",
+    "bpf_coeff_bank": "Pure combinational hard-coded 101-tap coefficient ROM bank with the exact required signed 16-bit quantized band-pass FIR coefficients.",
+    "bpf_mac": "Pure combinational signed multiply-accumulate block; multiplies the shifted sample vector by the coefficient vector and accumulates into a 64-bit signed sum.",
+    "bpf_scale": "Pure combinational fixed-point output scaler; arithmetic right-shifts the 64-bit accumulator by 15 bits and truncates to the DATA_W+GAIN_W output width."
+  }
+}

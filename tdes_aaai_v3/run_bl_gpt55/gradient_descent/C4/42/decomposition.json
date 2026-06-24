@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/gd_gradient_calc.v",
+  "sub_modules": {
+    "gd_gradient_calc": "Pure combinational fixed-point derivative calculator. Computes f'(x) = ((2*a*x) >>> M) + b using widened signed intermediates.",
+    "gd_update_calc": "Pure combinational gradient descent update datapath. Computes x_updated = x - ((alpha * gradient) >>> M) with widened signed multiplication and subtraction.",
+    "gd_iteration_done": "Pure combinational iteration-limit checker. Indicates when the current CALC cycle is the final required iteration."
+  }
+}

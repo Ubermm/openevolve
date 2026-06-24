@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/usm_window_zero_pad.v",
+  "sub_modules": {
+    "usm_window_zero_pad": "Combinational 3x3 window boundary handler. Applies zero-padding to unavailable top and left stencil taps and forwards the aligned original pixel.",
+    "usm_gaussian3x3_blur": "Combinational 3x3 Gaussian stencil stage using fixed coefficients [1 2 1; 2 4 2; 1 2 1] normalized by 16.",
+    "usm_highfreq_subtract": "Combinational pointwise stage computing signed high-frequency detail as original minus blurred.",
+    "usm_gain_scale": "Combinational pointwise signed multiplier that scales the high-frequency component by the runtime gain input.",
+    "usm_reconstruct_saturate": "Combinational pointwise reconstruction and saturation stage that adds scaled detail back to the original pixel and clamps to the output pixel range."
+  }
+}

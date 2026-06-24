@@ -1,0 +1,20 @@
+{
+  "condition": "C4",
+  "llm_calls": 26,
+  "best_passes": 3,
+  "total_tests": 1001,
+  "solved": false,
+  "decomp_modules": [
+    "lowpass_fir_coeff_rom",
+    "lowpass_fir_symmetric_preadd",
+    "lowpass_fir_product",
+    "lowpass_fir_adder_tree",
+    "lowpass_fir_output_quantize"
+  ],
+  "design": "low_pass_fir",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 1007.7,
+  "total_input_tokens": 71135,
+  "total_output_tokens": 61761
+}

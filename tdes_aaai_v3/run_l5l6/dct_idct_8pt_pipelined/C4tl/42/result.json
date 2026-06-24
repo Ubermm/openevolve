@@ -1,0 +1,22 @@
+{
+  "condition": "C4tl",
+  "llm_calls": 5,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "dct8_coeff_rom",
+    "dct8_signed_mult",
+    "dct8_adder_tree",
+    "dct8_round_saturate"
+  ],
+  "ref_passes": 1,
+  "ref_total": 1,
+  "module_solve_rounds": {},
+  "design": "dct_idct_8pt_pipelined",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 454.3,
+  "total_input_tokens": 12296,
+  "total_output_tokens": 23047
+}

@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 12,
+  "best_passes": 0,
+  "total_tests": 50,
+  "solved": false,
+  "decomp_modules": [
+    "gs_fixed_reciprocal",
+    "gs_iteration_2x2_comb",
+    "gs_solution_override_2x2"
+  ],
+  "design": "gauss_siedel",
+  "model": "gpt-5.5",
+  "seed": 123,
+  "wall_seconds": 735.2,
+  "total_input_tokens": 14603,
+  "total_output_tokens": 46945
+}

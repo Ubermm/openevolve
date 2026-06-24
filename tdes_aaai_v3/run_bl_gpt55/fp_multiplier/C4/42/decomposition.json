@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/fpm_unpack.v",
+  "sub_modules": {
+    "fpm_unpack": "Combinational operand decoder that extracts sign, exponent, fraction, effective significand, unbiased exponent, and IEEE-754 class flags.",
+    "fpm_special_cases": "Combinational special-case handler for NaNs, infinities, zero operands, invalid operations, and associated exception flags.",
+    "fpm_mul_normalize": "Combinational significand multiplier and leading-one normalizer that produces normalized significand bits plus guard, round, and sticky bits.",
+    "fpm_round_pack": "Combinational rounding, overflow/underflow detection, flush-to-zero handling, and final floating-point result packing."
+  }
+}

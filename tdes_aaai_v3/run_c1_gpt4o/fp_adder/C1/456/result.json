@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 23,
+  "total_tests": 36,
+  "solved": false,
+  "golden_correct": 0,
+  "golden_total": 0,
+  "design": "fp_adder",
+  "model": "gpt-4o",
+  "seed": 456,
+  "wall_seconds": 102.7,
+  "total_input_tokens": 4165,
+  "total_output_tokens": 5560
+}

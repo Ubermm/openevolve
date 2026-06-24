@@ -1,0 +1,19 @@
+{
+  "condition": "C4",
+  "llm_calls": 11,
+  "best_passes": 33,
+  "total_tests": 33,
+  "solved": true,
+  "decomp_modules": [
+    "fft_bit_reverse_index",
+    "fft_index_gen",
+    "fft_twiddle_rom",
+    "fft_butterfly_fixed"
+  ],
+  "design": "fft_16pt_iterative",
+  "model": "gpt-5.5",
+  "seed": 123,
+  "wall_seconds": 365.4,
+  "total_input_tokens": 16985,
+  "total_output_tokens": 23165
+}

@@ -1,0 +1,13 @@
+{
+  "condition": "C2",
+  "llm_calls": 30,
+  "best_passes": 27,
+  "total_tests": 30,
+  "solved": false,
+  "design": "fp_mult_pipeline",
+  "model": "o4-mini",
+  "seed": 123,
+  "wall_seconds": 1185.5,
+  "total_input_tokens": 106365,
+  "total_output_tokens": 210034
+}

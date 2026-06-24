@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/fp_unpack.v",
+  "sub_modules": {
+    "fp_unpack": "Unpack IEEE-754 operand into sign, exponent, mantissa and detect special cases",
+    "fp_mul_exp": "Multiply mantissas and compute unbiased exponent sum, forward flags",
+    "fp_normalize": "Normalize the 48-bit product, extract mantissa, guard/round/sticky bits, adjust exponent",
+    "fp_round": "Round normalized mantissa to nearest-even, adjust exponent on mantissa overflow",
+    "fp_pack": "Pack sign, exponent and mantissa into IEEE-754 result, handle all special cases"
+  }
+}

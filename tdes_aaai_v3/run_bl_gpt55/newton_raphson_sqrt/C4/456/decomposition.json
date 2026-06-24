@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/sqrt_nr_initial_guess.v",
+  "sub_modules": {
+    "sqrt_nr_initial_guess": "Combinational fixed-point initial estimate generator. It detects zero input and otherwise chooses max(X, 1.0) as a safe Newton-Raphson starting point.",
+    "sqrt_nr_iteration": "Combinational Newton-Raphson iteration datapath implementing y_next = (y_current + X/y_current)/2 with fixed-point scaling, rounded averaging, divide-by-zero protection, and output saturation.",
+    "sqrt_nr_convergence": "Combinational convergence detector that compares successive Newton-Raphson estimates and asserts when their absolute difference is within a configurable fixed-point tolerance."
+  }
+}

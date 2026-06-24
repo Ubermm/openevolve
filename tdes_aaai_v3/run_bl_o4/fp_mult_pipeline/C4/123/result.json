@@ -1,0 +1,20 @@
+{
+  "condition": "C4",
+  "llm_calls": 26,
+  "best_passes": 0,
+  "total_tests": 30,
+  "solved": false,
+  "decomp_modules": [
+    "unpack_stage",
+    "mult_stage",
+    "normalize_stage",
+    "round_stage",
+    "pack_stage"
+  ],
+  "design": "fp_mult_pipeline",
+  "model": "o4-mini",
+  "seed": 123,
+  "wall_seconds": 482.6,
+  "total_input_tokens": 30783,
+  "total_output_tokens": 78491
+}

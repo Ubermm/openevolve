@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/addr_gen.v",
+  "sub_modules": {
+    "addr_gen": "Computes butterfly input/output indices and twiddle index for each stage and counter.",
+    "twiddle_rom": "Stores Q1.15 twiddle factors for k=0..7 and applies FFT/IFFT sign adjustment.",
+    "butterfly": "Performs one radix-2 DIT butterfly: complex multiply by twiddle and sum/difference."
+  }
+}

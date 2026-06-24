@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/fp_mul_unpack.v",
+  "sub_modules": {
+    "fp_mul_unpack": "Combinational operand decoder that extracts sign, exponent, fraction, IEEE-754 class information, hidden-bit significand, and unbiased exponent.",
+    "fp_mul_special_cases": "Combinational special-case handler for NaNs, infinities, zero operands, invalid infinity-times-zero, and testbench-compatible exception flags.",
+    "fp_mul_core": "Combinational finite multiplication core that XORs signs, adds unbiased exponents, and multiplies significands.",
+    "fp_mul_normalize_round": "Combinational normalization, rounding, biased exponent reconstruction, overflow detection, and flush-to-zero underflow handling."
+  }
+}

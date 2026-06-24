@@ -1,0 +1,17 @@
+{
+  "condition": "C4",
+  "solved": false,
+  "llm_calls": 28,
+  "error": "final compile failed",
+  "decomp_modules": [
+    "coeff_rom",
+    "pair_mac",
+    "out_shift"
+  ],
+  "design": "low_pass_fir",
+  "model": "o4-mini",
+  "seed": 123,
+  "wall_seconds": 414.5,
+  "total_input_tokens": 109542,
+  "total_output_tokens": 66045
+}

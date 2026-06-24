@@ -1,0 +1,20 @@
+{
+  "condition": "C4",
+  "llm_calls": 26,
+  "best_passes": 11,
+  "total_tests": 100,
+  "solved": false,
+  "decomp_modules": [
+    "poly_eval",
+    "deriv_eval",
+    "fixed_div",
+    "abs_val",
+    "comparator"
+  ],
+  "design": "newton_raphson_polynomial",
+  "model": "o4-mini",
+  "seed": 42,
+  "wall_seconds": 340.3,
+  "total_input_tokens": 37108,
+  "total_output_tokens": 57228
+}

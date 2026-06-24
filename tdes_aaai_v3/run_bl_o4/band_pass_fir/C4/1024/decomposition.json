@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/coeff_mem.v",
+  "sub_modules": {
+    "coeff_mem": "Combinational coefficient lookup table",
+    "mac_unit": "Combinational multiply-accumulate per tap",
+    "round_shift": "Combinational arithmetic right-shift to final output width"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "condition": "C4i",
+  "llm_calls": 6,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "conv2d_coord_gen",
+    "conv2d_window_extract",
+    "conv2d_coeff_gen",
+    "conv2d_dot_product",
+    "conv2d_output_cast"
+  ],
+  "module_solve_rounds": {
+    "conv2d_coord_gen": 1,
+    "conv2d_window_extract": 1,
+    "conv2d_coeff_gen": 1,
+    "conv2d_dot_product": 1,
+    "conv2d_output_cast": 1
+  },
+  "design": "conv2d",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 739.0,
+  "total_input_tokens": 13843,
+  "total_output_tokens": 33469
+}

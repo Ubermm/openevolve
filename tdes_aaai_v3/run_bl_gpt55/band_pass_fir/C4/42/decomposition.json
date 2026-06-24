@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/bandpass_fir_coeffs.v",
+  "sub_modules": {
+    "bandpass_fir_coeffs": "Purely combinational coefficient bank that hard-codes the exact 101 signed 16-bit FIR coefficients and exposes them as a flattened vector.",
+    "bandpass_fir_mac": "Purely combinational multiply-accumulate block. It multiplies the flattened signed sample window by the flattened signed coefficient vector and accumulates into a 64-bit signed sum.",
+    "bandpass_fir_quantize": "Purely combinational fixed-point output scaler. It performs the arithmetic right shift by 15 bits and truncates to the configured output width."
+  }
+}

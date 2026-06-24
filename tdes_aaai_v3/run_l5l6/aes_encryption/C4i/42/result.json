@@ -1,0 +1,29 @@
+{
+  "condition": "C4i",
+  "llm_calls": 7,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "aes_sbox",
+    "aes_subbytes",
+    "aes_shiftrows",
+    "aes_mixcolumns",
+    "aes_round",
+    "aes_key_expand"
+  ],
+  "module_solve_rounds": {
+    "aes_sbox": 1,
+    "aes_subbytes": 1,
+    "aes_shiftrows": 1,
+    "aes_mixcolumns": 1,
+    "aes_round": 1,
+    "aes_key_expand": 1
+  },
+  "design": "aes_encryption",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 316.8,
+  "total_input_tokens": 15537,
+  "total_output_tokens": 22536
+}

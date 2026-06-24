@@ -1,0 +1,17 @@
+{
+  "condition": "C4",
+  "solved": false,
+  "llm_calls": 28,
+  "error": "final compile failed",
+  "decomp_modules": [
+    "fir_coeff",
+    "fir_mac",
+    "fir_output"
+  ],
+  "design": "high_pass_fir",
+  "model": "o4-mini",
+  "seed": 456,
+  "wall_seconds": 310.0,
+  "total_input_tokens": 79966,
+  "total_output_tokens": 48326
+}

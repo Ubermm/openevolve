@@ -1,0 +1,13 @@
+{
+  "condition": "C2",
+  "llm_calls": 18,
+  "best_passes": 36,
+  "total_tests": 36,
+  "solved": true,
+  "design": "fp_adder",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 1980.8,
+  "total_input_tokens": 72793,
+  "total_output_tokens": 117434
+}

@@ -1,0 +1,13 @@
+{
+  "condition": "C2",
+  "llm_calls": 30,
+  "best_passes": 70,
+  "total_tests": 100,
+  "solved": false,
+  "design": "newton_raphson_polynomial",
+  "model": "o4-mini",
+  "seed": 42,
+  "wall_seconds": 685.9,
+  "total_input_tokens": 84472,
+  "total_output_tokens": 125452
+}

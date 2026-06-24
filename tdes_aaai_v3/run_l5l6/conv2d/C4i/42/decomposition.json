@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/conv2d_coord_gen.v",
+  "sub_modules": {
+    "conv2d_coord_gen": "Combinational timing/coordinate generator. Converts the accepted pixel count into the delayed output stencil center coordinate and asserts window_valid after the line-buffer fill delay.",
+    "conv2d_window_extract": "Combinational sliding-window extractor. Reads the flattened history/line-buffer contents and builds the KERNEL_SIZE by KERNEL_SIZE stencil with zero padding on top, left, and right image boundaries.",
+    "conv2d_coeff_gen": "Combinational coefficient generator. Produces flattened signed convolution coefficients; for 3x3 it emits the Gaussian kernel [1 2 1; 2 4 2; 1 2 1], with binomial Gaussian-style defaults for 5x5 and 7x7.",
+    "conv2d_dot_product": "Combinational matrix-vector dot product. Multiplies each window pixel by its signed coefficient and accumulates into an extended signed accumulator.",
+    "conv2d_output_cast": "Combinational output formatter. Saturates signed accumulator results into the unsigned DATA_W+GAIN_W pixel output range."
+  }
+}

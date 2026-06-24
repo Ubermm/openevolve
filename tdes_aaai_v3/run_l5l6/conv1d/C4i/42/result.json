@@ -1,0 +1,25 @@
+{
+  "condition": "C4i",
+  "llm_calls": 5,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "conv1d_window_next",
+    "conv1d_coeff_pack",
+    "conv1d_mac",
+    "conv1d_output_cast"
+  ],
+  "module_solve_rounds": {
+    "conv1d_window_next": 1,
+    "conv1d_coeff_pack": 1,
+    "conv1d_mac": 1,
+    "conv1d_output_cast": 1
+  },
+  "design": "conv1d",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 300.2,
+  "total_input_tokens": 8858,
+  "total_output_tokens": 13463
+}

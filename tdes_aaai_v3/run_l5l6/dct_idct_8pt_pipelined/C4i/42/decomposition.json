@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/dct8_coeff_pack.v",
+  "sub_modules": {
+    "dct8_coeff_pack": "Combinational fixed-point cosine coefficient provider. For DCT it emits one normalized DCT matrix row; for IDCT it emits the corresponding transposed matrix column for the requested output index.",
+    "dct8_dot_product": "Combinational 8-term signed fixed-point dot-product engine using widened products and accumulator growth.",
+    "dct_round_saturate": "Combinational Q14 rounding, arithmetic down-shift, and signed saturation to the configured output width."
+  }
+}

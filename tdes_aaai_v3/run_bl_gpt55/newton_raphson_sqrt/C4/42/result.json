@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 7,
+  "best_passes": 50,
+  "total_tests": 50,
+  "solved": true,
+  "decomp_modules": [
+    "sqrt_fixedpoint_initial_guess",
+    "sqrt_fixedpoint_nr_step",
+    "sqrt_fixedpoint_convergence"
+  ],
+  "design": "newton_raphson_sqrt",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 272.6,
+  "total_input_tokens": 5034,
+  "total_output_tokens": 13902
+}

@@ -1,0 +1,9 @@
+{
+  "error": "Connection error.",
+  "design": "ifft_16pt_iterative",
+  "model": "gpt-5.5",
+  "seed": 123,
+  "wall_seconds": 31.4,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0
+}

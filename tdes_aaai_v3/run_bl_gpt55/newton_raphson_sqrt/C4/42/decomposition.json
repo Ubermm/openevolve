@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/sqrt_fixedpoint_initial_guess.v",
+  "sub_modules": {
+    "sqrt_fixedpoint_initial_guess": "Combinational block that scales the fixed-point radicand by 2^M, finds its most significant set bit, and generates a power-of-two initial Newton-Raphson estimate. It also detects zero input.",
+    "sqrt_fixedpoint_nr_step": "Combinational Newton-Raphson iteration datapath implementing y_next = (y_current + (X << M) / y_current) / 2 using widened fixed-point intermediates and divide-by-zero protection.",
+    "sqrt_fixedpoint_convergence": "Combinational convergence checker that compares consecutive estimates and asserts convergence when their absolute difference is within a one-LSB threshold."
+  }
+}

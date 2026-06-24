@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/comb_mult.v",
+  "sub_modules": {
+    "comb_mult": "Combinational multiplier: multiplies signed data input by constant coefficient",
+    "comb_add": "Combinational adder: adds accumulator input and multiplier output with proper sign-extension",
+    "output_stage": "Combinational scaling/truncation: arithmetic right-shift of accumulated sum and truncation to output width"
+  }
+}

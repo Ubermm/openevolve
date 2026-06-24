@@ -1,0 +1,11 @@
+{
+  "top_source_file": "verilog/aes_sbox.v",
+  "sub_modules": {
+    "aes_sbox": "Combinational AES forward S-box lookup for one byte.",
+    "aes_subbytes": "Applies the AES forward S-box independently to all 16 state bytes.",
+    "aes_shiftrows": "Combinational AES ShiftRows byte permutation using column-major AES state ordering.",
+    "aes_mixcolumns": "Combinational AES MixColumns transformation with GF(2^8) multiply-by-2 and multiply-by-3 logic.",
+    "aes_round": "One full AES encryption round: SubBytes, ShiftRows, MixColumns, and AddRoundKey.",
+    "aes_key_expand": "One AES-128 key schedule step producing the next 128-bit round key for the configured round number."
+  }
+}

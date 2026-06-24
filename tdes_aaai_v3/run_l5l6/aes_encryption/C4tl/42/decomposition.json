@@ -1,0 +1,11 @@
+{
+  "top_source_file": "verilog/aes_sbox.v",
+  "sub_modules": {
+    "aes_sbox": "Combinational AES forward S-box lookup used by SubBytes and key schedule RotWord/SubWord.",
+    "aes_subbytes": "Applies the AES S-box independently to all sixteen state bytes.",
+    "aes_shiftrows": "Performs the AES encryption ShiftRows byte permutation using column-major AES state ordering.",
+    "aes_mixcolumns": "Performs AES MixColumns on each 32-bit state column using GF(2^8) multiply-by-2 and multiply-by-3 logic.",
+    "aes_key_expand_round": "Computes one AES-128 round key from the previous round key using inline key expansion and Rcon.",
+    "aes_round": "Combinational AES encryption round: SubBytes, ShiftRows, optional MixColumns, then AddRoundKey; final round omits MixColumns."
+  }
+}

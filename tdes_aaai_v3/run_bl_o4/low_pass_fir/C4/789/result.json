@@ -1,0 +1,9 @@
+{
+  "error": "Decomposition failed after 3 attempts: /tmp/tdes_fpga_s7spga3o/coeff_rom.v:16: error: localparam must have a value.\n/tmp/tdes_fpga_s7spga3o/coeff_rom.v:16: syntax error\n/tmp/tdes_fpga_s7spga3o/coeff_rom.v:28: error: Invalid module item.",
+  "design": "low_pass_fir",
+  "model": "o4-mini",
+  "seed": 789,
+  "wall_seconds": 153.4,
+  "total_input_tokens": 86639,
+  "total_output_tokens": 28200
+}

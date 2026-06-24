@@ -1,0 +1,19 @@
+{
+  "condition": "C4",
+  "llm_calls": 29,
+  "best_passes": 5,
+  "total_tests": 1001,
+  "solved": false,
+  "decomp_modules": [
+    "bpf_coeff_const",
+    "bpf_tap_product",
+    "bpf_adder_tree_sum",
+    "bpf_output_quantizer"
+  ],
+  "design": "band_pass_fir",
+  "model": "gpt-5.5",
+  "seed": 123,
+  "wall_seconds": 2030.6,
+  "total_input_tokens": 77378,
+  "total_output_tokens": 48522
+}

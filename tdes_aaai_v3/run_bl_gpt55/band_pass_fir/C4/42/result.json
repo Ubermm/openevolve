@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 28,
+  "best_passes": 5,
+  "total_tests": 1001,
+  "solved": false,
+  "decomp_modules": [
+    "bandpass_fir_coeffs",
+    "bandpass_fir_mac",
+    "bandpass_fir_quantize"
+  ],
+  "design": "band_pass_fir",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 1411.8,
+  "total_input_tokens": 86409,
+  "total_output_tokens": 76782
+}

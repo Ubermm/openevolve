@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/lowpass_fir_coeff_rom.v",
+  "sub_modules": {
+    "lowpass_fir_coeff_rom": "Pure combinational coefficient ROM containing the exact 101 signed 16-bit FIR coefficients required by the benchmark.",
+    "lowpass_fir_symmetric_preadd": "Pure combinational pre-adder for mirrored FIR samples, producing a DATA_W+1 signed sum for symmetric tap reuse.",
+    "lowpass_fir_product": "Pure combinational signed multiplier for a pre-added sample value and one quantized coefficient.",
+    "lowpass_fir_adder_tree": "Pure combinational wide accumulator that sums all symmetric-pair products and the center-tap product into a 64-bit result.",
+    "lowpass_fir_output_quantize": "Pure combinational output scaler that arithmetic-right-shifts the 64-bit accumulator by 20 bits and returns the configured output width."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/butterfly_comb.v",
+  "sub_modules": {
+    "butterfly_comb": "Combinational radix-2 butterfly unit with fixed-point complex multiply and add/subtract",
+    "twiddle_rom": "Combinational ROM generating Q1.15 twiddle factors for FFT/IFFT with optional conjugation",
+    "bit_reverse4": "Combinational 4-bit bit-reversal index generator"
+  }
+}

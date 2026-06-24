@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/hp_coeff_rom_comb.v",
+  "sub_modules": {
+    "hp_coeff_rom_comb": "Pure combinational ROM that returns the exact hard-coded 101 high-pass FIR coefficients quantized at scale 32768.",
+    "hp_sample_coeff_product": "Pure combinational signed multiplier for one delayed input sample and one FIR coefficient.",
+    "hp_accumulate_products": "Pure combinational wide accumulator that sums all tap products into a 64-bit signed MAC result.",
+    "hp_quantize_shift": "Pure combinational fixed-point output formatter that arithmetic-right-shifts the 64-bit accumulator by 15 and truncates to DATA_W+GAIN_W bits."
+  }
+}

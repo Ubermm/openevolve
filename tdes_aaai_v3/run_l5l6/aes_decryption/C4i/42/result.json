@@ -1,0 +1,9 @@
+{
+  "error": "Decomposition failed after 3 attempts: Could not find top module. Wrap it in <file name=\"X.v\" type=\"top\">...</file>",
+  "design": "aes_decryption",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 516.1,
+  "total_input_tokens": 5133,
+  "total_output_tokens": 36000
+}

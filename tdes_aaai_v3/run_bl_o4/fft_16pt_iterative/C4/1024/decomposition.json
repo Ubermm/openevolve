@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/addr_gen.v",
+  "sub_modules": {
+    "addr_gen": "Generate butterfly pair addresses and twiddle index for each stage and count.",
+    "twiddle_rom": "Fixed-point twiddle factor ROM, Q1.15 outputs with FFT/IFFT conjugation.",
+    "butterfly": "Combinational radix-2 DIT butterfly unit with twiddle multiply and rounding."
+  }
+}

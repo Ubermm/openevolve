@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/highpass_fir_sample_insert.v",
+  "sub_modules": {
+    "highpass_fir_sample_insert": "Pure combinational shift-register input insertion block; forms the next tap-delay vector from the current vector and incoming sample.",
+    "highpass_fir_mac101": "Pure combinational 101-tap signed multiply-accumulate engine with the exact hard-coded high-pass FIR coefficient set.",
+    "highpass_fir_q15_scale": "Pure combinational fixed-point scaler; arithmetic right-shifts the 64-bit MAC result by 15 and truncates to the configured output width."
+  }
+}

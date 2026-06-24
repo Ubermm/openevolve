@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/coeff_rom.v",
+  "sub_modules": {
+    "coeff_rom": "Coefficient lookup ROM hard-coded",
+    "mult_pair": "Multiply sum of two taps by coefficient",
+    "add_tree": "Accumulate partial products into filter output"
+  }
+}

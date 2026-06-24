@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/fir_coeffs.v",
+  "sub_modules": {
+    "fir_coeffs": "ROM of 101 high-pass FIR coefficients",
+    "mult_by_coeff": "Combinational multiplier of data sample and coefficient",
+    "adder": "Combinational adder for accumulating products",
+    "output_shifter": "Arithmetic right-shift stage to scale accumulator to output width"
+  }
+}

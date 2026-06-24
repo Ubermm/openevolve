@@ -1,0 +1,9 @@
+{
+  "error": "Decomposition failed after 3 attempts: Could not find top module. Wrap it in <file name=\"X.v\" type=\"top\">...</file>",
+  "design": "fp_adder_pipeline",
+  "model": "o4-mini",
+  "seed": 123,
+  "wall_seconds": 272.1,
+  "total_input_tokens": 8976,
+  "total_output_tokens": 36000
+}

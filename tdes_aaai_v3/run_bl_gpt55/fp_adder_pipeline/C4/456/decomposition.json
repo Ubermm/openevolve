@@ -1,0 +1,11 @@
+{
+  "top_source_file": "verilog/fp_unpack.v",
+  "sub_modules": {
+    "fp_unpack": "Combinational IEEE-754 operand unpacking, effective subtraction sign application, significand extraction, and basic classification.",
+    "fp_special": "Combinational handling for NaNs, infinities, signed zero cases, and one-zero operand forwarding.",
+    "fp_align": "Combinational operand magnitude ordering, exponent difference calculation, significand alignment, and sticky-bit generation.",
+    "fp_addsub_significands": "Combinational signed significand addition or subtraction using the aligned operands.",
+    "fp_normalize": "Combinational post-add normalization with carry handling and left normalization after cancellation.",
+    "fp_round_pack": "Combinational round-to-nearest-even logic and IEEE-754 result packing with overflow and zero handling."
+  }
+}

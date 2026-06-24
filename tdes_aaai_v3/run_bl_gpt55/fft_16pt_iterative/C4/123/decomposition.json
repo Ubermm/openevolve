@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/fft_bit_reverse_index.v",
+  "sub_modules": {
+    "fft_bit_reverse_index": "Combinational bit-reversal index mapper used during input loading so the iterative DIT FFT produces natural-order output bins.",
+    "fft_index_gen": "Combinational radix-2 stage controller helper that maps the current stage and butterfly count to memory pair addresses and twiddle address.",
+    "fft_twiddle_rom": "Combinational Q1.15 twiddle coefficient lookup table for N=16 using the exact specified cosine and sine encodings.",
+    "fft_butterfly_fixed": "Combinational fixed-point complex radix-2 butterfly with Q1.15 twiddle multiplication, FFT/IFFT conjugation mode support, and no per-stage scaling."
+  }
+}

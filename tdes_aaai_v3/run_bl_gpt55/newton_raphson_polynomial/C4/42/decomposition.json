@@ -1,0 +1,11 @@
+{
+  "top_source_file": "verilog/fixed_poly_eval_cubic.v",
+  "sub_modules": {
+    "fixed_poly_eval_cubic": "Combinational fixed-point cubic polynomial evaluator using Horner's method for p(x)=a0+a1*x+a2*x^2+a3*x^3.",
+    "fixed_poly_derivative_cubic": "Combinational fixed-point derivative evaluator for p'(x)=a1+2*a2*x+3*a3*x^2 using Horner-style arithmetic.",
+    "fixed_newton_update": "Combinational Newton-Raphson update block computing x_next=x-p(x)/p'(x) with fixed-point scaled division and derivative-zero protection.",
+    "fixed_convergence_check": "Combinational absolute-value tolerance checker for polynomial residual and Newton update magnitude.",
+    "fixed_root_verify": "Combinational verification block asserting valid when the candidate root polynomial residual is within tolerance.",
+    "fixed_root_pack": "Combinational packer that maps the extended-precision internal fixed-point root into the configured output width."
+  }
+}

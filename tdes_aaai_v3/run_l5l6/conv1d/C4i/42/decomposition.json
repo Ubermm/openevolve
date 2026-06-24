@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/conv1d_window_next.v",
+  "sub_modules": {
+    "conv1d_window_next": "Purely combinational shift-register next-state generator for the streaming stencil window.",
+    "conv1d_coeff_pack": "Purely combinational fixed coefficient provider. Defaults to common Gaussian-style kernels, including the 5-tap [2, 8, 12, 8, 2] mask.",
+    "conv1d_mac": "Purely combinational multiply-accumulate datapath over the flattened sample window and coefficient vector.",
+    "conv1d_output_cast": "Purely combinational output width adapter that truncates the wide accumulator to DATA_W+GAIN_W bits."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "condition": "C4i",
+  "llm_calls": 6,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "fft64_sign_extend",
+    "fft64_twiddle_rom",
+    "fft64_complex_mult",
+    "fft64_butterfly",
+    "fft64_output_clip"
+  ],
+  "module_solve_rounds": {
+    "fft64_sign_extend": 1,
+    "fft64_twiddle_rom": 1,
+    "fft64_complex_mult": 1,
+    "fft64_butterfly": 1,
+    "fft64_output_clip": 1
+  },
+  "design": "fft_streaming_64pt",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 317.8,
+  "total_input_tokens": 14082,
+  "total_output_tokens": 21833
+}

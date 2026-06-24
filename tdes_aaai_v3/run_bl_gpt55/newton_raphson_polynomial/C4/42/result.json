@@ -1,0 +1,20 @@
+{
+  "condition": "C4",
+  "solved": false,
+  "llm_calls": 25,
+  "error": "final compile failed",
+  "decomp_modules": [
+    "fixed_poly_eval_cubic",
+    "fixed_poly_derivative_cubic",
+    "fixed_newton_update",
+    "fixed_convergence_check",
+    "fixed_root_verify",
+    "fixed_root_pack"
+  ],
+  "design": "newton_raphson_polynomial",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 1708.3,
+  "total_input_tokens": 15013,
+  "total_output_tokens": 29108
+}

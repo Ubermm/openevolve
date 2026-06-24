@@ -1,0 +1,23 @@
+{
+  "condition": "C4tl",
+  "llm_calls": 6,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "aes128_key_expand",
+    "aes128_inv_shiftrows",
+    "aes128_inv_subbytes",
+    "aes128_add_round_key",
+    "aes128_inv_mixcolumns"
+  ],
+  "ref_passes": 1,
+  "ref_total": 1,
+  "module_solve_rounds": {},
+  "design": "aes_decryption",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 405.2,
+  "total_input_tokens": 10739,
+  "total_output_tokens": 26308
+}

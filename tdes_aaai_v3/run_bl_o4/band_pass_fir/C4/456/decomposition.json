@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/coeff_rom.v",
+  "sub_modules": {
+    "coeff_rom": "Combinational lookup of 101 signed FIR coefficients",
+    "fir_mac": "Combinational multiply-accumulate stage for one tap",
+    "scaler": "Combinational right-shift to scale full-precision sum to output width"
+  }
+}

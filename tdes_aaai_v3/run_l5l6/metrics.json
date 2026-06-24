@@ -1,0 +1,363 @@
+{
+  "conv1d__C4i__gpt-5.5__42": {
+    "condition": "C4i",
+    "llm_calls": 5,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "conv1d_window_next",
+      "conv1d_coeff_pack",
+      "conv1d_mac",
+      "conv1d_output_cast"
+    ],
+    "module_solve_rounds": {
+      "conv1d_window_next": 1,
+      "conv1d_coeff_pack": 1,
+      "conv1d_mac": 1,
+      "conv1d_output_cast": 1
+    },
+    "design": "conv1d",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 300.2,
+    "total_input_tokens": 8858,
+    "total_output_tokens": 13463
+  },
+  "conv1d__C4tl__gpt-5.5__42": {
+    "condition": "C4tl",
+    "llm_calls": 5,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "conv1d_window_next",
+      "conv1d_coeff_bank",
+      "conv1d_mac",
+      "conv1d_output_cast"
+    ],
+    "ref_passes": 1,
+    "ref_total": 1,
+    "module_solve_rounds": {},
+    "design": "conv1d",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 422.0,
+    "total_input_tokens": 8969,
+    "total_output_tokens": 18212
+  },
+  "conv2d__C4tl__gpt-5.5__42": {
+    "condition": "C4tl",
+    "llm_calls": 6,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "conv2d_window_update",
+      "conv2d_valid_region",
+      "conv2d_coeff_rom",
+      "conv2d_dot_product",
+      "conv2d_output_cast"
+    ],
+    "ref_passes": 1,
+    "ref_total": 1,
+    "module_solve_rounds": {},
+    "design": "conv2d",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 547.5,
+    "total_input_tokens": 11254,
+    "total_output_tokens": 25348
+  },
+  "conv2d__C4i__gpt-5.5__42": {
+    "condition": "C4i",
+    "llm_calls": 6,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "conv2d_coord_gen",
+      "conv2d_window_extract",
+      "conv2d_coeff_gen",
+      "conv2d_dot_product",
+      "conv2d_output_cast"
+    ],
+    "module_solve_rounds": {
+      "conv2d_coord_gen": 1,
+      "conv2d_window_extract": 1,
+      "conv2d_coeff_gen": 1,
+      "conv2d_dot_product": 1,
+      "conv2d_output_cast": 1
+    },
+    "design": "conv2d",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 739.0,
+    "total_input_tokens": 13843,
+    "total_output_tokens": 33469
+  },
+  "dct_idct_8pt_pipelined__C4tl__gpt-5.5__42": {
+    "condition": "C4tl",
+    "llm_calls": 5,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "dct8_coeff_rom",
+      "dct8_signed_mult",
+      "dct8_adder_tree",
+      "dct8_round_saturate"
+    ],
+    "ref_passes": 1,
+    "ref_total": 1,
+    "module_solve_rounds": {},
+    "design": "dct_idct_8pt_pipelined",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 454.3,
+    "total_input_tokens": 12296,
+    "total_output_tokens": 23047
+  },
+  "harris_corner_detection__C4tl__gpt-5.5__42": {
+    "condition": "C4tl",
+    "llm_calls": 6,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "harris_sobel3x3",
+      "harris_grad_products",
+      "harris_gaussian3x3",
+      "harris_response",
+      "harris_threshold"
+    ],
+    "ref_passes": 1,
+    "ref_total": 1,
+    "module_solve_rounds": {},
+    "design": "harris_corner_detection",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 527.3,
+    "total_input_tokens": 11659,
+    "total_output_tokens": 24564
+  },
+  "harris_corner_detection__C4i__gpt-5.5__42": {
+    "condition": "C4i",
+    "llm_calls": 6,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "sobel3x3",
+      "grad_products",
+      "gaussian3x3",
+      "harris_response_comb",
+      "harris_threshold_comb"
+    ],
+    "module_solve_rounds": {
+      "sobel3x3": 1,
+      "grad_products": 1,
+      "gaussian3x3": 1,
+      "harris_response_comb": 1,
+      "harris_threshold_comb": 1
+    },
+    "design": "harris_corner_detection",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 456.8,
+    "total_input_tokens": 12350,
+    "total_output_tokens": 21945
+  },
+  "systolic_gemm__C4tl__gpt-5.5__42": {
+    "condition": "C4tl",
+    "solved": false,
+    "llm_calls": 29,
+    "error": "final compile failed",
+    "decomp_modules": [
+      "pe",
+      "systolic_done_control",
+      "result_mapper_4x4"
+    ],
+    "ref_passes": 0,
+    "ref_total": 0,
+    "module_solve_rounds": {},
+    "design": "systolic_gemm",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 1994.1,
+    "total_input_tokens": 61025,
+    "total_output_tokens": 86189
+  },
+  "dct_idct_8pt_pipelined__C4i__gpt-5.5__42": {
+    "condition": "C4i",
+    "llm_calls": 28,
+    "best_passes": 0,
+    "total_tests": 0,
+    "solved": false,
+    "decomp_modules": [
+      "dct8_coeff_pack",
+      "dct8_dot_product",
+      "dct_round_saturate"
+    ],
+    "module_solve_rounds": {},
+    "design": "dct_idct_8pt_pipelined",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 4079.3,
+    "total_input_tokens": 458176,
+    "total_output_tokens": 131415
+  },
+  "unsharp_mask__C4tl__gpt-5.5__42": {
+    "condition": "C4tl",
+    "llm_calls": 5,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "usm_gaussian3x3",
+      "usm_highpass",
+      "usm_gain_scale",
+      "usm_reconstruct_sat"
+    ],
+    "ref_passes": 1,
+    "ref_total": 1,
+    "module_solve_rounds": {},
+    "design": "unsharp_mask",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 278.3,
+    "total_input_tokens": 8021,
+    "total_output_tokens": 14321
+  },
+  "systolic_gemm__C4i__gpt-5.5__42": {
+    "condition": "C4i",
+    "solved": false,
+    "llm_calls": 29,
+    "error": "final compile failed",
+    "decomp_modules": [
+      "pe",
+      "boundary_router",
+      "cycle_control_logic",
+      "result_bus_mapper"
+    ],
+    "module_solve_rounds": {},
+    "design": "systolic_gemm",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 1337.4,
+    "total_input_tokens": 157034,
+    "total_output_tokens": 70703
+  },
+  "unsharp_mask__C4i__gpt-5.5__42": {
+    "condition": "C4i",
+    "llm_calls": 6,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "usm_window_zero_pad",
+      "usm_gaussian3x3_blur",
+      "usm_highfreq_subtract",
+      "usm_gain_scale",
+      "usm_reconstruct_saturate"
+    ],
+    "module_solve_rounds": {
+      "usm_window_zero_pad": 1,
+      "usm_gaussian3x3_blur": 1,
+      "usm_highfreq_subtract": 1,
+      "usm_gain_scale": 1,
+      "usm_reconstruct_saturate": 1
+    },
+    "design": "unsharp_mask",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 289.9,
+    "total_input_tokens": 10038,
+    "total_output_tokens": 16484
+  },
+  "aes_decryption__C4tl__gpt-5.5__42": {
+    "condition": "C4tl",
+    "llm_calls": 6,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "aes128_key_expand",
+      "aes128_inv_shiftrows",
+      "aes128_inv_subbytes",
+      "aes128_add_round_key",
+      "aes128_inv_mixcolumns"
+    ],
+    "ref_passes": 1,
+    "ref_total": 1,
+    "module_solve_rounds": {},
+    "design": "aes_decryption",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 405.2,
+    "total_input_tokens": 10739,
+    "total_output_tokens": 26308
+  },
+  "aes_decryption__C4i__gpt-5.5__42": {
+    "error": "Decomposition failed after 3 attempts: Could not find top module. Wrap it in <file name=\"X.v\" type=\"top\">...</file>",
+    "design": "aes_decryption",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 516.1,
+    "total_input_tokens": 5133,
+    "total_output_tokens": 36000
+  },
+  "aes_encryption__C4tl__gpt-5.5__42": {
+    "condition": "C4tl",
+    "llm_calls": 7,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "aes_sbox",
+      "aes_subbytes",
+      "aes_shiftrows",
+      "aes_mixcolumns",
+      "aes_key_expand_round",
+      "aes_round"
+    ],
+    "ref_passes": 1,
+    "ref_total": 1,
+    "module_solve_rounds": {},
+    "design": "aes_encryption",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 575.6,
+    "total_input_tokens": 15580,
+    "total_output_tokens": 40325
+  },
+  "aes_encryption__C4i__gpt-5.5__42": {
+    "condition": "C4i",
+    "llm_calls": 7,
+    "best_passes": 1,
+    "total_tests": 1,
+    "solved": true,
+    "decomp_modules": [
+      "aes_sbox",
+      "aes_subbytes",
+      "aes_shiftrows",
+      "aes_mixcolumns",
+      "aes_round",
+      "aes_key_expand"
+    ],
+    "module_solve_rounds": {
+      "aes_sbox": 1,
+      "aes_subbytes": 1,
+      "aes_shiftrows": 1,
+      "aes_mixcolumns": 1,
+      "aes_round": 1,
+      "aes_key_expand": 1
+    },
+    "design": "aes_encryption",
+    "model": "gpt-5.5",
+    "seed": 42,
+    "wall_seconds": 316.8,
+    "total_input_tokens": 15537,
+    "total_output_tokens": 22536
+  }
+}

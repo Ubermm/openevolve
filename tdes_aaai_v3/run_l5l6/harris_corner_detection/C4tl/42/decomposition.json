@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/harris_sobel3x3.v",
+  "sub_modules": {
+    "harris_sobel3x3": "Pure combinational 3x3 Sobel gradient operator producing signed X and Y gradients.",
+    "harris_grad_products": "Pure combinational gradient product stage computing Ix^2, Iy^2, and IxIy.",
+    "harris_gaussian3x3": "Pure combinational 3x3 Gaussian smoothing kernel with weights 1-2-1 / 2-4-2 / 1-2-1 and divide-by-16 normalization.",
+    "harris_response": "Pure combinational fixed-point Harris response arithmetic computing det(M) minus k-scaled trace(M)^2 with output saturation.",
+    "harris_threshold": "Pure combinational pointwise threshold decision for the final binary corner map."
+  }
+}

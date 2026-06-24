@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 28,
+  "best_passes": 0,
+  "total_tests": 50,
+  "solved": false,
+  "decomp_modules": [
+    "fixed_mult",
+    "compute_x1",
+    "compute_x2"
+  ],
+  "design": "gauss_siedel",
+  "model": "o4-mini",
+  "seed": 1024,
+  "wall_seconds": 456.9,
+  "total_input_tokens": 37310,
+  "total_output_tokens": 80798
+}

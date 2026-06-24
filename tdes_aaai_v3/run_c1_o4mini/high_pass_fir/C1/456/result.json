@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 20,
+  "total_tests": 1001,
+  "solved": false,
+  "golden_correct": 0,
+  "golden_total": 0,
+  "design": "high_pass_fir",
+  "model": "o4-mini",
+  "seed": 456,
+  "wall_seconds": 191.6,
+  "total_input_tokens": 7540,
+  "total_output_tokens": 28336
+}

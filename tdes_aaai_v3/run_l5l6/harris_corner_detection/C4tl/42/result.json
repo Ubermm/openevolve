@@ -1,0 +1,23 @@
+{
+  "condition": "C4tl",
+  "llm_calls": 6,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "harris_sobel3x3",
+    "harris_grad_products",
+    "harris_gaussian3x3",
+    "harris_response",
+    "harris_threshold"
+  ],
+  "ref_passes": 1,
+  "ref_total": 1,
+  "module_solve_rounds": {},
+  "design": "harris_corner_detection",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 527.3,
+  "total_input_tokens": 11659,
+  "total_output_tokens": 24564
+}

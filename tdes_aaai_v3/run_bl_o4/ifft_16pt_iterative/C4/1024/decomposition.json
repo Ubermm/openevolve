@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/butterfly_unit.v",
+  "sub_modules": {
+    "butterfly_unit": "Combinational radix-2 butterfly unit computing two complex outputs from inputs and twiddle factors.",
+    "twiddle_rom": "Combinational ROM storing Q1.15 twiddle cosine and sine values for N=16 IFFT.",
+    "bit_rev": "Combinational module reversing bits of a 4-bit index for final output reordering."
+  }
+}

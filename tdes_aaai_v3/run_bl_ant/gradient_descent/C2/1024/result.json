@@ -1,0 +1,13 @@
+{
+  "condition": "C2",
+  "llm_calls": 30,
+  "best_passes": 0,
+  "total_tests": 0,
+  "solved": false,
+  "design": "gradient_descent",
+  "model": "claude-opus-4-6",
+  "seed": 1024,
+  "wall_seconds": 11.3,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0
+}

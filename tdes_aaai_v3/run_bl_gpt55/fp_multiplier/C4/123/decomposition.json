@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/fp_operand_unpack.v",
+  "sub_modules": {
+    "fp_operand_unpack": "Extracts sign, exponent, fraction, classification bits, effective significand, and unbiased exponent from each floating-point operand.",
+    "fp_special_cases": "Detects and resolves NaN, infinity, infinity-times-zero, and zero operand cases with the exception flag behavior expected by the testbench.",
+    "fp_significand_multiply": "Computes result sign, unbiased exponent sum, and raw significand product.",
+    "fp_normalize_round_pack": "Normalizes the raw significand product, applies the selected rounding mode, detects overflow/flush-to-zero underflow, and packs the final floating-point result."
+  }
+}

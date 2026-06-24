@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 2,
+  "total_tests": 50,
+  "solved": false,
+  "golden_correct": 0,
+  "golden_total": 0,
+  "design": "newton_raphson_sqrt",
+  "model": "gpt-4o",
+  "seed": 456,
+  "wall_seconds": 38.4,
+  "total_input_tokens": 5250,
+  "total_output_tokens": 3294
+}

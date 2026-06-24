@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/fft16_addr_gen.v",
+  "sub_modules": {
+    "fft16_addr_gen": "Combinational radix-2 DIT stage address generator for one butterfly per cycle. Produces p/q memory addresses and the twiddle index for N=16.",
+    "fft16_twiddle_rom": "Combinational Q1.15 twiddle coefficient ROM using the exact required N=16 cosine and positive-sine table.",
+    "fft16_butterfly": "Combinational fixed-point complex radix-2 butterfly. Reuses one unit iteratively and supports FFT/IFFT twiddle sign selection.",
+    "fft16_bit_reverse": "Combinational 4-bit address bit-reversal block used during input loading so DIT computation produces natural-order FFT bins.",
+    "fft16_output_scale": "Combinational output normalization block. Passes FFT outputs unchanged and divides IFFT outputs by N=16 via arithmetic right shift."
+  }
+}

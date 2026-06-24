@@ -1,0 +1,13 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 45,
+  "total_tests": 50,
+  "solved": false,
+  "design": "gauss_siedel",
+  "model": "gpt-5.5",
+  "seed": 456,
+  "wall_seconds": 432.4,
+  "total_input_tokens": 6360,
+  "total_output_tokens": 28147
+}

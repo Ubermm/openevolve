@@ -1,0 +1,22 @@
+{
+  "condition": "C4tl",
+  "llm_calls": 5,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "conv1d_window_next",
+    "conv1d_coeff_bank",
+    "conv1d_mac",
+    "conv1d_output_cast"
+  ],
+  "ref_passes": 1,
+  "ref_total": 1,
+  "module_solve_rounds": {},
+  "design": "conv1d",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 422.0,
+  "total_input_tokens": 8969,
+  "total_output_tokens": 18212
+}

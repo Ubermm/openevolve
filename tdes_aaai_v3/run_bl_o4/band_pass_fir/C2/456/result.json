@@ -1,0 +1,13 @@
+{
+  "condition": "C2",
+  "llm_calls": 30,
+  "best_passes": 1,
+  "total_tests": 1001,
+  "solved": false,
+  "design": "band_pass_fir",
+  "model": "o4-mini",
+  "seed": 456,
+  "wall_seconds": 1255.8,
+  "total_input_tokens": 81818,
+  "total_output_tokens": 187052
+}

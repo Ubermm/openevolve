@@ -1,0 +1,11 @@
+{
+  "top_source_file": "verilog/fp_unpack.v",
+  "sub_modules": {
+    "fp_unpack": "Combinational IEEE-754 single-precision operand unpacker. Extracts sign, effective exponent, 24-bit significand, and zero/INF/NaN flags.",
+    "fp_special_cases": "Combinational special-value resolver for NaNs and infinities, including invalid infinity cancellation to quiet NaN.",
+    "fp_align": "Combinational magnitude ordering and exponent alignment block. Produces guard/round/sticky-extended significands.",
+    "fp_significand_addsub": "Combinational aligned significand add/subtract block based on effective operand signs.",
+    "fp_normalize": "Combinational normalization block. Handles carry normalization, cancellation left-normalization, zero detection, and subnormal boundary behavior.",
+    "fp_round_pack": "Combinational IEEE-754 round-to-nearest-even and pack block with overflow to infinity and subnormal packing."
+  }
+}

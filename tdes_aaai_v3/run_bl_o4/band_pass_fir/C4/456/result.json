@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 28,
+  "best_passes": 19,
+  "total_tests": 1001,
+  "solved": false,
+  "decomp_modules": [
+    "coeff_rom",
+    "fir_mac",
+    "scaler"
+  ],
+  "design": "band_pass_fir",
+  "model": "o4-mini",
+  "seed": 456,
+  "wall_seconds": 617.6,
+  "total_input_tokens": 106787,
+  "total_output_tokens": 93129
+}

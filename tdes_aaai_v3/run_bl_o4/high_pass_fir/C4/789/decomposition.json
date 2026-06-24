@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/coeff_rom.v",
+  "sub_modules": {
+    "coeff_rom": "Combinational ROM storing 101 signed 16-bit FIR coefficients",
+    "mult_add_stage": "Combinational single-tap multiply-accumulate stage",
+    "scaler": "Combinational right-shift scaling of the accumulator to output width"
+  }
+}

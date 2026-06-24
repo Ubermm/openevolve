@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 8,
+  "total_tests": 8,
+  "solved": true,
+  "golden_correct": 8,
+  "golden_total": 8,
+  "design": "aes_decryption",
+  "model": "gpt-5.5",
+  "seed": 123,
+  "wall_seconds": 461.7,
+  "total_input_tokens": 3740,
+  "total_output_tokens": 39961
+}

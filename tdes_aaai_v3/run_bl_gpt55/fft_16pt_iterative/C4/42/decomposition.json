@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/fft16_bit_reverse_index.v",
+  "sub_modules": {
+    "fft16_bit_reverse_index": "Combinational 4-bit bit-reversal mapper used to load DIT FFT input samples in bit-reversed order.",
+    "fft16_index_calc": "Combinational iterative radix-2 DIT address generator for butterfly pair indices and twiddle ROM index.",
+    "fft16_twiddle_rom": "Combinational Q1.15 twiddle coefficient lookup table for N=16 using the specified cosine and sine encoding.",
+    "fft16_butterfly": "Combinational fixed-point complex radix-2 butterfly with FFT/IFFT twiddle sign selection and Q1.15 rounded twiddle multiplication.",
+    "fft16_output_normalize": "Combinational output scaling block: FFT passthrough, IFFT arithmetic divide-by-16 normalization."
+  }
+}

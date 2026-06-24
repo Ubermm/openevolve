@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/fir_coeff.v",
+  "sub_modules": {
+    "fir_coeff": "Combinational coefficient lookup from a 101-entry static array",
+    "fir_mac": "Combinational multiply-accumulate stage",
+    "fir_output": "Combinational output stage: arithmetic shift and truncate"
+  }
+}

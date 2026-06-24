@@ -1,0 +1,13 @@
+{
+  "condition": "C2",
+  "llm_calls": 30,
+  "best_passes": 0,
+  "total_tests": 0,
+  "solved": false,
+  "design": "band_pass_fir",
+  "model": "gpt-5.5",
+  "seed": 123,
+  "wall_seconds": 941.3,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0
+}

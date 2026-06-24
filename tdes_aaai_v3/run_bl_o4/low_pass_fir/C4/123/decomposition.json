@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/coeff_rom.v",
+  "sub_modules": {
+    "coeff_rom": "Coefficient lookup ROM for FIR taps",
+    "pair_mac": "Combines two samples and multiplies by coefficient",
+    "out_shift": "Shifts accumulated sum to output scale"
+  }
+}

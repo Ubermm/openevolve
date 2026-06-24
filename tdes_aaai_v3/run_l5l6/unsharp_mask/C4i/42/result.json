@@ -1,0 +1,27 @@
+{
+  "condition": "C4i",
+  "llm_calls": 6,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "usm_window_zero_pad",
+    "usm_gaussian3x3_blur",
+    "usm_highfreq_subtract",
+    "usm_gain_scale",
+    "usm_reconstruct_saturate"
+  ],
+  "module_solve_rounds": {
+    "usm_window_zero_pad": 1,
+    "usm_gaussian3x3_blur": 1,
+    "usm_highfreq_subtract": 1,
+    "usm_gain_scale": 1,
+    "usm_reconstruct_saturate": 1
+  },
+  "design": "unsharp_mask",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 289.9,
+  "total_input_tokens": 10038,
+  "total_output_tokens": 16484
+}

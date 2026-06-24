@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 28,
+  "best_passes": 0,
+  "total_tests": 1001,
+  "solved": false,
+  "decomp_modules": [
+    "shift_regs",
+    "valid_pipe",
+    "fir_acc"
+  ],
+  "design": "low_pass_fir",
+  "model": "o4-mini",
+  "seed": 456,
+  "wall_seconds": 613.6,
+  "total_input_tokens": 106843,
+  "total_output_tokens": 94845
+}

@@ -1,0 +1,13 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 0,
+  "total_tests": 0,
+  "solved": false,
+  "design": "gauss_siedel",
+  "model": "claude-opus-4-6",
+  "seed": 456,
+  "wall_seconds": 2.7,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0
+}

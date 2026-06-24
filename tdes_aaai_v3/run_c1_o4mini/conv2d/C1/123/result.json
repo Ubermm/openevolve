@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 0,
+  "total_tests": 0,
+  "solved": false,
+  "golden_correct": 0,
+  "golden_total": 0,
+  "design": "conv2d",
+  "model": "o4-mini",
+  "seed": 123,
+  "wall_seconds": 189.8,
+  "total_input_tokens": 5110,
+  "total_output_tokens": 30613
+}

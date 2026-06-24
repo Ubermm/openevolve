@@ -1,0 +1,9 @@
+{
+  "error": "Decomposition failed after 3 attempts: Could not find top module. Wrap it in <file name=\"X.v\" type=\"top\">...</file>",
+  "design": "ifft_16pt_iterative",
+  "model": "o4-mini",
+  "seed": 789,
+  "wall_seconds": 219.6,
+  "total_input_tokens": 13266,
+  "total_output_tokens": 33792
+}

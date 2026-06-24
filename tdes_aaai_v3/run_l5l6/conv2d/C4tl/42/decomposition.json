@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/conv2d_window_update.v",
+  "sub_modules": {
+    "conv2d_window_update": "Combinational horizontal stencil shifter and flattened KxK window formatter with zero left-padding at line starts.",
+    "conv2d_valid_region": "Combinational valid generator that asserts after the configured stencil radius of rows and columns has been buffered.",
+    "conv2d_coeff_rom": "Combinational coefficient provider. The default 3x3 kernel is the Gaussian-style [1 2 1; 2 4 2; 1 2 1] kernel; other sizes default to identity.",
+    "conv2d_dot_product": "Combinational matrix-vector dot product over the flattened pixel window and flattened coefficient vector.",
+    "conv2d_output_cast": "Combinational signed accumulator-to-output cast with clamp-to-zero for negative values and saturation for overflow."
+  }
+}

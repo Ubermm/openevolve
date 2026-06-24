@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 28,
+  "best_passes": 0,
+  "total_tests": 0,
+  "solved": false,
+  "decomp_modules": [
+    "deriv_calc",
+    "fixed_mul_shift",
+    "fixed_sub"
+  ],
+  "design": "gradient_descent",
+  "model": "o4-mini",
+  "seed": 1024,
+  "wall_seconds": 1906.4,
+  "total_input_tokens": 33535,
+  "total_output_tokens": 50248
+}

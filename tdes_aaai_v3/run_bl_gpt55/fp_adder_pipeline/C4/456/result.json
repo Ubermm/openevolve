@@ -1,0 +1,21 @@
+{
+  "condition": "C4",
+  "llm_calls": 18,
+  "best_passes": 4,
+  "total_tests": 23,
+  "solved": false,
+  "decomp_modules": [
+    "fp_unpack",
+    "fp_special",
+    "fp_align",
+    "fp_addsub_significands",
+    "fp_normalize",
+    "fp_round_pack"
+  ],
+  "design": "fp_adder_pipeline",
+  "model": "gpt-5.5",
+  "seed": 456,
+  "wall_seconds": 970.3,
+  "total_input_tokens": 16041,
+  "total_output_tokens": 47141
+}

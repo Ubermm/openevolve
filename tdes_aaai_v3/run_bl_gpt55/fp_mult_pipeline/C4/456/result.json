@@ -1,0 +1,21 @@
+{
+  "condition": "C4",
+  "llm_calls": 13,
+  "best_passes": 31,
+  "total_tests": 31,
+  "solved": true,
+  "decomp_modules": [
+    "fp_mult_unpack",
+    "fp_mult_special",
+    "fp_mult_mul_exp",
+    "fp_mult_normalize_round",
+    "fp_mult_status",
+    "fp_mult_pack"
+  ],
+  "design": "fp_mult_pipeline",
+  "model": "gpt-5.5",
+  "seed": 456,
+  "wall_seconds": 308.8,
+  "total_input_tokens": 7400,
+  "total_output_tokens": 16735
+}

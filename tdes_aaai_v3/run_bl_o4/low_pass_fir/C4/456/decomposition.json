@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/shift_regs.v",
+  "sub_modules": {
+    "shift_regs": "Serial sample shift register of length TAP_CNT",
+    "valid_pipe": "Valid-bit pipeline to align output valid signal",
+    "fir_acc": "Combinational FIR accumulator using hard-coded coefficients"
+  }
+}

@@ -1,0 +1,777 @@
+2026-06-24 04:01:40,231 __main__ INFO Total: 99 cells (99 to run, 0 already done)
+2026-06-24 04:01:40,233 __main__ INFO === Cell: aes128_single_round / C1 / o4-mini / seed=456 ===
+2026-06-24 04:01:40,234 __main__ INFO === Cell: aes128_single_round / C1 / o4-mini / seed=123 ===
+2026-06-24 04:01:40,235 __main__ INFO === Cell: aes128_single_round / C1 / o4-mini / seed=42 ===
+2026-06-24 04:02:37,094 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:02:37,120 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:02:38,661 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:03:28,068 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:03:28,549 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:03:30,316 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:22,939 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:23,345 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:17,684 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:18,108 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:23,483 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:06,659 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:15,211 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:15,213 __main__ INFO Progress: 1/99 cells (1%) — aes128_single_round__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 04:06:15,213 __main__ INFO === Cell: cla_32bit_pipe / C1 / o4-mini / seed=42 ===
+2026-06-24 04:06:16,687 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:16,689 __main__ INFO Progress: 2/99 cells (2%) — aes128_single_round__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 04:06:16,689 __main__ INFO === Cell: cla_32bit_pipe / C1 / o4-mini / seed=123 ===
+2026-06-24 04:07:01,481 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:01,482 __main__ INFO Progress: 3/99 cells (3%) — aes128_single_round__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 04:07:01,483 __main__ INFO === Cell: cla_32bit_pipe / C1 / o4-mini / seed=456 ===
+2026-06-24 04:07:15,758 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:17,335 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:00,895 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:14,098 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:15,511 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:43,056 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:02,435 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:13,285 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:16,217 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:55,609 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:01,160 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:08,175 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:54,087 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:54,092 __main__ INFO Progress: 4/99 cells (4%) — cla_32bit_pipe__C1__o4-mini__123: FAILED (1/50)
+2026-06-24 04:10:54,092 __main__ INFO === Cell: dadda_mult_pipe / C1 / o4-mini / seed=42 ===
+2026-06-24 04:11:00,302 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:11:00,303 __main__ INFO Progress: 5/99 cells (5%) — cla_32bit_pipe__C1__o4-mini__42: FAILED (1/50)
+2026-06-24 04:11:00,306 __main__ INFO === Cell: dadda_mult_pipe / C1 / o4-mini / seed=123 ===
+2026-06-24 04:11:02,973 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:11:03,046 __main__ INFO Progress: 6/99 cells (6%) — cla_32bit_pipe__C1__o4-mini__456: FAILED (1/50)
+2026-06-24 04:11:03,047 __main__ INFO === Cell: dadda_mult_pipe / C1 / o4-mini / seed=456 ===
+2026-06-24 04:11:47,178 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:11:51,327 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:12:01,883 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:12:28,484 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:12:52,725 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:12:54,670 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:13:12,231 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:13:38,964 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:13:41,549 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:13:55,332 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:14:21,489 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:14:27,920 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:14:50,463 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:14:50,464 __main__ INFO Progress: 7/99 cells (7%) — dadda_mult_pipe__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 04:14:50,465 __main__ INFO === Cell: rca_32bit_pipe / C1 / o4-mini / seed=42 ===
+2026-06-24 04:15:00,471 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:15:00,498 __main__ INFO Progress: 8/99 cells (8%) — dadda_mult_pipe__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 04:15:00,498 __main__ INFO === Cell: rca_32bit_pipe / C1 / o4-mini / seed=123 ===
+2026-06-24 04:15:16,617 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:15:20,391 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:15:20,393 __main__ INFO Progress: 9/99 cells (9%) — dadda_mult_pipe__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 04:15:20,393 __main__ INFO === Cell: rca_32bit_pipe / C1 / o4-mini / seed=456 ===
+2026-06-24 04:15:50,846 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:03,215 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:05,619 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:34,805 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:38,288 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:59,073 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:03,573 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:24,579 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:27,252 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:29,698 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:43,489 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:22,036 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:22,039 __main__ INFO Progress: 10/99 cells (10%) — rca_32bit_pipe__C1__o4-mini__456: FAILED (15/50)
+2026-06-24 04:18:22,039 __main__ INFO === Cell: wallace_tree_mult_pipe / C1 / o4-mini / seed=42 ===
+2026-06-24 04:18:22,226 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:22,249 __main__ INFO Progress: 11/99 cells (11%) — rca_32bit_pipe__C1__o4-mini__123: SOLVED (50/50)
+2026-06-24 04:18:22,249 __main__ INFO === Cell: wallace_tree_mult_pipe / C1 / o4-mini / seed=123 ===
+2026-06-24 04:18:26,461 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:26,463 __main__ INFO Progress: 12/99 cells (12%) — rca_32bit_pipe__C1__o4-mini__42: SOLVED (50/50)
+2026-06-24 04:18:26,463 __main__ INFO === Cell: wallace_tree_mult_pipe / C1 / o4-mini / seed=456 ===
+2026-06-24 04:18:58,768 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:18,462 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:18,530 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:49,485 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:52,009 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:20:17,734 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:20:19,413 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:20:19,789 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:02,616 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:03,026 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:07,718 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:21,044 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:21,058 __main__ INFO Progress: 13/99 cells (13%) — wallace_tree_mult_pipe__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 04:21:21,059 __main__ INFO === Cell: fp_adder / C1 / o4-mini / seed=42 ===
+2026-06-24 04:21:26,891 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:39,407 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:39,421 __main__ INFO Progress: 14/99 cells (14%) — wallace_tree_mult_pipe__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 04:21:39,421 __main__ INFO === Cell: fp_adder / C1 / o4-mini / seed=123 ===
+2026-06-24 04:21:48,567 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:22:09,212 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:22:18,652 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:22:18,664 __main__ INFO Progress: 15/99 cells (15%) — wallace_tree_mult_pipe__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 04:22:18,664 __main__ INFO === Cell: fp_adder / C1 / o4-mini / seed=456 ===
+2026-06-24 04:22:48,066 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:00,331 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:35,242 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:44,759 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:54,721 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:24:23,716 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:24:55,902 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:05,207 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:14,890 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:58,665 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:58,668 __main__ INFO Progress: 16/99 cells (16%) — fp_adder__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 04:25:58,671 __main__ INFO === Cell: fp_multiplier / C1 / o4-mini / seed=42 ===
+2026-06-24 04:26:08,938 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:08,940 __main__ INFO Progress: 17/99 cells (17%) — fp_adder__C1__o4-mini__123: FAILED (5/36)
+2026-06-24 04:26:08,940 __main__ INFO === Cell: fp_multiplier / C1 / o4-mini / seed=123 ===
+2026-06-24 04:26:15,027 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:53,805 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:56,033 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:56,043 __main__ INFO Progress: 18/99 cells (18%) — fp_adder__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 04:26:56,044 __main__ INFO === Cell: fp_multiplier / C1 / o4-mini / seed=456 ===
+2026-06-24 04:27:03,505 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:30,035 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:48,068 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:51,986 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:11,296 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:20,226 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:42,689 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:50,951 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:03,980 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:23,546 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:32,070 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:53,559 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:53,573 __main__ INFO Progress: 19/99 cells (19%) — fp_multiplier__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 04:29:53,576 __main__ INFO === Cell: gauss_siedel / C1 / o4-mini / seed=42 ===
+2026-06-24 04:30:14,372 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:14,386 __main__ INFO Progress: 20/99 cells (20%) — fp_multiplier__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 04:30:14,387 __main__ INFO === Cell: gauss_siedel / C1 / o4-mini / seed=123 ===
+2026-06-24 04:30:21,865 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:21,874 __main__ INFO Progress: 21/99 cells (21%) — fp_multiplier__C1__o4-mini__456: FAILED (2/10)
+2026-06-24 04:30:21,874 __main__ INFO === Cell: gauss_siedel / C1 / o4-mini / seed=456 ===
+2026-06-24 04:30:26,782 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:53,651 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:00,987 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:09,688 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:25,984 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:27,848 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:45,226 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:50,848 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:58,596 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:09,183 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:17,616 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:19,149 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:19,169 __main__ INFO Progress: 22/99 cells (22%) — gauss_siedel__C1__o4-mini__42: FAILED (45/50)
+2026-06-24 04:32:19,172 __main__ INFO === Cell: gradient_descent / C1 / o4-mini / seed=42 ===
+2026-06-24 04:32:29,501 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:29,525 __main__ INFO Progress: 23/99 cells (23%) — gauss_siedel__C1__o4-mini__456: FAILED (45/50)
+2026-06-24 04:32:29,526 __main__ INFO === Cell: gradient_descent / C1 / o4-mini / seed=123 ===
+2026-06-24 04:32:31,940 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:34,377 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:54,589 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:12,628 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:12,656 __main__ INFO Progress: 24/99 cells (24%) — gauss_siedel__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 04:33:12,656 __main__ INFO === Cell: gradient_descent / C1 / o4-mini / seed=456 ===
+2026-06-24 04:33:41,564 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:59,262 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:34:16,292 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:07,541 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:16,728 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:52,334 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:36,242 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:40,124 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:14,050 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:49,207 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:10,127 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:38,615 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:39:10,202 __main__ INFO Progress: 25/99 cells (25%) — gradient_descent__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 04:39:10,205 __main__ INFO === Cell: newton_raphson_polynomial / C1 / o4-mini / seed=42 ===
+2026-06-24 04:39:21,978 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:39:38,695 __main__ INFO Progress: 26/99 cells (26%) — gradient_descent__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 04:39:38,696 __main__ INFO === Cell: newton_raphson_polynomial / C1 / o4-mini / seed=123 ===
+2026-06-24 04:39:40,179 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:39:59,024 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:13,823 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:21,847 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:22,055 __main__ INFO Progress: 27/99 cells (27%) — gradient_descent__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 04:40:22,056 __main__ INFO === Cell: newton_raphson_polynomial / C1 / o4-mini / seed=456 ===
+2026-06-24 04:40:39,534 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:47,510 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:56,817 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:03,306 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:16,317 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:43,879 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:43,881 __main__ INFO Progress: 28/99 cells (28%) — newton_raphson_polynomial__C1__o4-mini__123: FAILED (40/100)
+2026-06-24 04:41:43,884 __main__ INFO === Cell: newton_raphson_sqrt / C1 / o4-mini / seed=42 ===
+2026-06-24 04:41:43,974 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:02,378 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:10,584 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:10,636 __main__ INFO Progress: 29/99 cells (29%) — newton_raphson_polynomial__C1__o4-mini__42: FAILED (73/100)
+2026-06-24 04:42:10,637 __main__ INFO === Cell: newton_raphson_sqrt / C1 / o4-mini / seed=123 ===
+2026-06-24 04:42:24,025 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:39,619 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:47,432 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:06,417 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:13,775 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:13,809 __main__ INFO Progress: 30/99 cells (30%) — newton_raphson_polynomial__C1__o4-mini__456: FAILED (66/100)
+2026-06-24 04:43:13,809 __main__ INFO === Cell: newton_raphson_sqrt / C1 / o4-mini / seed=456 ===
+2026-06-24 04:43:17,844 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:26,674 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:43,780 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:44,131 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:52,176 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:14,250 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:14,424 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:21,737 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:35,662 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:44,448 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:44,474 __main__ INFO Progress: 31/99 cells (31%) — newton_raphson_sqrt__C1__o4-mini__42: SOLVED (50/50)
+2026-06-24 04:44:44,477 __main__ INFO === Cell: fp_mult_pipeline / C1 / o4-mini / seed=42 ===
+2026-06-24 04:45:02,009 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:14,497 __main__ INFO Progress: 32/99 cells (32%) — newton_raphson_sqrt__C1__o4-mini__123: FAILED (6/50)
+2026-06-24 04:45:14,497 __main__ INFO === Cell: fp_mult_pipeline / C1 / o4-mini / seed=123 ===
+2026-06-24 04:45:25,792 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:28,573 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:28,590 __main__ INFO Progress: 33/99 cells (33%) — newton_raphson_sqrt__C1__o4-mini__456: SOLVED (50/50)
+2026-06-24 04:45:28,590 __main__ INFO === Cell: fp_mult_pipeline / C1 / o4-mini / seed=456 ===
+2026-06-24 04:45:32,824 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:58,737 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:46:14,549 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:46:19,037 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:46:29,705 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:46:47,211 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:46:57,107 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:47:15,265 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:47:20,859 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:47:45,720 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:47:54,107 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:47:54,440 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:47:54,458 __main__ INFO Progress: 34/99 cells (34%) — fp_mult_pipeline__C1__o4-mini__42: FAILED (29/30)
+2026-06-24 04:47:54,461 __main__ INFO === Cell: fp_adder_pipeline / C1 / o4-mini / seed=42 ===
+2026-06-24 04:48:20,696 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:48:20,704 __main__ INFO Progress: 35/99 cells (35%) — fp_mult_pipeline__C1__o4-mini__123: FAILED (7/30)
+2026-06-24 04:48:20,705 __main__ INFO === Cell: fp_adder_pipeline / C1 / o4-mini / seed=123 ===
+2026-06-24 04:48:42,068 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:48:42,274 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:48:42,276 __main__ INFO Progress: 36/99 cells (36%) — fp_mult_pipeline__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 04:48:42,277 __main__ INFO === Cell: fp_adder_pipeline / C1 / o4-mini / seed=456 ===
+2026-06-24 04:48:49,825 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:49:26,699 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:49:29,841 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:49:30,284 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:50:11,192 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:50:15,167 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:50:18,694 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:50:48,067 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:50:58,509 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:50:59,968 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:51:35,244 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:51:35,246 __main__ INFO Progress: 37/99 cells (37%) — fp_adder_pipeline__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 04:51:35,247 __main__ INFO === Cell: fft_16pt_iterative / C1 / o4-mini / seed=42 ===
+2026-06-24 04:51:46,077 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:51:46,079 __main__ INFO Progress: 38/99 cells (38%) — fp_adder_pipeline__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 04:51:46,079 __main__ INFO === Cell: fft_16pt_iterative / C1 / o4-mini / seed=123 ===
+2026-06-24 04:51:47,249 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:52:23,145 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:52:33,506 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:52:33,508 __main__ INFO Progress: 39/99 cells (39%) — fp_adder_pipeline__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 04:52:33,508 __main__ INFO === Cell: fft_16pt_iterative / C1 / o4-mini / seed=456 ===
+2026-06-24 04:52:34,018 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:53:10,553 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:53:21,932 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:53:22,198 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:53:51,730 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:53:56,698 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:54:07,900 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:54:31,799 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:54:45,215 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:54:56,719 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:55:16,388 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:55:16,409 __main__ INFO Progress: 40/99 cells (40%) — fft_16pt_iterative__C1__o4-mini__123: FAILED (7/33)
+2026-06-24 04:55:16,409 __main__ INFO === Cell: ifft_16pt_iterative / C1 / o4-mini / seed=42 ===
+2026-06-24 04:55:33,954 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:55:33,956 __main__ INFO Progress: 41/99 cells (41%) — fft_16pt_iterative__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 04:55:33,956 __main__ INFO === Cell: ifft_16pt_iterative / C1 / o4-mini / seed=123 ===
+2026-06-24 04:55:39,919 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:56:00,755 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:56:20,399 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:56:26,280 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:56:26,282 __main__ INFO Progress: 42/99 cells (42%) — fft_16pt_iterative__C1__o4-mini__456: FAILED (7/33)
+2026-06-24 04:56:26,282 __main__ INFO === Cell: ifft_16pt_iterative / C1 / o4-mini / seed=456 ===
+2026-06-24 04:56:38,316 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:56:57,595 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:57:15,154 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:57:19,611 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:57:48,582 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:57:55,255 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:58:05,358 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:58:20,055 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:58:20,074 __main__ INFO Progress: 43/99 cells (43%) — ifft_16pt_iterative__C1__o4-mini__42: FAILED (5/33)
+2026-06-24 04:58:20,074 __main__ INFO === Cell: band_pass_fir / C1 / o4-mini / seed=42 ===
+2026-06-24 04:58:34,815 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:58:51,123 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:59:05,047 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:59:14,365 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:59:14,446 __main__ INFO Progress: 44/99 cells (44%) — ifft_16pt_iterative__C1__o4-mini__123: FAILED (12/33)
+2026-06-24 04:59:14,446 __main__ INFO === Cell: band_pass_fir / C1 / o4-mini / seed=123 ===
+2026-06-24 04:59:34,863 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:59:37,572 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:59:42,877 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:00:01,169 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:00:02,775 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:00:25,738 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:00:25,740 __main__ INFO Progress: 45/99 cells (45%) — ifft_16pt_iterative__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 05:00:25,740 __main__ INFO === Cell: band_pass_fir / C1 / o4-mini / seed=456 ===
+2026-06-24 05:00:43,779 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:00:44,633 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:01:02,034 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:01:24,200 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:01:25,526 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:01:30,466 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:01:30,468 __main__ INFO Progress: 46/99 cells (46%) — band_pass_fir__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:01:30,469 __main__ INFO === Cell: high_pass_fir / C1 / o4-mini / seed=42 ===
+2026-06-24 05:01:53,661 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:01:53,674 __main__ INFO Progress: 47/99 cells (47%) — band_pass_fir__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:01:53,674 __main__ INFO === Cell: high_pass_fir / C1 / o4-mini / seed=123 ===
+2026-06-24 05:02:07,058 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:02:12,002 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:02:21,871 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:02:34,151 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:02:50,045 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:03:08,251 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:03:11,329 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:03:11,348 __main__ INFO Progress: 48/99 cells (48%) — band_pass_fir__C1__o4-mini__456: FAILED (1/1001)
+2026-06-24 05:03:11,348 __main__ INFO === Cell: high_pass_fir / C1 / o4-mini / seed=456 ===
+2026-06-24 05:03:19,814 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:03:45,038 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:03:47,130 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:03:50,771 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:04:26,079 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:04:29,721 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:04:31,104 __main__ INFO Progress: 49/99 cells (49%) — high_pass_fir__C1__o4-mini__42: FAILED (1/1001)
+2026-06-24 05:04:31,105 __main__ INFO === Cell: low_pass_fir / C1 / o4-mini / seed=42 ===
+2026-06-24 05:04:32,285 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:04:58,225 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:04:58,677 __main__ INFO Progress: 50/99 cells (51%) — high_pass_fir__C1__o4-mini__123: FAILED (20/1001)
+2026-06-24 05:04:58,677 __main__ INFO === Cell: low_pass_fir / C1 / o4-mini / seed=123 ===
+2026-06-24 05:05:06,209 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:05:19,232 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:05:34,295 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:05:38,470 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:05:43,468 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:06:09,564 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:06:19,506 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:06:22,952 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:06:22,956 __main__ INFO Progress: 51/99 cells (52%) — high_pass_fir__C1__o4-mini__456: FAILED (20/1001)
+2026-06-24 05:06:22,956 __main__ INFO === Cell: low_pass_fir / C1 / o4-mini / seed=456 ===
+2026-06-24 05:06:50,070 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:06:51,766 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:06:56,842 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:07:21,440 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:07:21,470 __main__ INFO Progress: 52/99 cells (53%) — low_pass_fir__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:07:21,470 __main__ INFO === Cell: conv1d / C1 / o4-mini / seed=42 ===
+2026-06-24 05:07:26,884 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:07:30,948 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:07:59,417 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:08:02,386 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:08:15,933 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:08:15,937 __main__ INFO Progress: 53/99 cells (54%) — low_pass_fir__C1__o4-mini__123: FAILED (3/1001)
+2026-06-24 05:08:15,937 __main__ INFO === Cell: conv1d / C1 / o4-mini / seed=123 ===
+2026-06-24 05:08:19,838 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:08:29,058 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:08:43,906 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:08:51,346 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:08:59,854 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:08:59,874 __main__ INFO Progress: 54/99 cells (55%) — low_pass_fir__C1__o4-mini__456: FAILED (3/1001)
+2026-06-24 05:08:59,874 __main__ INFO === Cell: conv1d / C1 / o4-mini / seed=456 ===
+2026-06-24 05:09:11,960 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:09:13,990 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:09:22,949 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:09:33,046 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:09:33,074 __main__ INFO Progress: 55/99 cells (56%) — conv1d__C1__o4-mini__42: SOLVED (16/16)
+2026-06-24 05:09:33,075 __main__ INFO === Cell: conv2d / C1 / o4-mini / seed=42 ===
+2026-06-24 05:09:35,776 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:09:44,972 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:09:56,468 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:10:15,029 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:10:15,162 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:10:16,592 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:10:16,622 __main__ INFO Progress: 56/99 cells (57%) — conv1d__C1__o4-mini__123: SOLVED (16/16)
+2026-06-24 05:10:16,623 __main__ INFO === Cell: conv2d / C1 / o4-mini / seed=123 ===
+2026-06-24 05:10:40,258 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:10:45,256 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:10:47,231 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:11:02,985 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:11:03,015 __main__ INFO Progress: 57/99 cells (58%) — conv1d__C1__o4-mini__456: SOLVED (16/16)
+2026-06-24 05:11:03,016 __main__ INFO === Cell: conv2d / C1 / o4-mini / seed=456 ===
+2026-06-24 05:11:18,937 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:11:32,769 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:11:51,050 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:12:04,895 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:12:08,175 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:12:24,637 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:12:34,988 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:12:34,999 __main__ INFO Progress: 58/99 cells (59%) — conv2d__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:12:34,999 __main__ INFO === Cell: dct_idct_8pt_pipelined / C1 / o4-mini / seed=42 ===
+2026-06-24 05:12:50,676 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:12:53,069 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:13:15,966 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:13:22,681 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:13:26,398 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:13:26,407 __main__ INFO Progress: 59/99 cells (60%) — conv2d__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:13:26,407 __main__ INFO === Cell: dct_idct_8pt_pipelined / C1 / o4-mini / seed=123 ===
+2026-06-24 05:13:40,812 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:13:40,932 __main__ INFO Progress: 60/99 cells (61%) — conv2d__C1__o4-mini__456: FAILED (2686/4096)
+2026-06-24 05:13:40,933 __main__ INFO === Cell: dct_idct_8pt_pipelined / C1 / o4-mini / seed=456 ===
+2026-06-24 05:14:08,794 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:14:13,096 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:14:57,852 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:15:02,533 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:15:05,687 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:15:45,870 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:15:47,135 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:15:54,715 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:16:36,192 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:16:36,195 __main__ INFO Progress: 61/99 cells (62%) — dct_idct_8pt_pipelined__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:16:36,195 __main__ INFO === Cell: harris_corner_detection / C1 / o4-mini / seed=42 ===
+2026-06-24 05:16:37,129 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:16:45,276 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:17:08,328 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:17:25,588 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:17:25,590 __main__ INFO Progress: 62/99 cells (63%) — dct_idct_8pt_pipelined__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:17:25,590 __main__ INFO === Cell: harris_corner_detection / C1 / o4-mini / seed=123 ===
+2026-06-24 05:17:33,020 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:17:48,154 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:18:02,449 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:18:21,358 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:18:21,360 __main__ INFO Progress: 63/99 cells (64%) — dct_idct_8pt_pipelined__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 05:18:21,361 __main__ INFO === Cell: harris_corner_detection / C1 / o4-mini / seed=456 ===
+2026-06-24 05:18:36,397 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:18:50,976 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:18:59,653 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:19:08,046 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:19:34,470 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:19:36,736 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:19:57,337 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:19:58,551 __main__ INFO Progress: 64/99 cells (65%) — harris_corner_detection__C1__o4-mini__42: FAILED (0/1)
+2026-06-24 05:19:58,552 __main__ INFO === Cell: systolic_gemm / C1 / o4-mini / seed=42 ===
+2026-06-24 05:20:09,941 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:20:16,955 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:20:23,415 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:20:54,658 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:21:08,265 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:21:09,444 __main__ INFO Progress: 65/99 cells (66%) — harris_corner_detection__C1__o4-mini__123: FAILED (0/1)
+2026-06-24 05:21:09,444 __main__ INFO === Cell: systolic_gemm / C1 / o4-mini / seed=123 ===
+2026-06-24 05:21:27,682 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:21:42,282 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:21:49,377 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:21:58,028 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:22:07,851 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:22:07,860 __main__ INFO Progress: 66/99 cells (67%) — systolic_gemm__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:22:07,861 __main__ INFO === Cell: systolic_gemm / C1 / o4-mini / seed=456 ===
+2026-06-24 05:22:08,151 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:22:28,742 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:22:46,423 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:22:48,842 __main__ INFO Progress: 67/99 cells (68%) — harris_corner_detection__C1__o4-mini__456: FAILED (0/1)
+2026-06-24 05:22:48,842 __main__ INFO === Cell: unsharp_mask / C1 / o4-mini / seed=42 ===
+2026-06-24 05:22:50,051 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:22:54,815 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:23:20,897 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:23:26,561 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:23:32,484 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:23:32,494 __main__ INFO Progress: 68/99 cells (69%) — systolic_gemm__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:23:32,494 __main__ INFO === Cell: unsharp_mask / C1 / o4-mini / seed=123 ===
+2026-06-24 05:23:58,726 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:24:06,351 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:24:10,030 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:24:33,283 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:24:44,924 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:24:54,021 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:25:04,110 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:25:04,122 __main__ INFO Progress: 69/99 cells (70%) — systolic_gemm__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 05:25:04,122 __main__ INFO === Cell: unsharp_mask / C1 / o4-mini / seed=456 ===
+2026-06-24 05:25:37,520 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:25:43,742 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:25:55,017 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:26:26,607 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:26:27,234 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:26:27,991 __main__ INFO Progress: 70/99 cells (71%) — unsharp_mask__C1__o4-mini__42: FAILED (61882/65536)
+2026-06-24 05:26:27,991 __main__ INFO === Cell: aes_decryption / C1 / o4-mini / seed=42 ===
+2026-06-24 05:26:36,978 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:26:54,861 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:27:08,061 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:27:15,512 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:27:16,412 __main__ INFO Progress: 71/99 cells (72%) — unsharp_mask__C1__o4-mini__123: FAILED (63384/65536)
+2026-06-24 05:27:16,413 __main__ INFO === Cell: aes_decryption / C1 / o4-mini / seed=123 ===
+2026-06-24 05:27:42,634 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:27:54,330 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:28:03,031 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:28:28,549 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:28:38,150 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:28:39,891 __main__ INFO Progress: 72/99 cells (73%) — unsharp_mask__C1__o4-mini__456: FAILED (64250/65536)
+2026-06-24 05:28:39,892 __main__ INFO === Cell: aes_decryption / C1 / o4-mini / seed=456 ===
+2026-06-24 05:28:48,169 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:28:49,786 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:29:10,598 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:29:25,666 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:29:36,456 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:29:37,353 __main__ INFO Progress: 73/99 cells (74%) — aes_decryption__C1__o4-mini__42: FAILED (0/8)
+2026-06-24 05:29:37,354 __main__ INFO === Cell: aes_encryption / C1 / o4-mini / seed=42 ===
+2026-06-24 05:29:53,765 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:29:57,538 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:30:24,289 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:30:39,776 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:30:41,238 __main__ INFO Progress: 74/99 cells (75%) — aes_decryption__C1__o4-mini__123: FAILED (0/8)
+2026-06-24 05:30:41,238 __main__ INFO === Cell: aes_encryption / C1 / o4-mini / seed=123 ===
+2026-06-24 05:30:48,331 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:31:17,654 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:31:31,588 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:31:33,671 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:32:07,224 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:32:22,367 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:32:22,370 __main__ INFO Progress: 75/99 cells (76%) — aes_decryption__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 05:32:22,370 __main__ INFO === Cell: aes_encryption / C1 / o4-mini / seed=456 ===
+2026-06-24 05:32:24,606 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:32:55,668 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:32:57,680 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:33:10,376 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:33:29,430 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:33:29,441 __main__ INFO Progress: 76/99 cells (77%) — aes_encryption__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:33:29,442 __main__ INFO === Cell: conv_3d / C1 / o4-mini / seed=42 ===
+2026-06-24 05:33:45,495 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:33:57,679 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:33:58,952 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:34:32,725 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:34:35,210 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:34:46,243 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:34:46,245 __main__ INFO Progress: 77/99 cells (78%) — aes_encryption__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:34:46,246 __main__ INFO === Cell: conv_3d / C1 / o4-mini / seed=123 ===
+2026-06-24 05:35:24,705 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:35:27,897 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:35:38,325 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:36:02,829 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:36:10,502 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:36:10,582 __main__ INFO Progress: 78/99 cells (79%) — aes_encryption__C1__o4-mini__456: FAILED (0/8)
+2026-06-24 05:36:10,582 __main__ INFO === Cell: conv_3d / C1 / o4-mini / seed=456 ===
+2026-06-24 05:36:10,980 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:36:28,457 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:36:31,092 __main__ INFO Progress: 79/99 cells (80%) — conv_3d__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:36:31,092 __main__ INFO === Cell: fft_streaming_64pt / C1 / o4-mini / seed=42 ===
+2026-06-24 05:36:34,402 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:37:05,039 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:37:12,783 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:37:21,435 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:37:45,040 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:37:47,143 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:38:08,529 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:38:25,335 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:38:26,534 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:38:29,201 __main__ INFO Progress: 80/99 cells (81%) — conv_3d__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:38:29,201 __main__ INFO === Cell: fft_streaming_64pt / C1 / o4-mini / seed=123 ===
+2026-06-24 05:38:57,906 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:39:05,754 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:39:05,831 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:39:05,841 __main__ INFO Progress: 81/99 cells (82%) — conv_3d__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 05:39:05,841 __main__ INFO === Cell: fft_streaming_64pt / C1 / o4-mini / seed=456 ===
+2026-06-24 05:39:26,944 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:39:36,925 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:39:54,294 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:40:17,678 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:40:18,529 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:40:18,542 __main__ INFO Progress: 82/99 cells (83%) — fft_streaming_64pt__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:40:18,542 __main__ INFO === Cell: fp_band_pass_fir / C1 / o4-mini / seed=42 ===
+2026-06-24 05:40:29,934 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:40:55,699 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:41:05,440 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:41:15,257 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:41:23,458 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:41:53,530 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:42:03,448 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:42:03,450 __main__ INFO Progress: 83/99 cells (84%) — fft_streaming_64pt__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:42:03,451 __main__ INFO === Cell: fp_band_pass_fir / C1 / o4-mini / seed=123 ===
+2026-06-24 05:42:09,350 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:42:35,544 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:42:41,316 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:42:45,099 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:42:45,102 __main__ INFO Progress: 84/99 cells (85%) — fft_streaming_64pt__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 05:42:45,103 __main__ INFO === Cell: fp_band_pass_fir / C1 / o4-mini / seed=456 ===
+2026-06-24 05:43:08,912 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:43:10,073 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:43:27,191 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:43:27,194 __main__ INFO Progress: 85/99 cells (86%) — fp_band_pass_fir__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:43:27,194 __main__ INFO === Cell: fp_high_pass_fir / C1 / o4-mini / seed=42 ===
+2026-06-24 05:43:45,294 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:43:56,773 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:43:57,766 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:44:21,259 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:44:33,606 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:44:44,875 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:45:04,157 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:45:04,171 __main__ INFO Progress: 86/99 cells (87%) — fp_band_pass_fir__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:45:04,171 __main__ INFO === Cell: fp_high_pass_fir / C1 / o4-mini / seed=123 ===
+2026-06-24 05:45:05,411 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:45:36,414 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:45:36,429 __main__ INFO Progress: 87/99 cells (88%) — fp_band_pass_fir__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 05:45:36,429 __main__ INFO === Cell: fp_high_pass_fir / C1 / o4-mini / seed=456 ===
+2026-06-24 05:45:43,841 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:45:48,719 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:46:07,077 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:46:24,000 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:46:24,844 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:46:34,217 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:46:50,742 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:47:03,565 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:47:08,960 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:47:08,972 __main__ INFO Progress: 88/99 cells (89%) — fp_high_pass_fir__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:47:08,973 __main__ INFO === Cell: fp_low_pass_fir / C1 / o4-mini / seed=42 ===
+2026-06-24 05:47:37,656 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:47:40,498 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:47:50,958 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:48:13,725 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:48:13,735 __main__ INFO Progress: 89/99 cells (90%) — fp_high_pass_fir__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:48:13,736 __main__ INFO === Cell: fp_low_pass_fir / C1 / o4-mini / seed=123 ===
+2026-06-24 05:48:15,562 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:48:15,578 __main__ INFO Progress: 90/99 cells (91%) — fp_high_pass_fir__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 05:48:15,578 __main__ INFO === Cell: fp_low_pass_fir / C1 / o4-mini / seed=456 ===
+2026-06-24 05:48:21,590 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:48:45,494 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:48:58,999 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:49:05,229 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:49:28,120 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:49:34,801 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:49:41,279 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:50:08,945 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:50:17,132 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:50:17,135 __main__ INFO Progress: 91/99 cells (92%) — fp_low_pass_fir__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:50:17,136 __main__ ERROR Cell multich_conv2d__C1__o4-mini__42 crashed: [Errno 2] No such file or directory: '/opt/openevolve/openevolve/tdes/fpga/autonomous/../benchmarks/archxbench/level-6/multich_conv2d/tb.v'
+2026-06-24 05:50:17,136 __main__ ERROR Cell multich_conv2d__C1__o4-mini__123 crashed: [Errno 2] No such file or directory: '/opt/openevolve/openevolve/tdes/fpga/autonomous/../benchmarks/archxbench/level-6/multich_conv2d/tb.v'
+2026-06-24 05:50:17,136 __main__ ERROR Cell multich_conv2d__C1__o4-mini__456 crashed: [Errno 2] No such file or directory: '/opt/openevolve/openevolve/tdes/fpga/autonomous/../benchmarks/archxbench/level-6/multich_conv2d/tb.v'
+2026-06-24 05:50:17,136 __main__ INFO === Cell: quantized_matmul / C1 / o4-mini / seed=42 ===
+2026-06-24 05:50:30,955 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:50:39,353 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:50:46,546 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:51:01,965 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:51:11,913 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:51:16,189 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:51:16,203 __main__ INFO Progress: 92/99 cells (93%) — fp_low_pass_fir__C1__o4-mini__456: FAILED (0/0)
+2026-06-24 05:51:16,203 __main__ INFO === Cell: quantized_matmul / C1 / o4-mini / seed=123 ===
+2026-06-24 05:51:26,706 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:51:38,050 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:51:38,059 __main__ INFO Progress: 93/99 cells (94%) — fp_low_pass_fir__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:51:38,059 __main__ INFO === Cell: quantized_matmul / C1 / o4-mini / seed=456 ===
+2026-06-24 05:51:55,107 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:52:03,925 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:52:04,538 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:52:43,000 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:52:50,011 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:52:50,021 __main__ INFO Progress: 94/99 cells (95%) — quantized_matmul__C1__o4-mini__42: FAILED (0/0)
+2026-06-24 05:52:50,815 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:53:06,124 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:53:30,798 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:53:31,129 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:53:56,491 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:54:02,988 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:54:03,281 __main__ INFO Progress: 95/99 cells (96%) — quantized_matmul__C1__o4-mini__123: FAILED (0/0)
+2026-06-24 05:54:34,404 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 05:54:34,414 __main__ INFO Progress: 96/99 cells (97%) — quantized_matmul__C1__o4-mini__456: FAILED (0/0)
+
+======================================================================
+EXPERIMENT COMPLETE
+======================================================================
+Cells: 96, Solved: 7/96
+  aes128_single_round__C1__o4-mini__123: FAILED (0/0) [276.5s]
+  aes128_single_round__C1__o4-mini__42: FAILED (0/0) [321.2s]
+  aes128_single_round__C1__o4-mini__456: FAILED (0/0) [275.0s]
+  aes_decryption__C1__o4-mini__123: FAILED (0/8) [204.8s]
+  aes_decryption__C1__o4-mini__42: FAILED (0/8) [189.4s]
+  aes_decryption__C1__o4-mini__456: FAILED (0/0) [222.5s]
+  aes_encryption__C1__o4-mini__123: FAILED (0/0) [245.0s]
+  aes_encryption__C1__o4-mini__42: FAILED (0/0) [232.1s]
+  aes_encryption__C1__o4-mini__456: FAILED (0/8) [228.2s]
+  band_pass_fir__C1__o4-mini__123: FAILED (0/0) [159.2s]
+  band_pass_fir__C1__o4-mini__42: FAILED (0/0) [190.4s]
+  band_pass_fir__C1__o4-mini__456: FAILED (1/1001) [165.6s]
+  cla_32bit_pipe__C1__o4-mini__123: FAILED (1/50) [277.4s]
+  cla_32bit_pipe__C1__o4-mini__42: FAILED (1/50) [285.1s]
+  cla_32bit_pipe__C1__o4-mini__456: FAILED (1/50) [241.6s]
+  conv1d__C1__o4-mini__123: SOLVED (16/16) [120.7s]
+  conv1d__C1__o4-mini__42: SOLVED (16/16) [131.6s]
+  conv1d__C1__o4-mini__456: SOLVED (16/16) [123.1s]
+  conv2d__C1__o4-mini__123: FAILED (0/0) [189.8s]
+  conv2d__C1__o4-mini__42: FAILED (0/0) [181.9s]
+  conv2d__C1__o4-mini__456: FAILED (2686/4096) [157.9s]
+  conv_3d__C1__o4-mini__123: FAILED (0/0) [223.0s]
+  conv_3d__C1__o4-mini__42: FAILED (0/0) [181.6s]
+  conv_3d__C1__o4-mini__456: FAILED (0/0) [175.3s]
+  dadda_mult_pipe__C1__o4-mini__123: FAILED (0/0) [260.1s]
+  dadda_mult_pipe__C1__o4-mini__42: FAILED (0/0) [246.4s]
+  dadda_mult_pipe__C1__o4-mini__456: FAILED (0/0) [227.4s]
+  dct_idct_8pt_pipelined__C1__o4-mini__123: FAILED (0/0) [239.2s]
+  dct_idct_8pt_pipelined__C1__o4-mini__42: FAILED (0/0) [241.2s]
+  dct_idct_8pt_pipelined__C1__o4-mini__456: FAILED (0/0) [280.4s]
+  fft_16pt_iterative__C1__o4-mini__123: FAILED (7/33) [210.3s]
+  fft_16pt_iterative__C1__o4-mini__42: FAILED (0/0) [238.7s]
+  fft_16pt_iterative__C1__o4-mini__456: FAILED (7/33) [232.8s]
+  fft_streaming_64pt__C1__o4-mini__123: FAILED (0/0) [214.2s]
+  fft_streaming_64pt__C1__o4-mini__42: FAILED (0/0) [227.4s]
+  fft_streaming_64pt__C1__o4-mini__456: FAILED (0/0) [219.3s]
+  fp_adder__C1__o4-mini__123: FAILED (5/36) [269.5s]
+  fp_adder__C1__o4-mini__42: FAILED (0/0) [277.6s]
+  fp_adder__C1__o4-mini__456: FAILED (0/0) [277.4s]
+  fp_adder_pipeline__C1__o4-mini__123: FAILED (0/0) [194.5s]
+  fp_adder_pipeline__C1__o4-mini__42: FAILED (0/0) [231.6s]
+  fp_adder_pipeline__C1__o4-mini__456: FAILED (0/0) [231.2s]
+  fp_band_pass_fir__C1__o4-mini__123: FAILED (0/0) [180.7s]
+  fp_band_pass_fir__C1__o4-mini__42: FAILED (0/0) [188.6s]
+  fp_band_pass_fir__C1__o4-mini__456: FAILED (0/0) [171.3s]
+  fp_high_pass_fir__C1__o4-mini__123: FAILED (0/0) [189.6s]
+  fp_high_pass_fir__C1__o4-mini__42: FAILED (0/0) [221.8s]
+  fp_high_pass_fir__C1__o4-mini__456: FAILED (0/0) [159.1s]
+  fp_low_pass_fir__C1__o4-mini__123: FAILED (0/0) [204.3s]
+  fp_low_pass_fir__C1__o4-mini__42: FAILED (0/0) [188.2s]
+  fp_low_pass_fir__C1__o4-mini__456: FAILED (0/0) [180.6s]
+  fp_mult_pipeline__C1__o4-mini__123: FAILED (7/30) [186.2s]
+  fp_mult_pipeline__C1__o4-mini__42: FAILED (29/30) [190.0s]
+  fp_mult_pipeline__C1__o4-mini__456: FAILED (0/0) [193.7s]
+  fp_multiplier__C1__o4-mini__123: FAILED (0/0) [245.4s]
+  fp_multiplier__C1__o4-mini__42: FAILED (0/0) [234.9s]
+  fp_multiplier__C1__o4-mini__456: FAILED (2/10) [205.8s]
+  gauss_siedel__C1__o4-mini__123: FAILED (0/0) [178.3s]
+  gauss_siedel__C1__o4-mini__42: FAILED (45/50) [145.6s]
+  gauss_siedel__C1__o4-mini__456: FAILED (45/50) [127.7s]
+  gradient_descent__C1__o4-mini__123: FAILED (0/0) [429.2s]
+  gradient_descent__C1__o4-mini__42: FAILED (0/0) [411.0s]
+  gradient_descent__C1__o4-mini__456: FAILED (0/0) [429.4s]
+  harris_corner_detection__C1__o4-mini__123: FAILED (0/1) [223.9s]
+  harris_corner_detection__C1__o4-mini__42: FAILED (0/1) [202.4s]
+  harris_corner_detection__C1__o4-mini__456: FAILED (0/1) [267.5s]
+  high_pass_fir__C1__o4-mini__123: FAILED (20/1001) [185.0s]
+  high_pass_fir__C1__o4-mini__42: FAILED (1/1001) [180.6s]
+  high_pass_fir__C1__o4-mini__456: FAILED (20/1001) [191.6s]
+  ifft_16pt_iterative__C1__o4-mini__123: FAILED (12/33) [220.5s]
+  ifft_16pt_iterative__C1__o4-mini__42: FAILED (5/33) [183.7s]
+  ifft_16pt_iterative__C1__o4-mini__456: FAILED (0/0) [239.5s]
+  low_pass_fir__C1__o4-mini__123: FAILED (3/1001) [197.3s]
+  low_pass_fir__C1__o4-mini__42: FAILED (0/0) [170.4s]
+  low_pass_fir__C1__o4-mini__456: FAILED (3/1001) [156.9s]
+  newton_raphson_polynomial__C1__o4-mini__123: FAILED (40/100) [125.2s]
+  newton_raphson_polynomial__C1__o4-mini__42: FAILED (73/100) [180.4s]
+  newton_raphson_polynomial__C1__o4-mini__456: FAILED (66/100) [171.8s]
+  newton_raphson_sqrt__C1__o4-mini__123: FAILED (6/50) [183.9s]
+  newton_raphson_sqrt__C1__o4-mini__42: SOLVED (50/50) [180.6s]
+  newton_raphson_sqrt__C1__o4-mini__456: SOLVED (50/50) [134.8s]
+  quantized_matmul__C1__o4-mini__123: FAILED (0/0) [167.1s]
+  quantized_matmul__C1__o4-mini__42: FAILED (0/0) [152.9s]
+  quantized_matmul__C1__o4-mini__456: FAILED (0/0) [176.4s]
+  rca_32bit_pipe__C1__o4-mini__123: SOLVED (50/50) [201.7s]
+  rca_32bit_pipe__C1__o4-mini__42: SOLVED (50/50) [216.0s]
+  rca_32bit_pipe__C1__o4-mini__456: FAILED (15/50) [181.6s]
+  systolic_gemm__C1__o4-mini__123: FAILED (0/0) [143.0s]
+  systolic_gemm__C1__o4-mini__42: FAILED (0/0) [129.3s]
+  systolic_gemm__C1__o4-mini__456: FAILED (0/0) [176.3s]
+  unsharp_mask__C1__o4-mini__123: FAILED (63384/65536) [223.9s]
+  unsharp_mask__C1__o4-mini__42: FAILED (61882/65536) [219.1s]
+  unsharp_mask__C1__o4-mini__456: FAILED (64250/65536) [215.8s]
+  wallace_tree_mult_pipe__C1__o4-mini__123: FAILED (0/0) [236.4s]
+  wallace_tree_mult_pipe__C1__o4-mini__42: FAILED (0/0) [179.0s]
+  wallace_tree_mult_pipe__C1__o4-mini__456: FAILED (0/0) [193.0s]

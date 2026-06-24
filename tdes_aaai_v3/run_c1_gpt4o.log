@@ -1,0 +1,955 @@
+2026-06-24 04:02:34,530 __main__ INFO Total: 99 cells (99 to run, 0 already done)
+2026-06-24 04:02:34,532 __main__ INFO === Cell: aes128_single_round / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:02:34,533 __main__ INFO === Cell: aes128_single_round / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:02:34,534 __main__ INFO === Cell: aes128_single_round / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:02:42,393 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:02:42,635 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:02:45,982 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:02:51,867 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:02:53,563 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:03:28,325 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:03:38,179 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:03:47,382 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:01,393 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:04,440 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:14,353 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:23,222 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:23,249 __main__ INFO Progress: 1/99 cells (1%) — aes128_single_round__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:04:23,253 __main__ INFO === Cell: cla_32bit_pipe / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:04:33,735 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:46,881 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:54,612 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:59,490 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:04:59,536 __main__ INFO Progress: 2/99 cells (2%) — aes128_single_round__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:04:59,536 __main__ INFO === Cell: cla_32bit_pipe / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:05:03,259 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:11,987 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:12,008 __main__ INFO Progress: 3/99 cells (3%) — cla_32bit_pipe__C1__gpt-4o__42: FAILED (1/50)
+2026-06-24 04:05:12,009 __main__ INFO === Cell: cla_32bit_pipe / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:05:12,743 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:14,074 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:18,245 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:20,457 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:28,321 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:28,346 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:28,384 __main__ INFO Progress: 4/99 cells (4%) — aes128_single_round__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:05:28,387 __main__ INFO === Cell: dadda_mult_pipe / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:05:29,462 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:36,159 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:36,661 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:42,378 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:42,393 __main__ INFO Progress: 5/99 cells (5%) — cla_32bit_pipe__C1__gpt-4o__123: FAILED (1/50)
+2026-06-24 04:05:42,393 __main__ INFO === Cell: dadda_mult_pipe / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:05:44,380 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:48,546 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:50,303 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:54,842 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:05:55,702 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:00,625 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:00,638 __main__ INFO Progress: 6/99 cells (6%) — dadda_mult_pipe__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:06:00,639 __main__ INFO === Cell: dadda_mult_pipe / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:06:00,860 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:01,952 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:06,820 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:08,188 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:11,867 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:12,127 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:15,267 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:15,314 __main__ INFO Progress: 7/99 cells (7%) — dadda_mult_pipe__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:06:15,317 __main__ INFO === Cell: rca_32bit_pipe / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:06:17,742 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:21,251 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:24,262 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:26,622 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:26,636 __main__ INFO Progress: 8/99 cells (8%) — cla_32bit_pipe__C1__gpt-4o__456: FAILED (1/50)
+2026-06-24 04:06:26,636 __main__ INFO === Cell: rca_32bit_pipe / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:06:28,789 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:29,130 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:29,174 __main__ INFO Progress: 9/99 cells (9%) — dadda_mult_pipe__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:06:29,175 __main__ INFO === Cell: rca_32bit_pipe / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:06:36,900 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:40,360 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:44,556 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:50,557 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:53,930 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:54,299 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:06:58,591 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:00,051 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:03,892 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:04,180 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:04,201 __main__ INFO Progress: 10/99 cells (10%) — rca_32bit_pipe__C1__gpt-4o__42: SOLVED (50/50)
+2026-06-24 04:07:04,204 __main__ INFO === Cell: wallace_tree_mult_pipe / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:07:06,160 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:10,638 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:10,735 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:10,755 __main__ INFO Progress: 11/99 cells (11%) — rca_32bit_pipe__C1__gpt-4o__456: SOLVED (50/50)
+2026-06-24 04:07:10,755 __main__ INFO === Cell: wallace_tree_mult_pipe / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:07:12,682 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:12,700 __main__ INFO Progress: 12/99 cells (12%) — rca_32bit_pipe__C1__gpt-4o__123: SOLVED (50/50)
+2026-06-24 04:07:12,700 __main__ INFO === Cell: wallace_tree_mult_pipe / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:07:16,344 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:17,170 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:21,750 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:22,642 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:25,669 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:29,669 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:29,758 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:31,878 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:38,380 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:40,258 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:40,271 __main__ INFO Progress: 13/99 cells (13%) — wallace_tree_mult_pipe__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:07:40,274 __main__ INFO === Cell: fp_adder / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:07:40,325 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:45,558 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:48,892 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:48,968 __main__ INFO Progress: 14/99 cells (14%) — wallace_tree_mult_pipe__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:07:48,968 __main__ INFO === Cell: fp_adder / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:07:50,587 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:07:57,964 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:02,393 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:07,420 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:10,064 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:16,612 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:17,786 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:24,272 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:25,262 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:25,288 __main__ INFO Progress: 15/99 cells (15%) — fp_adder__C1__gpt-4o__42: FAILED (15/36)
+2026-06-24 04:08:25,288 __main__ INFO === Cell: fp_adder / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:08:33,695 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:33,709 __main__ INFO Progress: 16/99 cells (16%) — fp_adder__C1__gpt-4o__123: FAILED (11/36)
+2026-06-24 04:08:33,712 __main__ INFO === Cell: fp_multiplier / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:08:35,152 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:42,694 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:45,373 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:51,173 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:53,378 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:55,225 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:08:55,239 __main__ INFO Progress: 17/99 cells (17%) — wallace_tree_mult_pipe__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:08:55,239 __main__ INFO === Cell: fp_multiplier / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:08:59,281 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:01,427 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:04,364 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:07,942 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:10,901 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:15,195 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:21,667 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:21,689 __main__ INFO Progress: 18/99 cells (18%) — fp_multiplier__C1__gpt-4o__42: FAILED (5/10)
+2026-06-24 04:09:21,689 __main__ INFO === Cell: fp_multiplier / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:09:25,511 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:32,824 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:33,282 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:41,199 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:41,219 __main__ INFO Progress: 19/99 cells (19%) — fp_multiplier__C1__gpt-4o__123: FAILED (4/10)
+2026-06-24 04:09:41,222 __main__ INFO === Cell: gauss_siedel / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:09:42,321 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:48,339 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:55,769 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:09:56,237 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:02,635 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:03,507 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:08,020 __main__ INFO Progress: 20/99 cells (20%) — fp_adder__C1__gpt-4o__456: FAILED (23/36)
+2026-06-24 04:10:08,021 __main__ INFO === Cell: gauss_siedel / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:10:10,719 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:11,728 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:11,753 __main__ INFO Progress: 21/99 cells (21%) — fp_multiplier__C1__gpt-4o__456: FAILED (4/10)
+2026-06-24 04:10:11,754 __main__ INFO === Cell: gauss_siedel / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:10:15,907 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:17,316 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:17,464 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:17,486 __main__ INFO Progress: 22/99 cells (22%) — gauss_siedel__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:10:17,486 __main__ INFO === Cell: gradient_descent / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:10:23,243 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:23,358 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:24,129 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:32,151 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:32,855 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:39,053 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:46,306 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:10:46,342 __main__ INFO Progress: 23/99 cells (23%) — gauss_siedel__C1__gpt-4o__456: FAILED (43/50)
+2026-06-24 04:10:46,342 __main__ INFO === Cell: gradient_descent / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:10:51,582 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:11:27,133 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:11:40,078 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:11:46,938 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:11:46,972 __main__ INFO Progress: 24/99 cells (24%) — gauss_siedel__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:11:46,972 __main__ INFO === Cell: gradient_descent / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:11:53,476 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:11:58,195 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:12:03,759 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:12:49,701 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:12:58,808 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:13:09,385 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:13:54,630 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:14:04,691 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:14:15,048 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:14:59,720 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:15:10,774 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:15:15,126 __main__ INFO Progress: 25/99 cells (25%) — gradient_descent__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:15:15,127 __main__ INFO === Cell: newton_raphson_polynomial / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:15:23,106 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:15:31,976 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:15:38,703 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:15:46,440 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:15:54,994 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:15:55,010 __main__ INFO Progress: 26/99 cells (26%) — newton_raphson_polynomial__C1__gpt-4o__42: FAILED (8/100)
+2026-06-24 04:15:55,011 __main__ INFO === Cell: newton_raphson_polynomial / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:15:59,797 __main__ INFO Progress: 27/99 cells (27%) — gradient_descent__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:15:59,798 __main__ INFO === Cell: newton_raphson_polynomial / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:16:02,529 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:06,048 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:10,218 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:14,331 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:17,554 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:17,570 __main__ INFO Progress: 28/99 cells (28%) — gradient_descent__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:16:17,570 __main__ INFO === Cell: newton_raphson_sqrt / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:16:18,048 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:24,680 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:16:27,064 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:24,632 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:30,318 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:33,783 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:37,988 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:45,386 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:52,656 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:58,294 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:17:58,330 __main__ INFO Progress: 29/99 cells (29%) — newton_raphson_sqrt__C1__gpt-4o__42: FAILED (1/50)
+2026-06-24 04:17:58,330 __main__ INFO === Cell: newton_raphson_sqrt / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:18:03,621 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:09,694 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:16,052 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:22,724 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:29,001 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:33,861 __main__ INFO Progress: 30/99 cells (30%) — newton_raphson_polynomial__C1__gpt-4o__123: FAILED (11/100)
+2026-06-24 04:18:33,862 __main__ INFO === Cell: newton_raphson_sqrt / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:18:36,464 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:42,764 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:49,275 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:18:56,048 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:04,418 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:12,258 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:12,275 __main__ INFO Progress: 31/99 cells (31%) — newton_raphson_sqrt__C1__gpt-4o__456: FAILED (2/50)
+2026-06-24 04:19:12,275 __main__ INFO === Cell: fp_mult_pipeline / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:19:29,078 __main__ INFO Progress: 32/99 cells (32%) — newton_raphson_sqrt__C1__gpt-4o__123: FAILED (1/50)
+2026-06-24 04:19:29,078 __main__ INFO === Cell: fp_mult_pipeline / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:19:30,958 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:36,547 __main__ INFO Progress: 33/99 cells (33%) — newton_raphson_polynomial__C1__gpt-4o__456: FAILED (8/100)
+2026-06-24 04:19:36,547 __main__ INFO === Cell: fp_mult_pipeline / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:19:40,107 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:43,534 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:45,972 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:50,369 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:50,976 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:19:57,233 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:20:02,221 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:20:59,344 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:05,779 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:10,697 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:15,433 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:17,298 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:17,317 __main__ INFO Progress: 34/99 cells (34%) — fp_mult_pipeline__C1__gpt-4o__42: FAILED (2/30)
+2026-06-24 04:21:17,317 __main__ INFO === Cell: fp_adder_pipeline / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:21:23,584 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:23,602 __main__ INFO Progress: 35/99 cells (35%) — fp_mult_pipeline__C1__gpt-4o__123: FAILED (25/30)
+2026-06-24 04:21:23,603 __main__ INFO === Cell: fp_adder_pipeline / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:21:23,968 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:23,979 __main__ INFO Progress: 36/99 cells (36%) — fp_mult_pipeline__C1__gpt-4o__456: FAILED (23/30)
+2026-06-24 04:21:23,979 __main__ INFO === Cell: fp_adder_pipeline / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:21:28,479 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:34,905 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:38,552 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:45,636 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:48,363 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:57,720 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:21:59,941 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:22:10,969 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:22:45,612 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:22:47,351 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:22:57,284 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:07,031 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:17,143 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:22,584 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:22,617 __main__ INFO Progress: 37/99 cells (37%) — fp_adder_pipeline__C1__gpt-4o__456: FAILED (14/23)
+2026-06-24 04:23:22,620 __main__ INFO === Cell: fft_16pt_iterative / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:23:36,406 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:47,939 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:59,011 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:23:59,035 __main__ INFO Progress: 38/99 cells (38%) — fp_adder_pipeline__C1__gpt-4o__123: FAILED (4/23)
+2026-06-24 04:23:59,036 __main__ INFO === Cell: fft_16pt_iterative / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:24:01,189 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:24:11,373 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:24:17,224 __main__ INFO Progress: 39/99 cells (39%) — fp_adder_pipeline__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:24:17,225 __main__ INFO === Cell: fft_16pt_iterative / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:24:24,658 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:24:33,172 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:24:39,562 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:24:45,778 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:24:53,466 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:02,178 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:08,123 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:08,135 __main__ INFO Progress: 40/99 cells (40%) — fft_16pt_iterative__C1__gpt-4o__123: FAILED (1/33)
+2026-06-24 04:25:08,138 __main__ INFO === Cell: ifft_16pt_iterative / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:25:13,935 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:14,114 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:20,860 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:29,209 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:29,222 __main__ INFO Progress: 41/99 cells (41%) — fft_16pt_iterative__C1__gpt-4o__456: FAILED (5/33)
+2026-06-24 04:25:29,223 __main__ INFO === Cell: ifft_16pt_iterative / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:25:29,454 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:29,474 __main__ INFO Progress: 42/99 cells (42%) — fft_16pt_iterative__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:25:29,474 __main__ INFO === Cell: ifft_16pt_iterative / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:25:33,860 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:38,468 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:40,551 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:45,226 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:51,795 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:52,543 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:25:58,052 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:03,959 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:03,999 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:08,518 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:09,633 __main__ INFO Progress: 43/99 cells (43%) — ifft_16pt_iterative__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:26:09,637 __main__ INFO === Cell: band_pass_fir / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:26:18,812 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:19,132 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:26,657 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:32,769 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:32,793 __main__ INFO Progress: 44/99 cells (44%) — ifft_16pt_iterative__C1__gpt-4o__123: FAILED (12/33)
+2026-06-24 04:26:32,794 __main__ INFO === Cell: band_pass_fir / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:26:33,436 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:39,603 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:40,217 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:46,380 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:47,239 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:47,259 __main__ INFO Progress: 45/99 cells (45%) — band_pass_fir__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:26:47,260 __main__ INFO === Cell: band_pass_fir / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:26:53,075 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:54,138 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:26:59,695 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:00,152 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:06,663 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:06,685 __main__ INFO Progress: 46/99 cells (46%) — band_pass_fir__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:27:06,689 __main__ INFO === Cell: high_pass_fir / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:27:07,944 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:08,010 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:08,010 openai._base_client INFO Retrying request to /chat/completions in 0.882000 seconds
+2026-06-24 04:27:08,926 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:08,926 openai._base_client INFO Retrying request to /chat/completions in 2.452000 seconds
+2026-06-24 04:27:15,336 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:15,385 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:15,385 openai._base_client INFO Retrying request to /chat/completions in 1.640000 seconds
+2026-06-24 04:27:17,062 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:17,063 openai._base_client INFO Retrying request to /chat/completions in 0.550000 seconds
+2026-06-24 04:27:18,185 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:18,234 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:24,839 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:24,856 __main__ INFO Progress: 47/99 cells (47%) — band_pass_fir__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:27:24,857 __main__ INFO === Cell: high_pass_fir / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:27:24,942 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:24,942 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:27:27,693 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:27,753 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:27,754 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:27:28,705 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:28,720 __main__ INFO Progress: 48/99 cells (48%) — ifft_16pt_iterative__C1__gpt-4o__456: FAILED (13/33)
+2026-06-24 04:27:28,720 __main__ INFO === Cell: high_pass_fir / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:27:28,804 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:28,804 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:27:31,575 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:31,575 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:27:34,343 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:34,343 __main__ WARNING C1 attempt 0: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1364. Please try again in 2.728s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:27:37,786 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:37,838 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:37,838 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:27:40,560 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:40,605 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:40,605 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:27:40,616 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:40,616 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:27:43,371 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:43,371 __main__ WARNING C1 attempt 1: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1364. Please try again in 2.728s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:27:43,380 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:43,380 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:27:43,410 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:43,411 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:27:43,593 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:46,176 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:27:46,177 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:27:53,959 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:56,198 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:27:57,343 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:04,038 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:04,102 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:04,103 openai._base_client INFO Retrying request to /chat/completions in 2.728000 seconds
+2026-06-24 04:28:07,132 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:08,083 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:08,114 __main__ INFO Progress: 49/99 cells (49%) — high_pass_fir__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:28:08,117 __main__ INFO === Cell: low_pass_fir / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:28:08,199 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:08,200 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:15,620 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:15,640 __main__ INFO Progress: 50/99 cells (51%) — high_pass_fir__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:28:15,641 __main__ INFO === Cell: low_pass_fir / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:28:15,735 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:15,736 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:16,241 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:16,263 __main__ INFO Progress: 51/99 cells (52%) — high_pass_fir__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:28:16,263 __main__ INFO === Cell: low_pass_fir / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:28:19,842 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:19,901 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:19,901 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:24,587 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:24,648 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:24,649 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:29,955 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:30,007 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:30,007 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:32,886 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:32,886 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:33,844 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:33,898 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:33,898 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:36,363 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:36,432 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:36,432 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:36,777 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:36,777 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:39,319 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:39,319 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:46,416 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:46,469 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:46,469 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:49,351 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:49,352 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:49,875 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:28:49,941 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:49,941 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:52,239 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:52,239 __main__ WARNING C1 attempt 3: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1421. Please try again in 2.842s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:28:52,273 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:52,274 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:52,830 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:52,831 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:28:55,721 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:28:55,721 __main__ WARNING C1 attempt 3: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1421. Please try again in 2.842s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:29:02,905 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:02,919 __main__ INFO Progress: 52/99 cells (53%) — low_pass_fir__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:29:02,922 __main__ INFO === Cell: conv1d / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:29:03,375 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:03,398 __main__ INFO Progress: 53/99 cells (54%) — low_pass_fir__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:29:03,398 __main__ INFO === Cell: conv1d / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:29:03,497 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:03,497 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:04,319 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:04,368 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:04,369 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:29:07,144 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:07,204 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:07,204 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:07,245 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:07,245 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:29:09,375 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:09,375 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:10,129 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:10,130 __main__ WARNING C1 attempt 2: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1421. Please try again in 2.842s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:29:11,224 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:11,275 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:11,275 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:13,461 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:13,461 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:15,647 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:15,647 __main__ WARNING C1 attempt 1: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1068. Please try again in 2.136s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:29:15,688 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:15,688 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:15,985 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:16,044 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:16,044 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:17,871 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:17,871 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:18,215 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:18,215 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:20,052 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:20,052 __main__ WARNING C1 attempt 2: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1068. Please try again in 2.136s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:29:20,319 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:20,371 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:20,371 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:29:20,387 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:20,388 __main__ WARNING C1 attempt 2: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1068. Please try again in 2.136s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:29:23,250 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:23,251 openai._base_client INFO Retrying request to /chat/completions in 2.842000 seconds
+2026-06-24 04:29:25,986 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:26,035 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:26,041 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:26,041 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:26,080 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:26,080 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:26,134 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:26,134 __main__ WARNING C1 attempt 4: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1421. Please try again in 2.842s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:29:26,135 __main__ INFO Progress: 54/99 cells (55%) — low_pass_fir__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:29:26,136 __main__ INFO === Cell: conv1d / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:29:28,225 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:28,226 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:29,762 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:29,811 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:29,811 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:31,984 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:31,984 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:32,700 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:32,720 __main__ INFO Progress: 55/99 cells (56%) — conv1d__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:29:32,723 __main__ INFO === Cell: conv2d / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:29:34,168 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:34,169 __main__ WARNING C1 attempt 1: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1068. Please try again in 2.136s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:29:34,206 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:34,206 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:35,232 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:35,242 __main__ INFO Progress: 56/99 cells (57%) — conv1d__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:29:35,243 __main__ INFO === Cell: conv2d / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:29:35,331 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:35,331 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:29:36,375 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:36,375 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:37,575 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:37,575 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:29:39,818 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:39,818 __main__ WARNING C1 attempt 0: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1103. Please try again in 2.206s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:29:40,308 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:40,367 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:40,367 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:29:42,613 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:42,614 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:29:44,810 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:44,855 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:44,855 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:44,860 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:44,861 __main__ WARNING C1 attempt 1: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1103. Please try again in 2.206s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:29:44,903 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:44,903 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:29:47,029 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:47,029 openai._base_client INFO Retrying request to /chat/completions in 2.136000 seconds
+2026-06-24 04:29:47,147 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:47,147 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:29:47,235 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:49,392 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:49,392 __main__ WARNING C1 attempt 2: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1103. Please try again in 2.206s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:29:49,432 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:49,432 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:29:54,525 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:56,537 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:58,327 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:29:58,376 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:29:58,376 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:30:00,619 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:00,619 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:30:01,030 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:01,044 __main__ INFO Progress: 57/99 cells (58%) — conv1d__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:30:01,044 __main__ INFO === Cell: conv2d / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:30:01,161 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:01,161 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:30:02,867 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:02,867 __main__ WARNING C1 attempt 4: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 1103. Please try again in 2.206s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:30:02,869 __main__ INFO Progress: 58/99 cells (59%) — conv2d__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:30:02,872 __main__ INFO === Cell: dct_idct_8pt_pipelined / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:30:02,965 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:02,965 openai._base_client INFO Retrying request to /chat/completions in 1.955000 seconds
+2026-06-24 04:30:03,413 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:03,413 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:30:03,466 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:03,648 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:03,649 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:30:04,958 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:04,958 openai._base_client INFO Retrying request to /chat/completions in 1.955000 seconds
+2026-06-24 04:30:05,899 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:05,899 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:30:13,417 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:13,470 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:13,471 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:30:15,344 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:15,496 __main__ INFO Progress: 59/99 cells (60%) — conv2d__C1__gpt-4o__123: FAILED (0/1)
+2026-06-24 04:30:15,497 __main__ INFO === Cell: dct_idct_8pt_pipelined / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:30:15,573 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:15,573 openai._base_client INFO Retrying request to /chat/completions in 1.955000 seconds
+2026-06-24 04:30:15,723 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:15,724 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:30:17,569 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:17,570 openai._base_client INFO Retrying request to /chat/completions in 1.955000 seconds
+2026-06-24 04:30:18,655 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:18,715 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:18,716 openai._base_client INFO Retrying request to /chat/completions in 1.955000 seconds
+2026-06-24 04:30:19,564 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:19,565 __main__ WARNING C1 attempt 0: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 978. Please try again in 1.955s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:30:19,599 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:19,600 openai._base_client INFO Retrying request to /chat/completions in 1.955000 seconds
+2026-06-24 04:30:20,708 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:20,709 openai._base_client INFO Retrying request to /chat/completions in 1.955000 seconds
+2026-06-24 04:30:22,707 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:22,707 __main__ WARNING C1 attempt 1: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-zxIkPnOHHmzaD4hrZvMIQ4ju on tokens per min (TPM): Limit 30000, Used 30000, Requested 978. Please try again in 1.955s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2026-06-24 04:30:22,744 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:22,744 openai._base_client INFO Retrying request to /chat/completions in 1.955000 seconds
+2026-06-24 04:30:27,643 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:28,305 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:28,306 openai._base_client INFO Retrying request to /chat/completions in 2.206000 seconds
+2026-06-24 04:30:34,777 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:40,597 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:41,432 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:41,489 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:30:41,489 openai._base_client INFO Retrying request to /chat/completions in 0.906000 seconds
+2026-06-24 04:30:49,070 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:30:56,763 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:00,636 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:01,274 __main__ INFO Progress: 60/99 cells (61%) — conv2d__C1__gpt-4o__456: FAILED (0/1)
+2026-06-24 04:31:01,274 __main__ INFO === Cell: dct_idct_8pt_pipelined / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:31:04,568 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:11,207 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:14,315 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:18,634 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:18,664 __main__ INFO Progress: 61/99 cells (62%) — dct_idct_8pt_pipelined__C1__gpt-4o__42: FAILED (0/1)
+2026-06-24 04:31:18,666 __main__ INFO === Cell: harris_corner_detection / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:31:23,740 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:23,752 __main__ INFO Progress: 62/99 cells (63%) — dct_idct_8pt_pipelined__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:31:23,753 __main__ INFO === Cell: harris_corner_detection / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:31:25,989 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:31,092 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:36,346 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:45,827 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:53,033 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:31:59,066 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:11,899 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:25,723 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:25,739 __main__ INFO Progress: 63/99 cells (64%) — harris_corner_detection__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:32:25,740 __main__ INFO === Cell: harris_corner_detection / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:32:27,055 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:37,549 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:38,634 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:32:48,687 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:00,086 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:10,579 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:17,825 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:25,487 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:25,520 __main__ INFO Progress: 64/99 cells (65%) — dct_idct_8pt_pipelined__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:33:25,524 __main__ INFO === Cell: systolic_gemm / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:33:39,759 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:48,062 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:51,817 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:33:58,931 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:34:00,705 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:34:09,174 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:34:19,022 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:34:19,049 __main__ INFO Progress: 65/99 cells (66%) — systolic_gemm__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:34:19,052 __main__ INFO === Cell: systolic_gemm / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:34:29,595 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:34:44,254 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:34:55,380 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:03,516 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:03,859 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:07,530 __main__ INFO Progress: 66/99 cells (67%) — harris_corner_detection__C1__gpt-4o__123: FAILED (0/1)
+2026-06-24 04:35:07,531 __main__ INFO === Cell: systolic_gemm / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:35:14,781 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:14,813 __main__ INFO Progress: 67/99 cells (68%) — systolic_gemm__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:35:14,816 __main__ INFO === Cell: unsharp_mask / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:35:22,305 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:31,541 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:32,562 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:41,198 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:44,462 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:35:48,492 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:00,101 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:00,131 __main__ INFO Progress: 68/99 cells (69%) — systolic_gemm__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:36:00,131 __main__ INFO === Cell: unsharp_mask / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:36:02,178 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:04,103 __main__ INFO Progress: 69/99 cells (70%) — harris_corner_detection__C1__gpt-4o__456: SOLVED (16384/16384)
+2026-06-24 04:36:04,104 __main__ INFO === Cell: unsharp_mask / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:36:13,613 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:15,734 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:15,967 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:26,396 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:27,273 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:30,063 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:30,077 __main__ INFO Progress: 70/99 cells (71%) — unsharp_mask__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:36:30,080 __main__ INFO === Cell: aes_decryption / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:36:38,819 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:40,023 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:40,492 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:51,014 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:54,261 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:54,997 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:36:59,843 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:05,582 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:11,192 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:11,225 __main__ INFO Progress: 71/99 cells (72%) — unsharp_mask__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:37:11,226 __main__ INFO === Cell: aes_decryption / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:37:11,516 __main__ INFO Progress: 72/99 cells (73%) — unsharp_mask__C1__gpt-4o__456: FAILED (0/1)
+2026-06-24 04:37:11,516 __main__ INFO === Cell: aes_decryption / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:37:19,201 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:20,793 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:27,050 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:30,241 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:36,963 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:41,988 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:44,051 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:52,918 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:53,023 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:37:53,066 __main__ INFO Progress: 73/99 cells (74%) — aes_decryption__C1__gpt-4o__123: FAILED (0/8)
+2026-06-24 04:37:53,069 __main__ INFO === Cell: aes_encryption / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:38:03,155 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:04,411 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:04,433 __main__ INFO Progress: 74/99 cells (75%) — aes_decryption__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:38:04,433 __main__ INFO === Cell: aes_encryption / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:38:13,057 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:15,522 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:16,088 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:22,166 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:29,440 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:29,703 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:41,539 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:49,065 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:51,462 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:59,617 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:38:59,654 __main__ INFO Progress: 75/99 cells (76%) — aes_encryption__C1__gpt-4o__42: FAILED (0/8)
+2026-06-24 04:38:59,655 __main__ INFO === Cell: aes_encryption / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:39:01,623 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:39:01,655 __main__ INFO Progress: 76/99 cells (77%) — aes_encryption__C1__gpt-4o__123: FAILED (0/8)
+2026-06-24 04:39:01,658 __main__ INFO === Cell: conv_3d / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:39:13,769 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:39:15,218 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:39:22,255 __main__ INFO Progress: 77/99 cells (78%) — aes_decryption__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:39:22,257 __main__ INFO === Cell: conv_3d / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:39:23,101 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:39:33,391 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:39:33,988 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:39:43,205 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:39:48,449 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:04,514 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:18,925 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:19,272 __main__ INFO Progress: 78/99 cells (79%) — conv_3d__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:40:19,273 __main__ INFO === Cell: conv_3d / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:40:27,476 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:28,397 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:37,811 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:46,151 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:47,420 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:48,293 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:40:59,172 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:01,952 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:22,197 __main__ INFO Progress: 79/99 cells (80%) — conv_3d__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:41:22,200 __main__ INFO === Cell: fft_streaming_64pt / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:41:29,521 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:29,555 __main__ INFO Progress: 80/99 cells (81%) — aes_encryption__C1__gpt-4o__456: FAILED (0/8)
+2026-06-24 04:41:29,555 __main__ INFO === Cell: fft_streaming_64pt / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:41:33,937 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:39,100 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:46,551 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:52,385 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:55,841 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:41:57,242 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:04,375 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:05,429 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:05,446 __main__ INFO Progress: 81/99 cells (82%) — conv_3d__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:42:05,447 __main__ INFO === Cell: fft_streaming_64pt / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:42:10,139 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:15,548 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:20,888 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:20,925 __main__ INFO Progress: 82/99 cells (83%) — fft_streaming_64pt__C1__gpt-4o__42: FAILED (0/1)
+2026-06-24 04:42:20,928 __main__ INFO === Cell: fp_band_pass_fir / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:42:25,310 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:27,269 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:28,751 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:35,554 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:36,734 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:36,758 __main__ INFO Progress: 83/99 cells (84%) — fft_streaming_64pt__C1__gpt-4o__123: FAILED (0/128)
+2026-06-24 04:42:36,759 __main__ INFO === Cell: fp_band_pass_fir / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:42:37,513 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:44,086 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:44,800 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:45,926 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:50,729 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:50,893 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:56,973 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:42:57,001 __main__ INFO Progress: 84/99 cells (85%) — fft_streaming_64pt__C1__gpt-4o__456: FAILED (0/1)
+2026-06-24 04:42:57,001 __main__ INFO === Cell: fp_band_pass_fir / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:42:57,163 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:00,144 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:00,159 __main__ INFO Progress: 85/99 cells (86%) — fp_band_pass_fir__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:43:00,162 __main__ INFO === Cell: fp_high_pass_fir / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:43:02,813 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:05,653 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:10,797 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:11,904 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:11,922 __main__ INFO Progress: 86/99 cells (87%) — fp_band_pass_fir__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:43:11,922 __main__ INFO === Cell: fp_high_pass_fir / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:43:13,942 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:18,076 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:20,147 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:20,328 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:27,153 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:27,975 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:31,911 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:32,824 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:32,850 __main__ INFO Progress: 87/99 cells (88%) — fp_band_pass_fir__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:43:32,851 __main__ INFO === Cell: fp_high_pass_fir / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:43:35,693 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:35,739 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:43:35,739 openai._base_client INFO Retrying request to /chat/completions in 1.606000 seconds
+2026-06-24 04:43:41,613 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:41,631 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:45,493 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:45,507 __main__ INFO Progress: 88/99 cells (89%) — fp_high_pass_fir__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:43:45,510 __main__ INFO === Cell: fp_low_pass_fir / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:43:47,257 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:47,309 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:43:47,310 openai._base_client INFO Retrying request to /chat/completions in 2.168000 seconds
+2026-06-24 04:43:50,479 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:56,160 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:43:56,222 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:43:56,222 openai._base_client INFO Retrying request to /chat/completions in 2.218000 seconds
+2026-06-24 04:44:03,084 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:03,098 __main__ INFO Progress: 89/99 cells (90%) — fp_high_pass_fir__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:44:03,099 __main__ INFO === Cell: fp_low_pass_fir / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:44:04,458 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:10,012 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:10,170 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:12,766 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:19,881 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:22,468 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:22,485 __main__ INFO Progress: 90/99 cells (91%) — fp_high_pass_fir__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:44:22,485 __main__ INFO === Cell: fp_low_pass_fir / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:44:26,440 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:38,042 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:48,373 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:49,731 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:50,109 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:57,638 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:57,654 __main__ INFO Progress: 91/99 cells (92%) — fp_low_pass_fir__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:44:57,655 __main__ ERROR Cell multich_conv2d__C1__gpt-4o__42 crashed: [Errno 2] No such file or directory: '/opt/openevolve/openevolve/tdes/fpga/autonomous/../benchmarks/archxbench/level-6/multich_conv2d/tb.v'
+2026-06-24 04:44:57,655 __main__ ERROR Cell multich_conv2d__C1__gpt-4o__123 crashed: [Errno 2] No such file or directory: '/opt/openevolve/openevolve/tdes/fpga/autonomous/../benchmarks/archxbench/level-6/multich_conv2d/tb.v'
+2026-06-24 04:44:57,656 __main__ ERROR Cell multich_conv2d__C1__gpt-4o__456 crashed: [Errno 2] No such file or directory: '/opt/openevolve/openevolve/tdes/fpga/autonomous/../benchmarks/archxbench/level-6/multich_conv2d/tb.v'
+2026-06-24 04:44:57,658 __main__ INFO === Cell: quantized_matmul / C1 / gpt-4o / seed=42 ===
+2026-06-24 04:44:59,360 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:44:59,376 __main__ INFO Progress: 92/99 cells (93%) — fp_low_pass_fir__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:44:59,377 __main__ INFO === Cell: quantized_matmul / C1 / gpt-4o / seed=123 ===
+2026-06-24 04:45:08,328 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:08,447 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:09,512 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:09,557 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-24 04:45:09,558 openai._base_client INFO Retrying request to /chat/completions in 0.576000 seconds
+2026-06-24 04:45:18,865 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:19,835 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:20,996 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:28,592 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:30,607 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:31,082 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:39,001 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:42,955 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:42,968 __main__ INFO Progress: 93/99 cells (94%) — fp_low_pass_fir__C1__gpt-4o__456: FAILED (0/0)
+2026-06-24 04:45:42,968 __main__ INFO === Cell: quantized_matmul / C1 / gpt-4o / seed=456 ===
+2026-06-24 04:45:43,115 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:48,267 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:48,291 __main__ INFO Progress: 94/99 cells (95%) — quantized_matmul__C1__gpt-4o__42: FAILED (0/0)
+2026-06-24 04:45:55,346 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:56,095 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:45:57,215 __main__ INFO Progress: 95/99 cells (96%) — quantized_matmul__C1__gpt-4o__123: FAILED (0/0)
+2026-06-24 04:46:06,105 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:46:20,272 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:46:30,292 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:46:38,288 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-24 04:46:38,307 __main__ INFO Progress: 96/99 cells (97%) — quantized_matmul__C1__gpt-4o__456: FAILED (0/0)
+
+======================================================================
+EXPERIMENT COMPLETE
+======================================================================
+Cells: 96, Solved: 4/96
+  aes128_single_round__C1__gpt-4o__123: FAILED (0/0) [173.9s]
+  aes128_single_round__C1__gpt-4o__42: FAILED (0/0) [108.7s]
+  aes128_single_round__C1__gpt-4o__456: FAILED (0/0) [145.0s]
+  aes_decryption__C1__gpt-4o__123: FAILED (0/8) [41.8s]
+  aes_decryption__C1__gpt-4o__42: FAILED (0/0) [172.2s]
+  aes_decryption__C1__gpt-4o__456: FAILED (0/0) [52.9s]
+  aes_encryption__C1__gpt-4o__123: FAILED (0/8) [57.2s]
+  aes_encryption__C1__gpt-4o__42: FAILED (0/8) [66.6s]
+  aes_encryption__C1__gpt-4o__456: FAILED (0/8) [149.9s]
+  band_pass_fir__C1__gpt-4o__123: FAILED (0/0) [33.9s]
+  band_pass_fir__C1__gpt-4o__42: FAILED (0/0) [37.6s]
+  band_pass_fir__C1__gpt-4o__456: FAILED (0/0) [37.6s]
+  cla_32bit_pipe__C1__gpt-4o__123: FAILED (1/50) [42.9s]
+  cla_32bit_pipe__C1__gpt-4o__42: FAILED (1/50) [48.8s]
+  cla_32bit_pipe__C1__gpt-4o__456: FAILED (1/50) [74.6s]
+  conv1d__C1__gpt-4o__123: FAILED (0/0) [31.8s]
+  conv1d__C1__gpt-4o__42: FAILED (0/0) [29.8s]
+  conv1d__C1__gpt-4o__456: FAILED (0/0) [34.9s]
+  conv2d__C1__gpt-4o__123: FAILED (0/1) [40.3s]
+  conv2d__C1__gpt-4o__42: FAILED (0/0) [30.1s]
+  conv2d__C1__gpt-4o__456: FAILED (0/1) [60.2s]
+  conv_3d__C1__gpt-4o__123: FAILED (0/0) [119.9s]
+  conv_3d__C1__gpt-4o__42: FAILED (0/0) [77.6s]
+  conv_3d__C1__gpt-4o__456: FAILED (0/0) [106.2s]
+  dadda_mult_pipe__C1__gpt-4o__123: FAILED (0/0) [32.9s]
+  dadda_mult_pipe__C1__gpt-4o__42: FAILED (0/0) [32.3s]
+  dadda_mult_pipe__C1__gpt-4o__456: FAILED (0/0) [28.5s]
+  dct_idct_8pt_pipelined__C1__gpt-4o__123: FAILED (0/0) [68.3s]
+  dct_idct_8pt_pipelined__C1__gpt-4o__42: FAILED (0/1) [75.8s]
+  dct_idct_8pt_pipelined__C1__gpt-4o__456: FAILED (0/0) [144.2s]
+  fft_16pt_iterative__C1__gpt-4o__123: FAILED (1/33) [69.1s]
+  fft_16pt_iterative__C1__gpt-4o__42: FAILED (0/0) [126.9s]
+  fft_16pt_iterative__C1__gpt-4o__456: FAILED (5/33) [72.0s]
+  fft_streaming_64pt__C1__gpt-4o__123: FAILED (0/128) [67.2s]
+  fft_streaming_64pt__C1__gpt-4o__42: FAILED (0/1) [58.7s]
+  fft_streaming_64pt__C1__gpt-4o__456: FAILED (0/1) [51.6s]
+  fp_adder__C1__gpt-4o__123: FAILED (11/36) [44.7s]
+  fp_adder__C1__gpt-4o__42: FAILED (15/36) [45.0s]
+  fp_adder__C1__gpt-4o__456: FAILED (23/36) [102.7s]
+  fp_adder_pipeline__C1__gpt-4o__123: FAILED (4/23) [155.4s]
+  fp_adder_pipeline__C1__gpt-4o__42: FAILED (0/0) [179.9s]
+  fp_adder_pipeline__C1__gpt-4o__456: FAILED (14/23) [118.6s]
+  fp_band_pass_fir__C1__gpt-4o__123: FAILED (0/0) [35.2s]
+  fp_band_pass_fir__C1__gpt-4o__42: FAILED (0/0) [39.2s]
+  fp_band_pass_fir__C1__gpt-4o__456: FAILED (0/0) [35.8s]
+  fp_high_pass_fir__C1__gpt-4o__123: FAILED (0/0) [51.2s]
+  fp_high_pass_fir__C1__gpt-4o__42: FAILED (0/0) [45.3s]
+  fp_high_pass_fir__C1__gpt-4o__456: FAILED (0/0) [49.6s]
+  fp_low_pass_fir__C1__gpt-4o__123: FAILED (0/0) [54.6s]
+  fp_low_pass_fir__C1__gpt-4o__42: FAILED (0/0) [73.9s]
+  fp_low_pass_fir__C1__gpt-4o__456: FAILED (0/0) [80.5s]
+  fp_mult_pipeline__C1__gpt-4o__123: FAILED (25/30) [114.5s]
+  fp_mult_pipeline__C1__gpt-4o__42: FAILED (2/30) [125.0s]
+  fp_mult_pipeline__C1__gpt-4o__456: FAILED (23/30) [107.4s]
+  fp_multiplier__C1__gpt-4o__123: FAILED (4/10) [46.0s]
+  fp_multiplier__C1__gpt-4o__42: FAILED (5/10) [48.0s]
+  fp_multiplier__C1__gpt-4o__456: FAILED (4/10) [50.1s]
+  gauss_siedel__C1__gpt-4o__123: FAILED (0/0) [98.9s]
+  gauss_siedel__C1__gpt-4o__42: FAILED (0/0) [36.3s]
+  gauss_siedel__C1__gpt-4o__456: FAILED (43/50) [34.6s]
+  gradient_descent__C1__gpt-4o__123: FAILED (0/0) [268.8s]
+  gradient_descent__C1__gpt-4o__42: FAILED (0/0) [342.3s]
+  gradient_descent__C1__gpt-4o__456: FAILED (0/0) [270.6s]
+  harris_corner_detection__C1__gpt-4o__123: FAILED (0/1) [223.8s]
+  harris_corner_detection__C1__gpt-4o__42: FAILED (0/0) [67.1s]
+  harris_corner_detection__C1__gpt-4o__456: SOLVED (16384/16384) [218.4s]
+  high_pass_fir__C1__gpt-4o__123: FAILED (0/0) [51.4s]
+  high_pass_fir__C1__gpt-4o__42: FAILED (0/0) [61.4s]
+  high_pass_fir__C1__gpt-4o__456: FAILED (0/0) [46.9s]
+  ifft_16pt_iterative__C1__gpt-4o__123: FAILED (12/33) [63.6s]
+  ifft_16pt_iterative__C1__gpt-4o__42: FAILED (0/0) [61.5s]
+  ifft_16pt_iterative__C1__gpt-4o__456: FAILED (13/33) [119.2s]
+  low_pass_fir__C1__gpt-4o__123: FAILED (0/0) [70.5s]
+  low_pass_fir__C1__gpt-4o__42: FAILED (0/0) [55.3s]
+  low_pass_fir__C1__gpt-4o__456: FAILED (0/0) [46.7s]
+  newton_raphson_polynomial__C1__gpt-4o__123: FAILED (11/100) [158.8s]
+  newton_raphson_polynomial__C1__gpt-4o__42: FAILED (8/100) [39.9s]
+  newton_raphson_polynomial__C1__gpt-4o__456: FAILED (8/100) [216.7s]
+  newton_raphson_sqrt__C1__gpt-4o__123: FAILED (1/50) [90.7s]
+  newton_raphson_sqrt__C1__gpt-4o__42: FAILED (1/50) [100.8s]
+  newton_raphson_sqrt__C1__gpt-4o__456: FAILED (2/50) [38.4s]
+  quantized_matmul__C1__gpt-4o__123: FAILED (0/0) [57.8s]
+  quantized_matmul__C1__gpt-4o__42: FAILED (0/0) [50.6s]
+  quantized_matmul__C1__gpt-4o__456: FAILED (0/0) [55.3s]
+  rca_32bit_pipe__C1__gpt-4o__123: SOLVED (50/50) [46.1s]
+  rca_32bit_pipe__C1__gpt-4o__42: SOLVED (50/50) [48.9s]
+  rca_32bit_pipe__C1__gpt-4o__456: SOLVED (50/50) [41.6s]
+  systolic_gemm__C1__gpt-4o__123: FAILED (0/0) [55.8s]
+  systolic_gemm__C1__gpt-4o__42: FAILED (0/0) [53.5s]
+  systolic_gemm__C1__gpt-4o__456: FAILED (0/0) [52.6s]
+  unsharp_mask__C1__gpt-4o__123: FAILED (0/0) [71.1s]
+  unsharp_mask__C1__gpt-4o__42: FAILED (0/0) [75.3s]
+  unsharp_mask__C1__gpt-4o__456: FAILED (0/1) [67.4s]
+  wallace_tree_mult_pipe__C1__gpt-4o__123: FAILED (0/0) [38.2s]
+  wallace_tree_mult_pipe__C1__gpt-4o__42: FAILED (0/0) [36.1s]
+  wallace_tree_mult_pipe__C1__gpt-4o__456: FAILED (0/0) [102.5s]

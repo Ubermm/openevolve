@@ -1,0 +1,20 @@
+{
+  "condition": "C4",
+  "llm_calls": 26,
+  "best_passes": 0,
+  "total_tests": 10,
+  "solved": false,
+  "decomp_modules": [
+    "fp_decode",
+    "exp_add",
+    "mant_mul",
+    "normalize",
+    "round"
+  ],
+  "design": "fp_multiplier",
+  "model": "o4-mini",
+  "seed": 456,
+  "wall_seconds": 472.3,
+  "total_input_tokens": 27746,
+  "total_output_tokens": 86925
+}

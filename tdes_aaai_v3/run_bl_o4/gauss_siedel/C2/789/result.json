@@ -1,0 +1,13 @@
+{
+  "condition": "C2",
+  "llm_calls": 30,
+  "best_passes": 45,
+  "total_tests": 50,
+  "solved": false,
+  "design": "gauss_siedel",
+  "model": "o4-mini",
+  "seed": 789,
+  "wall_seconds": 1151.0,
+  "total_input_tokens": 72072,
+  "total_output_tokens": 191719
+}

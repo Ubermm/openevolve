@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/fir_coeff_rom.v",
+  "sub_modules": {
+    "fir_coeff_rom": "Combinational hard-coded coefficient ROM for the required 101-tap symmetric FIR coefficient set.",
+    "fir_symmetric_preadd": "Combinational symmetric sample pre-adder that forms mirrored tap sums and forwards the center tap sample.",
+    "fir_parallel_mac": "Combinational parallel multiply-accumulate engine using pre-added symmetric samples, center sample, and hard-coded coefficients."
+  }
+}

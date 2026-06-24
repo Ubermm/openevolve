@@ -1,0 +1,13 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 0,
+  "total_tests": 0,
+  "solved": false,
+  "design": "fp_adder_pipeline",
+  "model": "gpt-5.5",
+  "seed": 123,
+  "wall_seconds": 997.3,
+  "total_input_tokens": 3800,
+  "total_output_tokens": 40000
+}

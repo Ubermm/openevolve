@@ -1,0 +1,27 @@
+{
+  "condition": "C4i",
+  "llm_calls": 6,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "sobel3x3",
+    "grad_products",
+    "gaussian3x3",
+    "harris_response_comb",
+    "harris_threshold_comb"
+  ],
+  "module_solve_rounds": {
+    "sobel3x3": 1,
+    "grad_products": 1,
+    "gaussian3x3": 1,
+    "harris_response_comb": 1,
+    "harris_threshold_comb": 1
+  },
+  "design": "harris_corner_detection",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 456.8,
+  "total_input_tokens": 12350,
+  "total_output_tokens": 21945
+}

@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/hpf_coeff_mem.v",
+  "sub_modules": {
+    "hpf_coeff_mem": "Coefficient ROM providing hard-coded high-pass FIR coefficients",
+    "hpf_dot_product": "Combinational dot-product accumulator of taps and coefficients",
+    "hpf_scaler": "Arithmetic right-shift scaler to normalize the accumulated sum"
+  }
+}

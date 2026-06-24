@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/bit_reverse.v",
+  "sub_modules": {
+    "bit_reverse": "Reverses 4-bit index for bit-reversal ordering",
+    "twiddle_rom": "Lookup ROM for Q1.15 twiddle cosine and sine values (conjugated for IFFT)",
+    "butterfly_unit": "Combinational radix-2 DIT butterfly, performs complex multiply and add/sub"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 28,
+  "best_passes": 1,
+  "total_tests": 50,
+  "solved": false,
+  "decomp_modules": [
+    "initial_guess",
+    "div_fixedpoint",
+    "add_avg"
+  ],
+  "design": "newton_raphson_sqrt",
+  "model": "o4-mini",
+  "seed": 123,
+  "wall_seconds": 459.2,
+  "total_input_tokens": 28139,
+  "total_output_tokens": 80373
+}

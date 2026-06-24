@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/fir_coeff_rom_101.v",
+  "sub_modules": {
+    "fir_coeff_rom_101": "Pure-combinational hard-coded 101-tap coefficient provider with the exact signed integer coefficients required by the benchmark.",
+    "fir_sample_formatter": "Pure-combinational formatter that builds the current FIR sample vector from the new serial input sample and the registered delay line.",
+    "fir_symmetric_preadder": "Pure-combinational linear-phase FIR pre-adder that sums mirrored samples and extracts the center tap sample.",
+    "fir_symmetric_mac": "Pure-combinational symmetric multiply-accumulate engine using mirrored pair sums, center sample, and hard-coded coefficients, accumulating into 64 bits.",
+    "fir_output_scaler": "Pure-combinational fixed-point output scaler that arithmetic-right-shifts the 64-bit accumulator by 20 and returns the 24-bit output word."
+  }
+}

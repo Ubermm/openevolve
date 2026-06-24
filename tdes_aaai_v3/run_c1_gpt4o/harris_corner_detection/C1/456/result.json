@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 16384,
+  "total_tests": 16384,
+  "solved": true,
+  "golden_correct": 16384,
+  "golden_total": 16384,
+  "design": "harris_corner_detection",
+  "model": "gpt-4o",
+  "seed": 456,
+  "wall_seconds": 218.4,
+  "total_input_tokens": 4610,
+  "total_output_tokens": 4962
+}

@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/coeff_rom.v",
+  "sub_modules": {
+    "coeff_rom": "combinational ROM providing hard-coded FIR coefficients",
+    "mult": "combinational multiplier for sample and coefficient",
+    "shift_arith": "combinational arithmetic right-shift to scale accumulated sum"
+  }
+}

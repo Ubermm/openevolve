@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 28,
+  "best_passes": 7,
+  "total_tests": 33,
+  "solved": false,
+  "decomp_modules": [
+    "twiddle_rom_16",
+    "fft_butterfly",
+    "fft_addr_gen"
+  ],
+  "design": "fft_16pt_iterative",
+  "model": "o4-mini",
+  "seed": 789,
+  "wall_seconds": 713.0,
+  "total_input_tokens": 79436,
+  "total_output_tokens": 120407
+}

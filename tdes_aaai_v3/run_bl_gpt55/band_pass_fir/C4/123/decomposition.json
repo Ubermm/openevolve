@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/bpf_coeff_const.v",
+  "sub_modules": {
+    "bpf_coeff_const": "Purely combinational constant-coefficient provider with the exact hard-coded 101-tap signed FIR coefficient set.",
+    "bpf_tap_product": "Purely combinational signed multiplier for one delayed input sample and one FIR coefficient, producing a 64-bit product.",
+    "bpf_adder_tree_sum": "Purely combinational accumulator that sums all flattened 64-bit tap products into one 64-bit FIR accumulation result.",
+    "bpf_output_quantizer": "Purely combinational fixed-point output scaler that arithmetic-right-shifts the 64-bit accumulator by 15 and returns the configured output width."
+  }
+}

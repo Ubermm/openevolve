@@ -1,0 +1,11 @@
+{
+  "top_source_file": "verilog/fp_mult_unpack.v",
+  "sub_modules": {
+    "fp_mult_unpack": "Combinational IEEE-754 field extraction, implicit significand construction, and operand class detection for zero, infinity, NaN, and subnormal values.",
+    "fp_mult_special": "Combinational special-case resolver that applies NaN, infinity, zero, and invalid 0-times-infinity priority rules while forwarding the result sign.",
+    "fp_mult_mul_exp": "Combinational 24x24 significand multiplier and biased exponent pre-calculation using effective exponent 1 for subnormal operands.",
+    "fp_mult_normalize_round": "Combinational normalization and round-to-nearest-even unit producing rounded fraction and adjusted exponent.",
+    "fp_mult_status": "Combinational overflow and underflow detector for the rounded normal datapath while suppressing checks for earlier special cases.",
+    "fp_mult_pack": "Combinational final IEEE-754 result packer with priority handling for canonical NaN, infinity, signed zero, overflow, normal result, and flushed underflow."
+  }
+}

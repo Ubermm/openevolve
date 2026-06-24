@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 28,
+  "best_passes": 0,
+  "total_tests": 0,
+  "solved": false,
+  "decomp_modules": [
+    "gd_poly_derivative",
+    "gd_poly_step",
+    "gd_poly_update"
+  ],
+  "design": "gradient_descent",
+  "model": "gpt-5.5",
+  "seed": 123,
+  "wall_seconds": 2780.5,
+  "total_input_tokens": 35682,
+  "total_output_tokens": 62846
+}

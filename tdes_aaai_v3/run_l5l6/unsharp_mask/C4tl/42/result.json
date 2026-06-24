@@ -1,0 +1,22 @@
+{
+  "condition": "C4tl",
+  "llm_calls": 5,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "usm_gaussian3x3",
+    "usm_highpass",
+    "usm_gain_scale",
+    "usm_reconstruct_sat"
+  ],
+  "ref_passes": 1,
+  "ref_total": 1,
+  "module_solve_rounds": {},
+  "design": "unsharp_mask",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 278.3,
+  "total_input_tokens": 8021,
+  "total_output_tokens": 14321
+}

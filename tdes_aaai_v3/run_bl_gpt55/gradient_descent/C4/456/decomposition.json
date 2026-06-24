@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/gd_derivative.v",
+  "sub_modules": {
+    "gd_derivative": "Combinational fixed-point derivative calculator for f'(x)=2*a*x+b using extended internal x precision.",
+    "gd_step": "Combinational fixed-point learning-rate multiplier computing alpha multiplied by the derivative/gradient.",
+    "gd_update": "Combinational gradient-descent state update computing x_next = x - step with two's-complement wrap behavior.",
+    "gd_output_quantizer": "Combinational converter from the extended internal fixed-point x format back to the external N-bit Q format."
+  }
+}

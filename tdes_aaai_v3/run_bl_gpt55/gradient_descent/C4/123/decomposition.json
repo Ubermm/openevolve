@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/gd_poly_derivative.v",
+  "sub_modules": {
+    "gd_poly_derivative": "Pure combinational fixed-point derivative calculator. Computes gradient = ((2*a*x) >>> M) + b using sign-extended wide intermediates.",
+    "gd_poly_step": "Pure combinational fixed-point learning-rate multiplier. Computes step = (alpha * gradient) >>> M with widened signed arithmetic.",
+    "gd_poly_update": "Pure combinational update block. Computes next_x = current_x - step and returns the wrapped N-bit fixed-point result."
+  }
+}

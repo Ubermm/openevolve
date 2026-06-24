@@ -1,0 +1,8 @@
+{
+  "top_source_file": "verilog/butterfly.v",
+  "sub_modules": {
+    "butterfly": "Radix-2 DIT butterfly with fixed-point twiddle multiply and sum/difference",
+    "twiddle_rom": "Combinational ROM for Q1.15 twiddle factors for N=16",
+    "bit_rev": "Bit-reversal index generator for 4-bit indices"
+  }
+}

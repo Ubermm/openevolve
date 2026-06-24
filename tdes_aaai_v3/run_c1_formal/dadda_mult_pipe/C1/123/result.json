@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 0,
+  "total_tests": 0,
+  "solved": false,
+  "golden_correct": 0,
+  "golden_total": 0,
+  "design": "dadda_mult_pipe",
+  "model": "gpt-5.5",
+  "seed": 123,
+  "wall_seconds": 674.5,
+  "total_input_tokens": 2985,
+  "total_output_tokens": 38772
+}

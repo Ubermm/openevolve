@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 0,
+  "total_tests": 0,
+  "solved": false,
+  "golden_correct": 0,
+  "golden_total": 0,
+  "design": "unsharp_mask",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 708.0,
+  "total_input_tokens": 4120,
+  "total_output_tokens": 40000
+}

@@ -1,0 +1,9 @@
+{
+  "top_source_file": "verilog/dct8_coeff_rom.v",
+  "sub_modules": {
+    "dct8_coeff_rom": "Combinational Q14 orthonormal 8-point DCT coefficient ROM. In DCT mode it returns C[k][n]; in IDCT mode it returns the transposed coefficient C[n][k].",
+    "dct8_signed_mult": "Combinational signed fixed-point multiplier for one sample and one cosine coefficient.",
+    "dct8_adder_tree": "Combinational eight-input signed adder tree with sign extension to the accumulation width.",
+    "dct8_round_saturate": "Combinational fixed-point rounding, scaling, and saturation block that converts the Q-format accumulator into the configured output width."
+  }
+}

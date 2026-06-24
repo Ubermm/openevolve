@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 12,
+  "total_tests": 33,
+  "solved": false,
+  "golden_correct": 0,
+  "golden_total": 0,
+  "design": "ifft_16pt_iterative",
+  "model": "o4-mini",
+  "seed": 123,
+  "wall_seconds": 220.5,
+  "total_input_tokens": 10240,
+  "total_output_tokens": 36747
+}

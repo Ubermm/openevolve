@@ -1,0 +1,10 @@
+{
+  "top_source_file": "verilog/fp_unpack.v",
+  "sub_modules": {
+    "fp_unpack": "Unpack IEEE-754 fields and detect special cases",
+    "fp_align": "Align exponents and shift significands",
+    "fp_addsub": "Perform addition or subtraction of aligned mantissas",
+    "fp_normalize": "Normalize the raw mantissa and adjust exponent",
+    "fp_round_pack": "Round the normalized result and pack into IEEE-754 format"
+  }
+}

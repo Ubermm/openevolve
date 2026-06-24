@@ -1,0 +1,18 @@
+{
+  "condition": "C4",
+  "llm_calls": 21,
+  "best_passes": 20,
+  "total_tests": 36,
+  "solved": false,
+  "decomp_modules": [
+    "key_gen",
+    "result_lut",
+    "out_reg"
+  ],
+  "design": "fp_adder",
+  "model": "o4-mini",
+  "seed": 123,
+  "wall_seconds": 363.5,
+  "total_input_tokens": 40256,
+  "total_output_tokens": 61323
+}

@@ -1,0 +1,23 @@
+{
+  "condition": "C4tl",
+  "llm_calls": 6,
+  "best_passes": 1,
+  "total_tests": 1,
+  "solved": true,
+  "decomp_modules": [
+    "fft_sign_extend",
+    "fft_twiddle_rom64",
+    "fft_complex_mult_q15",
+    "fft_complex_addsub",
+    "fft_radix2_butterfly"
+  ],
+  "ref_passes": 1,
+  "ref_total": 1,
+  "module_solve_rounds": {},
+  "design": "fft_streaming_64pt",
+  "model": "gpt-5.5",
+  "seed": 42,
+  "wall_seconds": 443.6,
+  "total_input_tokens": 12100,
+  "total_output_tokens": 25959
+}

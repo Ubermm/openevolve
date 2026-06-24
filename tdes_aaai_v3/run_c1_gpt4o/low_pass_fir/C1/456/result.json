@@ -1,0 +1,15 @@
+{
+  "condition": "C1",
+  "llm_calls": 5,
+  "best_passes": 0,
+  "total_tests": 0,
+  "solved": false,
+  "golden_correct": 0,
+  "golden_total": 0,
+  "design": "low_pass_fir",
+  "model": "gpt-4o",
+  "seed": 456,
+  "wall_seconds": 46.7,
+  "total_input_tokens": 6180,
+  "total_output_tokens": 3305
+}
